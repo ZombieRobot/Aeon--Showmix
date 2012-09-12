@@ -1,0 +1,266 @@
+<window>
+  <defaultcontrol>101</defaultcontrol>
+  <coordinates>
+    <system>1</system>
+    <posx>0</posx>
+    <posy>0</posy>
+  </coordinates>
+  <controls>
+	<control type="group">
+		<posx>1060</posx>
+		<posy>30</posy>
+		<animation type="Visible">
+			<effect type="slide" time="400" start="847,0" end="0,0" easing="out" tween="cubic" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="slide" time="400" start="0,0" end="847,0" easing="in" tween="cubic" />
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="slide" time="400" start="847,0" end="0,0" easing="out" tween="cubic" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="slide" time="400" start="0,0" end="847,0" easing="in" tween="cubic" />
+		</animation>
+		<control type="image">
+			<description>background image</description>
+			<posx>-40</posx>
+			<posy>-30</posy>
+			<width>1000</width>
+			<height>870</height>
+			<texture>osd/osd_bookmarks.png</texture>
+		</control>
+
+		<!-- ** Required ** Do not change <id> or <type> -->
+		<control type="group" id="110">
+			<control type="image" >
+				<description>page header tab icon</description>
+				<posx>0</posx>
+				<posy>3</posy>
+				<width>375</width>
+				<height>75</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/logo_opensubtitles.png</texture>
+			</control>
+		</control>
+		<control type="group" id="111">
+			<control type="image" >
+				<description>page header tab icon</description>
+				<posx>0</posx>
+				<posy>3</posy>
+				<width>375</width>
+				<height>75</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/Sublight_logo.png</texture>
+			</control>
+		</control>
+		<control type="group" id="112">
+			<control type="image" >
+				<description>page header tab icon</description>
+				<posx>0</posx>
+				<posy>3</posy>
+				<width>375</width>
+				<height>60</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/podnapisi.png</texture>
+				<visible>!Control.IsVisible(111) + !Control.IsVisible(110)</visible>
+			</control>
+		</control>
+     
+		<control type="label" id="300">
+			 <description>textarea</description>
+			 <posx>570</posx>
+			 <posy>15</posy>
+			 <width>255</width>
+			 <height>33</height>
+			 <textcolor>d0FFFFFF</textcolor>
+			 <align>right</align>
+			<font>Font_FSInfoLabel</font>
+		</control>              
+		<control type="image">
+			<posx>580</posx>
+			<posy>20</posy>
+			<width>80</width>
+			<height>20</height>
+			<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/icon_sync.png</texture>
+			<visible>True</visible>
+		</control>  
+		<control type="label" id="301">
+			<description>textarea</description>
+			<posx>670</posx>
+			<posy>15</posy>
+			<width>210</width>
+			<height>33</height>
+			<textcolor>d0FFFFFF</textcolor>
+			<font>Font_FSInfoLabel</font>
+		</control>   
+                   
+		<control type="image">
+			<posx>0</posx>
+			<posy>75</posy>
+			<width>850</width>
+			<height>2</height>
+			<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/default-separatorOSD.png</texture>
+		</control>
+		<control type="label" id="100">
+			<description>textarea</description>
+			<posx>20</posx>
+			<posy>80</posy>
+			<width>850</width>
+			<height>40</height>
+			<textcolor>d0FFFFFF</textcolor>
+			<aligny>center</aligny>
+			<wrapmultiline>true</wrapmultiline>
+			<font>Font_FSInfoLabel</font>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>125</posy>
+			<width>850</width>
+			<height>2</height>
+			<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/default-separatorOSD.png</texture>
+		</control>
+     <!-- ** Required ** Do not change <id> or <type> -->
+		<control type="list" id="120">
+			<posx>-10</posx>
+			<posy>130</posy>
+			<width>840</width>
+			<height>680</height>
+			<onleft>121</onleft>
+			<onright>121</onright>
+			<onup>120</onup>
+			<ondown>120</ondown>
+			<viewtype label="535">list</viewtype>
+			<pagecontrol>121</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<itemlayout height="40">
+			<control type="image">
+				<posx>10</posx>
+				<posy>38</posy>
+				<width>840</width>
+				<height>2</height>
+				<texture border="10">special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/default-list-nofocus.png</texture>
+			</control>
+			<control type="image">
+				<posx>7</posx>
+				<posy>8</posy>
+				<width>33</width>
+				<height>22</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/$INFO[Listitem.Thumb]</texture>
+			</control>
+			<control type="label">
+				<posx>45</posx>
+				<posy>-5</posy>
+				<width>120</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<textcolor>d0FFFFFF</textcolor>
+				<selectedcolor>Selected</selectedcolor>
+				<align>left</align>
+				<info>ListItem.Label</info>
+				<font>Font_FSInfoLabel</font>
+			</control>
+			<control type="image">
+				<posx>155</posx>
+				<posy>8</posy>
+				<width>40</width>
+				<height>20</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/icon_sync.png</texture>
+				<visible>ListItem.property(sync)</visible>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control> 
+			<control type="label">
+				<posx>200</posx>
+				<posy>-5</posy>
+				<width>500</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<textcolor>d0FFFFFF</textcolor>
+				<selectedcolor>Selected</selectedcolor>
+				<align>left</align>
+				<info>ListItem.Label2</info>
+				<font>Font_FSInfoLabel</font>
+			</control>
+			<control type="image">
+				<posx>710</posx>
+				<posy>5</posy>
+				<width>120</width>
+				<height>20</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/info_window_icon_rating_star_$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+        </itemlayout>
+		<focusedlayout height="40">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>840</width>
+				<height>38</height>
+				<texture border="10">special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/default-list-focus.png</texture>
+				<visible>Control.HasFocus(120)</visible>
+			</control>
+			<control type="image">
+				<posx>7</posx>
+				<posy>8</posy>
+				<width>33</width>
+				<height>22</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/$INFO[Listitem.Thumb]</texture>
+			</control>
+			<control type="label">
+				<posx>45</posx>
+				<posy>-5</posy>
+				<width>120</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<textcolor>d0FFFFFF</textcolor>
+				<selectedcolor>Selected</selectedcolor>
+				<align>left</align>
+				<info>ListItem.Label</info>
+				<font>Font_FSInfoLabel</font>
+			</control>
+			<control type="image">
+				<posx>155</posx>
+				<posy>8</posy>
+				<width>40</width>
+				<height>20</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/icon_sync.png</texture>
+				<visible>ListItem.property(sync)</visible>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control> 
+			<control type="label">
+				<posx>200</posx>
+				<posy>-5</posy>
+				<width>500</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<textcolor>d0FFFFFF</textcolor>
+				<selectedcolor>Selected</selectedcolor>
+				<align>left</align>
+				<info>ListItem.Label2</info>
+				<font>Font_FSInfoLabel</font>
+			</control>
+			<control type="image">
+				<posx>710</posx>
+				<posy>5</posy>
+				<width>120</width>
+				<height>20</height>
+				<texture>special://home/scripts/OpenSubtitles_OSD/resources/skins/Default/media/info_window_icon_rating_star_$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+		</focusedlayout>
+      </control>
+		<control type="scrollbar" id="121">
+			<description>scroll bar indicator for lists</description>
+			<posx>755</posx>
+			<posy>130</posy>
+			<width>180</width>
+			<height>680</height>
+			<texturesliderbackground>windows/scrollbarback_nofocus.png</texturesliderbackground>
+			<texturesliderbar></texturesliderbar>
+			<texturesliderbarfocus>-</texturesliderbarfocus>
+			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+			<pulseonselect></pulseonselect>
+			<orientation>vertical</orientation>
+			<showonepage>false</showonepage>
+			<onleft>120</onleft>
+			<onright>120</onright>
+			<visible>Control.IsVisible(120)</visible>
+		</control>
+    </control>
+  </controls>
+</window>

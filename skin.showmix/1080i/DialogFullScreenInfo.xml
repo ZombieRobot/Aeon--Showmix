@@ -1,0 +1,415 @@
+<window type="dialog" id="142">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="group">
+			<visible>Skin.HasSetting(aeon_classic)</visible>
+			<posx>0</posx>
+			<posy>854</posy>
+			<width>1920</width>
+			<height>226</height>
+			<animation type="Visible">
+				<effect type="fade" time="400" start="0" end="100" />
+				<effect type="slide" time="400" start="0,226" end="0,0" easing="out" tween="cubic" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" time="400" start="100" end="0" />
+				<effect type="slide" time="400" start="0,0" end="0,226" easing="in" tween="cubic" />
+			</animation>
+			<animation type="WindowOpen">
+				<effect type="fade" time="400" start="0" end="100" />
+				<effect type="slide" time="400" start="0,226" end="0,0" easing="out" tween="cubic" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" time="400" start="100" end="0" />
+				<effect type="slide" time="400" start="0,0" end="0,226" easing="in" tween="cubic" />
+			</animation>
+			<control type="progress">
+				<description>Progressbar</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1920</width>
+				<height>226</height>
+				<info>Player.Progress</info>
+				<texturebg>osd/osd_progress_clear.png</texturebg>
+				<lefttexture>-</lefttexture>
+				<midtexture>osd/osd_progressmid.png</midtexture>
+				<righttexture>-</righttexture>
+				<overlaytexture>-</overlaytexture>
+				<include>Animation_CommonFade</include>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1920</width>
+				<height>226</height>
+				<texture>osd/fullscreen_bottom_classic.png</texture>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>68</posy>
+				<width>1920</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_OSDMusicArtist</font>
+				<label>31006</label>
+				<animation effect="slide" start="0,0" end="0,-18" time="200" condition="Control.IsVisible(212)">Conditional</animation>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>112</posy>
+				<width>1920</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_OSDMusicTitle</font>
+				<label>[COLOR FFFFFFFF]$INFO[VideoPlayer.Title][/COLOR]</label>
+				<animation effect="slide" start="0,0" end="0,-18" time="200" condition="Control.IsVisible(212)">Conditional</animation>
+			</control>
+			<control type="label" id="212">
+				<posx>0</posx>
+				<posy>138</posy>
+				<width>1920</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_OSDMusicArtist</font>
+				<label>[COLOR 91FFFFFF]$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration][/COLOR]</label>
+			</control>
+		</control>
+	
+		<control type="group">
+			<posx>0</posx>
+			<posy>930</posy>
+			<visible>Skin.HasSetting(aeon_leather)</visible>
+			<animation type="Visible">
+				<effect type="slide" time="400" start="0,226" end="0,0" easing="out" tween="cubic" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="slide" time="400" start="0,0" end="0,226" easing="in" tween="cubic" />
+			</animation>
+			<animation type="WindowOpen">
+				<effect type="slide" time="400" start="0,226" end="0,0" easing="out" tween="cubic" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" time="400" start="0,0" end="0,226" easing="in" tween="cubic" />
+			</animation>
+			
+			<control type="group">
+				<posx>230</posx>
+				<posy>-180</posy>
+				<include>Animation_CommonFade</include>
+				<control type="image">
+					<description>Panel</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>284</height>
+					<width>1460</width>
+					<texture flipy="true">osd/osd_back.png</texture>
+					
+				</control>
+				<control type="image">
+					<description>Panel</description>
+					<posx>0</posx>
+					<posy>-27</posy>
+					<height>284</height>
+					<width>1460</width>
+					<texture>osd/osd_back.png</texture>
+				</control>
+			</control>	
+			<control type="image">
+				<posx>748</posx>
+				<posy>-236</posy>
+				<width>421</width>
+				<height>42</height>
+				<texture>osd/osd_button_paused.png</texture>
+				<include>Animation_CommonFade</include>
+			</control>
+			<control type="label">
+				<posx>748</posx>
+				<posy>-236</posy>
+				<width>421</width>
+				<height>42</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Font_OSDSeek</font>
+				<textcolor>FF363636</textcolor>
+				<include>Animation_CommonFade</include>	
+				<label>MOVIE INFORMATION</label>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>	
+			<control type="image">
+                <description>Movie cover image</description>
+                <posx>280</posx>
+                <posy>-165</posy>
+                <width>154</width>
+                <height>231</height>
+                <fadetime>200</fadetime>
+                <texture background="true" diffuse="views/multiplex/multiplex_mask.png">$INFO[VideoPlayer.Cover]</texture>
+                <aspectratio aligny="bottom">stretch</aspectratio>
+                <visible>VideoPlayer.Content(Movies)</visible>
+				<include>Animation_CommonFade</include>
+            </control> 	
+			<control type="image">
+                <description>Movie cover image</description>
+                <posx>280</posx>
+                <posy>-165</posy>
+                <width>154</width>
+                <height>231</height>
+                <fadetime>200</fadetime>
+                <texture>views/multiplex/multiplex_glass.png</texture>
+                <aspectratio aligny="bottom">stretch</aspectratio>
+                <visible>VideoPlayer.Content(Movies)</visible>
+				<include>Animation_CommonFade</include>
+            </control> 	
+			<control type="group">
+				<posx>0</posx>
+				<posy>-16</posy>
+				<include>Animation_CommonFade</include>
+				<control type="label">
+					<posx>468</posx>
+					<posy>-147</posy>
+					<width>1920</width>
+					<height>37</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_OSDMusicTitle</font>
+					<label>$INFO[VideoPlayer.Title]</label>			
+					<animation effect="slide" start="0,0" end="0,-18" time="200" condition="Control.IsVisible(212)">Conditional</animation>			
+				</control>
+				<control type="textbox" id="400">
+					  <description>Description Value for Movies</description>
+					  <posx>468</posx>
+					  <posy>-65</posy>
+					  <width>1180</width>
+					  <height>80</height>
+					  <font>Font_OSDTime</font>
+					  <align>justify</align>
+					  <textcolor>white</textcolor>
+					  <pagecontrol>61</pagecontrol>
+					  <label>$INFO[VideoPlayer.Plot ]</label>
+					  <autoscroll time="3000" delay="10000" repeat="5000"></autoscroll>
+				</control>
+				<control type="label">
+					<posx>1652</posx>
+					<posy>-165</posy>
+					<width>250</width>
+					<height>44</height>
+					<label>$INFO[Player.Time,, / ]$INFO[Player.Duration]</label>
+					<textcolor>88FFFFFF</textcolor>
+					<font>Font_OSDTime</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<scroll>false</scroll>
+				</control>
+				<control type="label">
+					<posx>468</posx>
+					<posy>-110</posy>
+					<width>1200</width>
+					<height>44</height>
+					<label>$INFO[VideoPlayer.Genre,, • ]$INFO[VideoPlayer.Year]</label>
+					<textcolor>88FFFFFF</textcolor>
+					<font>Font_OSDTime</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<scroll>false</scroll>
+				</control>
+			</control>	
+			<control tye="image">
+				<posx>699</posx>
+				<posy>89</posy>
+				<width>521</width>
+				<height>62</height>
+				<texture flipy="true">osd/osd_button_paused.png</texture>
+				<include>Animation_CommonFade</include>
+			</control>
+			<control type="group">
+				<posx>100</posx>
+				<posy>-120</posy>
+				<width>1043</width>
+				<height>854</height>
+
+				<control type="image" id="9101">
+					<posx>600</posx>
+					<posy>138</posy>
+					<width>120</width>
+					<height>45</height>
+					<include>Furniture_MovieInfoFlagSource</include>
+					<texture>$INFO[VideoPlayer.VideoCodec,flags/info/,.png]</texture>
+					<visible>!substring(listitem.filename,sddvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,hdtv) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right)</visible>
+				</control>
+				
+				
+				<control type="image" id="9101">
+					<posx>18</posx>
+					<include>Furniture_MovieInfoFlagSource</include>
+					<texture>[$INFO[VideoPlayer.VideoCodec,flags/info/,.png]</texture>
+				</control>
+				<control type="image" id="9101">
+					<include>Furniture_MovieInfoFlagSource</include>
+					<texture>flags/info/bluray.png</texture>
+					<visible>substring(VideoPlayer.filename,bluray)</visible>
+				</control>
+				<control type="image" id="9101">
+					<include>Furniture_MovieInfoFlagSource</include>
+					<texture>flags/info/dvd.png</texture>
+					<visible>substring(VideoPlayer.filename,sddvd)</visible>
+				</control>
+				<control type="image" id="9101">
+					<include>Furniture_MovieInfoFlagSource</include>
+					<texture>flags/info/hdtv.png</texture>
+					<visible>substring(VideoPlayer.filename,hdtv)</visible>
+				</control>
+				<control type="image" id="9101">
+					<include>Furniture_MovieInfoFlagSource</include>
+					<texture>flags/info/hddvd.png</texture>
+					<visible>substring(listitem.filename,hddvd)</visible>
+				</control>		
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/aac51.png</texture>
+					<visible>substring(listitem.audiochannels,6) + substring(listitem.audiocodec,aac)</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dd51.png</texture>
+					<visible>substring(listitem.audiochannels,6) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dd71.png</texture>
+					<visible>substring(listitem.audiochannels,8) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dts20.png</texture>
+					<visible>substring(listitem.audiochannels,2) + [substring(listitem.audiocodec,dts) | substring(listitem.audiocodec,dca)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dts51.png</texture>
+					<visible>substring(listitem.audiochannels,6) + [substring(listitem.audiocodec,dts) | substring(listitem.audiocodec,dca)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dts71.png</texture>
+					<visible>substring(listitem.audiochannels,8) + [substring(listitem.audiocodec,dts) | substring(listitem.audiocodec,dca)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dts20.png</texture>
+					<visible>substring(listitem.audiochannels,2) + [substring(listitem.audiocodec,dts) | substring(listitem.audiocodec,dca)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dolby20.png</texture>
+					<visible>substring(listitem.audiochannels,2) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/dolbypro.png</texture>
+					<visible>substring(listitem.audiochannels,3) + [substring(listitem.audiocodec,ac-3) | substring(listitem.audiocodec,ac3) | substring(listitem.audiocodec,adpcm)]</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/aac20.png</texture>
+					<visible>substring(listitem.audiochannels,2) + substring(listitem.audiocodec,aac)</visible>
+				</control>
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/mp3_info.png</texture>
+					<visible>substring(listitem.audiochannels,2) + substring(listitem.audiocodec,mp3)</visible>
+				</control>
+				
+				<control type="image" id="9102">
+					<include>Furniture_MovieInfoFlagSound</include>
+					<texture>flags/info/mono.png</texture>
+					<visible>substring(listitem.audiochannels,1)</visible>
+				</control>
+
+
+				<control type="image" id="9104">
+					<posx>493</posx>
+					<posy>125</posy>
+					<width>90</width>
+					<height>70</height>	
+					<texture>$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+					<colordiffuse>FF7c7c7c</colordiffuse>
+				</control>
+				
+				<control type="image">
+					<posx>520</posx>
+					<posy>116</posy>		
+					<width>85</width>
+					<height>85</height>	
+					<aspectratio>keep</aspectratio>
+					<include>Furniture_MovieInfoFlagSubs</include>
+					<texture>$INFO[VideoPlayer.studio,flags/studios/,.png]</texture>
+					<visible>VideoPlayer.Content(Movies)</visible>
+				</control>
+				<control type="image">
+					<posx>520</posx>
+					<posy>116</posy>		
+					<width>85</width>
+					<height>85</height>	
+					<aspectratio>keep</aspectratio>
+					<include>Furniture_MovieInfoFlagSubs</include>
+					<texture>$INFO[VideoPlayer.studio,flags/studios/,.png]</texture>
+					<visible>VideoPlayer.Content(TVshows)</visible>
+				</control>					
+									
+				
+
+			
+				
+		
+			</control>
+		
+			
+			<control tye="label">
+				<posx>470</posx>
+				<posy>-24</posy>
+				<width>450</width>
+				<height>37</height>
+				<font>Font_OSDTime</font>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<label>$INFO[VideoPlayer.Time]</label>
+			</control>
+
+			<control tye="label">
+				<posx>470</posx>
+				<posy>06</posy>
+				<width>450</width>
+				<height>37</height>
+				<font>Font_OSDTime</font>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<label>[COLOR 60ffffff]CURRENT TIME: [/COLOR]$INFO[System.Time]</label>
+			</control>
+			
+			
+
+			<control tye="label">
+				<posx>1645</posx>
+				<posy>-24</posy>
+				<width>450</width>
+				<height>37</height>
+				<align>right</align>
+				<font>Font_OSDTime</font>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<label>$INFO[VideoPlayer.Duration]</label>
+			</control>
+
+			<control tye="label">
+				<posx>1645</posx>
+				<posy>06</posy>
+				<width>450</width>
+				<height>37</height>
+				<align>right</align>
+				<font>Font_OSDTime</font>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<label>[COLOR 60ffffff]FINISH TIME: [/COLOR]$INFO[Player.FinishTime]</label>
+			</control>
+		</control>
+	</controls>
+</window>

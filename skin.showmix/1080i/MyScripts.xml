@@ -1,0 +1,24 @@
+<window id="20">
+	<defaultcontrol>550</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>550,50,53</views>
+	<controls>
+	
+		<include>CommonScriptBackground</include>
+		<include>Furniture_WallBackground</include>
+	
+		<include>FullscreenDimensions</include>
+		<include>Animation_OpenCloseZoom</include>
+			<include>Furniture_Stage</include>
+				<include>Viewtype_Wall</include>
+		<include>Viewtype_LowList</include>
+		<include>Viewtype_List</include>
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
+		<include>Furniture_WallTime</include>
+		<include>Furniture_WallRSS</include>		
+		<include>VerticalMenu</include>		
+	
+		<include>Furniture_Debug</include>
+	</controls>
+</window>

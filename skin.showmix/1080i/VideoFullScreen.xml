@@ -1,0 +1,59 @@
+<window id="2005">
+	<controls>
+
+		<!-- codec infos -->
+	<control type="group">
+		<posx>0</posx>
+		<posy>0</posy>
+		<animation type="Visible">
+			<effect type="slide" time="400" start="0,-226" end="0,0" easing="out" tween="cubic" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="slide" time="400" start="0,0" end="0,-226" easing="in" tween="cubic" />
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="slide" time="400" start="0,-226" end="0,0" easing="out" tween="cubic" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="slide" time="400" start="0,0" end="0,-226" easing="in" tween="cubic" />
+		</animation>
+		<control type="image">
+			<description>Panel</description>
+			<posx>0</posx>
+			<posy>-50</posy>
+			<height>238</height>
+			<width>1920</width>
+			<texture>osd/codec_top.png</texture>
+		</control>
+
+		<control type="label" id="10">
+			<description>row 1 label</description>
+			<posx>0</posx>
+			<posy>5</posy>
+			<label>-</label>
+			<align>center</align>
+			<width>1920</width>			
+			<font>Font_OSDCodecInfo</font>
+		</control>
+		<control type="label" id="11">
+			<description>row 2 label</description>
+			<posx>0</posx>
+			<posy>42</posy>
+			<label>-</label>
+			<align>center</align>
+			<width>1920</width>						
+			<font>Font_OSDCodecInfo</font>
+		</control>
+		<control type="label" id="12">
+			<description>row 3 label</description>
+			<posx>0</posx>
+			<posy>80</posy>
+			<label>-</label>
+			<align>center</align>
+			<width>1920</width>						
+			<font>Font_OSDCodecInfo</font>
+		</control>
+	</control>
+	
+	</controls>
+</window>

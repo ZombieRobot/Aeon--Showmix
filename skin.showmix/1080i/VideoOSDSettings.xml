@@ -1,0 +1,98 @@
+<window>
+	<id>123</id>
+	<defaultcontrol>2</defaultcontrol>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<include>Animation_DialogPopup</include>		
+	<controls>
+
+		<control type="group"> 
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog)">conditional</animation>  
+			<control type="image">
+				<description>Panel</description>
+				<posx>300</posx>
+				<posy>60</posy>
+				<width>1325</width>
+				<height>721</height>
+				<texture>osd/osd_settings_back.png</texture>
+			</control>
+
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<posx>375</posx>
+				<posy>112</posy>
+				<width>1170</width>
+				<height>660</height>
+				<texture>-</texture>
+				<itemgap>0</itemgap>
+			</control>
+
+			<control type="button" id="7">
+				<description>default button</description>
+				<posx>0</posx>
+				<width>1100</width>
+				<height>60</height>
+				<textcolor>FF929191</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+				<textoffsetx>46</textoffsetx>
+				<textoffsety>13</textoffsety>
+				<aligny>top</aligny>
+				<font>Font_OSDOptions</font>
+				<texturefocus>osd/osd_settings_buttonf.png</texturefocus>
+				<texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>		
+			</control>
+
+			<control type="radiobutton" id="8">
+				<description>default radiobutton</description>
+				<radiowidth>141</radiowidth>
+				<radioposx>1030</radioposx>
+				<radioheight>97</radioheight>
+				<textoffsetx>46</textoffsetx>
+				<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
+				<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+				<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+				<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>		
+				<include>Objects_OSDSettingsButton</include>
+			</control>
+
+			<control type="spincontrolex" id="9">
+				<description>default spincontrolex</description>
+				<textureup>settings/spin-up.png</textureup>
+				<texturedown>settings/spin-down.png</texturedown>
+				<textureupfocus>settings/spin-up-focus.png</textureupfocus>
+				<texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
+				<spinposx>10</spinposx>
+				<spinposy>-7</spinposy>		
+				<spinwidth>60</spinwidth>
+				<spinheight>97</spinheight>
+				<reverse>yes</reverse>
+				<aligny>center</aligny>
+				<include>Objects_OSDSettingsButton</include>
+			</control>
+
+			<control type="sliderex" id="10">
+				<description>default slider</description>
+				<sliderposx>70</sliderposx>
+				<posx>0</posx>
+				<height>60</height>
+				<textcolor>FF929191</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+				<textoffsetx>46</textoffsetx>
+				<textoffsety>13</textoffsety>
+				<aligny>top</aligny>
+				<font>Font_OSDOptions</font>
+				<sliderwidth>316</sliderwidth>
+				<sliderheight>97</sliderheight>
+				<texturefocus>osd/osd_settings_buttonf.png</texturefocus>
+				<texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>		
+				<texturesliderbar>osd/osd_sliderback.png</texturesliderbar>
+				<textureslidernib>osd/osd_slidernub.png</textureslidernib>
+				<textureslidernibfocus>osd/osd_slidernubf.png</textureslidernibfocus>
+			</control>
+		</control>
+
+	</controls>
+</window>

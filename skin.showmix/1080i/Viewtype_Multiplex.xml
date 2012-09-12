@@ -1,0 +1,369 @@
+<includes>
+<!-- Common Flow labels -->
+	<include name="MultiplexFloorMainLabel">
+		<posx>460</posx>
+		<posy>1042</posy>
+		<width>1000</width>
+		<font>Font_FloorMainLabel</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<include>Animation_HideMultiplex</include>
+		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
+		<scrollspeed>30</scrollspeed>
+		<scrollout>true</scrollout>
+		<pauseatend>3000</pauseatend>
+		<scroll>true</scroll>
+		<visible>![Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()|Control.HasFocus(7011)|Control.HasFocus(7012)|Control.HasFocus(7013)]</visible>
+	</include>
+	<include name="MultiplexFloorDetailLabelLeft">
+		<posx>7</posx>
+		<posy>1035</posy>
+		<width>410</width>
+		<hight>150</hight>
+		<font>Font_FloorSubLabel</font>
+		<align>left</align>
+		<include>Animation_HideMultiplex</include>
+		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
+		<scrollspeed>30</scrollspeed>
+		<scrollout>true</scrollout>
+		<pauseatend>3000</pauseatend>
+		<scroll>true</scroll>
+		<visible>![Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()|Control.HasFocus(7011)|Control.HasFocus(7012)|Control.HasFocus(7013)]</visible>
+	</include>
+	<include name="MultiplexFloorDetailLabelRight">
+		<posx>410r</posx>
+		<posy>1035</posy>
+		<width>410</width>
+		<hight>150</hight>
+		<font>Font_FloorSubLabel</font>
+		<scrollspeed>30</scrollspeed>
+		<scrollout>false</scrollout>
+		<pauseatend>3000</pauseatend>
+		<scroll>true</scroll>
+		<align>right</align>
+		<include>Animation_HideMultiplex</include>
+		<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
+		<visible>![Control.HasFocus(61) | Control.HasFocus(94) | ControlGroup(7000).HasFocus()|Control.HasFocus(7011)|Control.HasFocus(7012)|Control.HasFocus(7013)]</visible>
+	</include>
+
+	<include name="Viewtype_Multiplex">
+		<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(504)">Viewtype_Multiplex_Music</include>
+		<include condition="Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)">Viewtype_Multiplex_Movies</include>
+		<include condition="Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)">Viewtype_Old_Multiplex_Movies</include>
+		<include condition="Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)">Viewtype_Multiplex_TVShows</include>
+		<control type="group">
+			<visible>Control.IsVisible(551)</visible>
+			<include condition="Window.IsActive(24) | Window.IsActive(25)">MultiplexMovies</include>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(552)</visible>
+			<include condition="Window.IsActive(24) | Window.IsActive(25)">MultiplexTVShows</include>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(553)</visible>
+			<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(504)">MultiplexMusic</include>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(554)</visible>
+			<include condition="Window.IsActive(24) | Window.IsActive(25)">OldMultiplexMovies</include>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+		</control>
+
+		<control type="group" id="111">
+			<visible>Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)|Control.IsVisible(554)</visible>
+			<control type="button" id="112">
+				<visible>[![Container.Content(movies)|Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)|Container.Content(songs)|Container.Content(albums)|Container.Content(artists)] + stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(movies) + stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048]) + [!Skin.HasSetting(movietrailers) | [Skin.HasSetting(movietrailers) + IsEmpty(ListItem.Trailer)]]] | [!Skin.HasSetting(tvpreview) + Container.Content(episodes) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(tvshows) + stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(seasons) + stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(Artists) + stringcompare(Skin.String(MusicArtistsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(Albums) + stringcompare(Skin.String(MusicAlbumsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]|[Container.Content(Songs) + stringcompare(Skin.String(MusicSongsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>601</ondown>
+				<onclick>SetFocus(551)</onclick>
+			</control>
+			<control type="button" id="113">
+				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(movies) + stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048]) + Skin.HasSetting(movietrailers) + !IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(tvpreview) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048]) + Container.Content(episodes)]</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>7000</onup>
+				<ondown>601</ondown>
+				<onclick>PlayMedia($INFO[listitem.path]$INFO[listitem.filename])</onclick>
+			</control>
+			<control type="button" id="114">
+				<visible>[![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(movies) + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(Artists) + !stringcompare(Skin.String(MusicArtistsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(Albums) + !stringcompare(Skin.String(MusicAlbumsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]|[Container.Content(Songs) + !stringcompare(Skin.String(MusicSongsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]</visible>
+				<onfocus>SetFocus(7000)</onfocus>
+			</control>
+		</control>
+
+		<control type="group" id="601">
+			<visible>[Control.IsVisible(551)|Control.IsVisible(552)]</visible>
+			<control type="button" id="602">
+				<visible>Control.IsVisible(552)+Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])]</visible>
+				<onfocus>SetFocus(604)</onfocus>
+			</control>
+			<control type="button" id="603">
+				<visible>Control.IsVisible(551)+Container.Content(movies) + Skin.HasSetting(movietrailers) + !Player.Playing + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078]) + !IsEmpty(ListItem.Trailer)</visible>
+				<onfocus>SetFocus(605)</onfocus>
+			</control>
+			<control type="button" id="604">
+				<animation effect="fade" time="1000">Focus</animation>
+				<visible>Control.IsVisible(552)+Container.Content(episodes) + Skin.HasSetting(tvpreview) + !Player.Playing + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+				<onfocus>PlayMedia($INFO[listitem.path]$INFO[listitem.filename],1,noresume)</onfocus>
+				<onfocus>SetFocus(607)</onfocus>
+			</control>
+			<control type="button" id="605">
+				<animation effect="fade" time="1000">Focus</animation>
+				<visible>Control.IsVisible(551)+Container.Content(movies) + Skin.HasSetting(movietrailers) + !Player.Playing + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078]) + !IsEmpty(ListItem.Trailer)</visible>
+				<onfocus>PlayMedia($INFO[ListItem.Trailer],1)</onfocus>
+				<onfocus>SetFocus(607)</onfocus>
+			</control>
+			<control type="button" id="606">
+				<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+[[Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)] | [Container.Content(movies) + IsEmpty(ListItem.Trailer)] | ![Skin.HasSetting(movietrailers) | Skin.HasSetting(tvpreview) | Player.Playing] | [[Container.Content(movies) + stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(episodes) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])]]]</visible>
+				<onfocus>SetFocus(61)</onfocus>
+			</control>
+		</control>
+
+		<control type="button" id="607">
+			<animation effect="fade" time="1000">Focus</animation>
+			<visible>[Control.IsVisible(551)|Control.IsVisible(552)]</visible>
+			<onright>SetFocus(608)</onright>
+			<onleft>SetFocus(608)</onleft>
+			<onup>SetFocus(608)</onup>
+			<ondown>SetFocus(608)</ondown>
+		</control>
+		<control type="button" id="608">
+			<visible>[Control.IsVisible(551)|Control.IsVisible(552)]</visible>
+			<onfocus>PlayerControl(stop)</onfocus>
+			<onfocus>SetFocus(609)</onfocus>
+		</control>
+		<control type="button" id="609">
+			<visible>[Control.IsVisible(551)|Control.IsVisible(552)]</visible>
+			<animation effect="fade" time="1500">Focus</animation>
+			<onfocus>SetFocus(550)</onfocus>
+		</control>
+
+		
+		<control type="button" id="197">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<onup>50</onup>
+			<ondown>50</ondown>
+		</control>		
+
+		<control type="group">
+			<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(553) | Control.IsVisible(53)]+ ![Control.HasFocus(61) | Control.HasFocus(94)]</visible>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+
+			<control type="image">
+				<posx>-5</posx>
+				<posy>990</posy>
+				<width>1930</width>
+				<height>105</height>
+				<texture>common/floor_panel_light.png</texture>
+				<visible>!Skin.HasSetting(darkshowcase)</visible>
+			</control>
+			<control type="image">
+				<posx>-5</posx>
+				<posy>990</posy>
+				<width>1930</width>
+				<height>105</height>
+				<texture>common/floor_panel_night.png</texture>
+				<visible>Skin.HasSetting(darkshowcase)</visible>
+			</control>
+
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Window.IsActive(24)|Container.Content(genres)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+				<include>MultiplexFloorDetailLabelRight</include>
+				<visible>Window.IsActive(24) + !IsEmpty(ListItem.Genre)</visible>
+			</control>
+
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>![Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)]</visible>
+			</control>
+			<control type="fadelabel">
+				<include>MultiplexFloorDetailLabelRight</include>
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+				<visible>[Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)] + !IsEmpty(ListItem.Genre)</visible>
+			</control>
+			<control type="fadelabel">
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<label>[UPPERCASE]$INFO[ListItem.Year] / $INFO[ListItem.Duration][/UPPERCASE]</label>
+				<visible>Container.Content(movies) + !IsEmpty(ListItem.Genre)</visible>
+			</control>
+
+
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(tvshows)</visible>
+			</control>
+			<control type="fadelabel">
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<label>[UPPERCASE][COLOR ABFFFFFF]$LOCALIZE[31439]:[/COLOR] $INFO[ListItem.Property(WatchedEpisodes)] / [COLOR ABFFFFFF]$LOCALIZE[31440]:[/COLOR] $INFO[ListItem.Property(UnwatchedEpisodes)][/UPPERCASE]</label>
+				<visible>Container.Content(tvshows)+!stringcompare(system.language,Hebrew)</visible>
+			</control>
+			<control type="fadelabel">
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<label>[UPPERCASE]$INFO[ListItem.Property(WatchedEpisodes)] [COLOR ABFFFFFF]$LOCALIZE[31439]:[/COLOR] / $INFO[ListItem.Property(UnwatchedEpisodes)] [COLOR ABFFFFFF]$LOCALIZE[31440]:[/COLOR][/UPPERCASE]</label>
+				<visible>Container.Content(tvshows)+stringcompare(system.language,Hebrew)</visible>
+			</control>
+
+
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(seasons) + !stringcompare(ListItem.Season,0)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>[UPPERCASE]$LOCALIZE[20381][/UPPERCASE]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(seasons) + stringcompare(ListItem.Season,0)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<visible>Container.Content(Seasons)</visible>
+			</control>
+
+
+			<control type="fadelabel">
+				<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>[UPPERCASE][B]$INFO[ListItem.TVShowTitle][/B][/UPPERCASE]</label>
+				<include>MultiplexFloorDetailLabelRight</include>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+
+			<control type="fadelabel">
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<label>[UPPERCASE][B]$LOCALIZE[20373] $INFO[ListItem.Season][/B][/UPPERCASE]</label>
+				<visible>Container.Content(episodes) + !stringcompare(ListItem.Season,0)</visible>
+			</control>
+			<control type="fadelabel">
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<label>[UPPERCASE][B]$LOCALIZE[20381][/B][/UPPERCASE]</label>
+				<visible>Container.Content(episodes) + stringcompare(ListItem.Season,0)</visible>
+			</control>
+
+			<control type="fadelabel">
+				<label>$INFO[listitem.tracknumber]. $INFO[listitem.title]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(songs)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>[B]$INFO[ListItem.Artist][/B]</label>
+				<include>MultiplexFloorDetailLabelRight</include>
+				<visible>Container.Content(songs)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>[B]$INFO[ListItem.Album][/B]</label>
+				<include>MultiplexFloorDetailLabelLeft</include>
+				<visible>Container.Content(songs)</visible>
+			</control>
+
+
+			<control type="fadelabel">
+				<label>$INFO[ListItem.Artist]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(artists)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>$INFO[listitem.Property(Genre)]</label>
+				<include>MultiplexFloorDetailLabelRight</include>
+				<visible>Container.Content(artists)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>$INFO[ListItem.Album]</label>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Container.Content(albums)</visible>
+			</control>
+			<control type="fadelabel">
+				<label>$INFO[ListItem.Artist]</label>
+				<include>MultiplexFloorDetailLabelRight</include>
+				<visible>Container.Content(albums)</visible>
+			</control>
+			
+			<control type="label">
+				<info>ListItem.Label2</info>
+				<include>MultiplexFloorMainLabel</include>
+				<visible>Window.IsActive(1) | Window.IsActive(501) + ![Container.Content(albums) | Container.Content(songs)]</visible>
+			</control>
+
+			<control type="label">
+				<visible>ControlGroup(7000).HasFocus()|Control.HasFocus(7011)|Control.HasFocus(7012)|Control.HasFocus(7013)</visible>		
+				<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
+				<posx>460</posx>
+				<posy>1042</posy>
+				<width>1000</width>
+				<font>Font_FloorMainLabel</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<include>Animation_HideMultiplex</include>
+				<include condition="!Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelLightShade</include>
+				<include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>
+			</control>				
+		</control>			
+			
+		<control type="scrollbar" id="61">
+			<description>My first scroll bar control</description>
+			<posx>460</posx>
+			<posy>995</posy>
+			<width>1000</width>
+			<height>60</height>
+			<visible allowhiddenfocus="true">[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + Control.HasFocus(61)</visible>
+			<texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
+			<texturesliderbar>-</texturesliderbar>
+			<texturesliderbarfocus>-</texturesliderbarfocus>
+			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+			<pulseonselect></pulseonselect>
+			<orientation>horizontal</orientation>
+			<showonepage>false</showonepage>
+			<onup>50</onup>
+			<ondown>197</ondown>
+			<onleft>61</onleft>
+			<onright>61</onright>
+			<include>Animation_HideMultiplex</include>
+			<include>Animation_CommonFade</include>
+		</control>
+
+	</include>
+
+</includes>

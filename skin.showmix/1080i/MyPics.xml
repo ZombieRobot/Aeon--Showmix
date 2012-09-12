@@ -1,0 +1,83 @@
+<window id="2">
+	<defaultcontrol>550</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>51,550,50,53</views>
+	<controls>
+
+		<control type="image" id="101">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texture>-</texture>
+			<visible>!Skin.HasSetting(nopicturefanart) + [Control.HasFocus(60) | Control.HasFocus(94)] + [!Container(57).OnNext + !Container(57).OnPrevious]</visible>
+			<animation effect="fade" start="0" end="100" time="150" delay="3000">Visible</animation>
+		</control>
+		
+		<control type="image" id="105">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texture>-</texture>
+			<visible>Control.HasFocus(51) + !Skin.HasSetting(nostripshowhide) + !Control.IsVisible(66) + Control.IsVisible(668) + [!Container(51).OnNext + !Container(51).OnPrevious]</visible>
+		</control>
+	
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>stripshow/stripshow_bg.png</texture>
+			<visible>Control.IsVisible(51)</visible>
+			<include>Animation_CommonFade</include>
+		</control>
+		
+		<include>CommonPictureBackground</include>
+	
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>windows/fanart_back.png</texture>
+			<visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(listitem.filenameandpath)</visible>
+			<visible>substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif)</visible>		
+			<animation effect="fade" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>		
+		</control>
+	
+		<control type="largeimage" id="71">
+			<include>FullscreenDimensions</include>
+			<visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(listitem.filenameandpath)</visible>
+			<visible>substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif)</visible>		
+			<animation effect="fade" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+			<texture>$INFO[listitem.filenameandpath]</texture>
+			<fadetime>400</fadetime>
+			<aspectratio align="top">keep</aspectratio>
+		</control>
+	
+		<control type="largeimage" id="668">
+			<include>FullscreenDimensions</include>
+			<texture>$INFO[listitem.filenameandpath]</texture>
+			<fadetime>400</fadetime>
+			<aspectratio align="top">keep</aspectratio>
+			<visible>Control.IsVisible(51) + [substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif) | substring(listitem.filenameandpath,ico) | substring(listitem.filenameandpath,pcx) | substring(listitem.filenameandpath,tga)]</visible>
+			<include>Animation_CommonFade</include>
+		</control>
+		
+		<include>Furniture_WallBackground</include>
+		
+		<include>FullscreenDimensions</include>
+		<include>Animation_OpenCloseZoom</include>
+		<include>Furniture_Stage</include>
+		<include>Viewtype_Wall</include>		
+		<include>Viewtype_StripShow</include>
+		<include>Viewtype_List</include>		
+		<include>Viewtype_LowList</include>		
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
+		<include>Furniture_WallTime</include>
+		<include>Furniture_WallRSS</include>		
+		<include>Furniture_Time</include>
+		<include>VerticalMenu</include>		
+	
+		<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+	
+	</controls>
+</window>

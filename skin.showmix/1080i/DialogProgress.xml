@@ -1,0 +1,61 @@
+<window id="101">
+	<defaultcontrol>10</defaultcontrol>
+	<zorder>1</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+
+	<control type="group">
+		<include>Dialogs_Group</include>
+		<include>Dialogs_Tablet</include>
+
+		<control type="progress" id="404">
+			<include>Dialogs_Progress</include>
+		</control>
+
+		<include>Dialogs_HardDrive</include>	
+		
+		<control type="label" id="1">
+			<description>heading label</description>
+			<include>Dialogs_HeadingLabel</include>
+		</control>
+	
+		<control type="label" id="2">
+			<include>Dialogs_Label2</include>
+		</control>
+
+		<control type="label" id="3">
+			<include>Dialogs_Label3</include>
+		</control>
+
+		<control type="label" id="4">
+			<include>Dialogs_Label4</include>
+		</control>
+		<control type="button" id="10">
+			<description>Cancel button</description>
+			<posx>645</posx>
+			<posy>98</posy>
+			<width>112</width>
+			<height>31</height>
+			<label>222</label>
+			<font>Font_ProgressLabel</font>		
+			<textcolor>grey</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<align>right</align>
+			<texturenofocus border="3">button-nofocus.png</texturenofocus>
+			<texturefocus border="3">button-focus2.png</texturefocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+		</control>
+
+	</control>
+
+
+	</controls>
+</window>

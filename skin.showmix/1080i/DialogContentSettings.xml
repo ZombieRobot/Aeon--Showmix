@@ -1,0 +1,236 @@
+<window id="132">
+	<defaultcontrol>5</defaultcontrol>
+	<zorder>3</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+
+	<control type="group">
+		<posx>319</posx>
+		<posy>303</posy>
+		<visible>!Window.IsActive(10140)</visible>
+	
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1283</width>
+			<height>428</height>
+			<texture>dialogs/setcontent_back.png</texture>
+		</control>
+	
+	
+		<control type="spincontrolex" id="3">
+			<description>directory content select spincontrol</description>
+			<posx>27</posx>
+			<posy>37</posy>
+			<width>708</width>
+			<height>52</height>
+			<font>Font_ContextMenuButton</font>
+			<texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
+			<texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+			<textureup>settings/spin-up.png</textureup>
+			<texturedown>settings/spin-down.png</texturedown>
+			<textureupfocus>settings/spin-up-focus.png</textureupfocus>
+			<texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
+			<textcolor>FF939597</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<label>31220</label>
+			<pulseonselect>false</pulseonselect>
+			<spinposx>-10</spinposx>
+			<spinwidth>60</spinwidth>
+			<spinheight>97</spinheight>
+			<textoffsetx>15</textoffsetx>
+			<onup>-</onup>
+			<ondown>5</ondown>
+			<onleft>28</onleft>
+			<onright>4</onright>
+			<aligny>center</aligny>
+			<subtype>text</subtype>
+		</control>
+
+		<control type="grouplist" id="5">
+			<description>control area</description>
+			<posx>27</posx>
+			<posy>90</posy>
+			<width>708</width>
+			<height>307</height>
+			<itemgap>0</itemgap>
+			<onup>3</onup>
+			<ondown>-</ondown>
+			<onleft>28</onleft>
+			<onright>4</onright>
+		</control>
+
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<height>52</height>
+			<font>Font_ContextMenuButton</font>
+			<textoffsetx>10</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>input-focus.png</texturefocus>
+			<texturenofocus>input-nofocus.png</texturenofocus>
+		</control>
+
+		<control type="radiobutton" id="8">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>708</width>
+			<height>52</height>
+			<font>Font_ContextMenuButton</font>
+			<texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
+			<texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+			<textcolor>FF939597</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<disabledcolor>33FFFFFF</disabledcolor>
+			<pulseonselect>false</pulseonselect>
+			<radiowidth>141</radiowidth>
+			<radioposx>588</radioposx>
+			<radioheight>97</radioheight>
+			<textoffsetx>15</textoffsetx>
+			<aligny>center</aligny>
+			<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+			<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+			<include>fast-fade</include>
+			<onup>5</onup>
+			<ondown>3</ondown>
+			<onleft>28</onleft>
+			<onright>4</onright>
+		</control>
+
+		<control type="list" id="4">
+			<posx>750</posx>
+			<posy>27</posy>
+			<width>412</width>
+			<height>378</height>
+			<onup>4</onup>
+			<ondown>4</ondown>
+			<onleft>3</onleft>
+			<onright>28</onright>
+			<scrolltime>200</scrolltime>
+			<itemlayout height="54">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>339</width>
+					<height>54</height>
+					<texture>dialogs/setcontent_button_nofocus.png</texture>
+				</control>
+				<control type="label">
+					<posx>168</posx>
+					<posy>0</posy>
+					<width>339</width>
+					<height>54</height>
+					<textcolor>FF939597</textcolor>
+					<selectedcolor>9b3cd2fd</selectedcolor>
+					<aligny>center</aligny>
+					<font>Font_SetContentList</font>
+					<align>center</align>
+					<info>ListItem.Label</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="54">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>339</width>
+					<height>54</height>
+					<texture>dialogs/setcontent_scraper_focus.png</texture>
+				</control>
+				<control type="label">
+					<posx>168</posx>
+					<posy>0</posy>
+					<width>339</width>
+					<height>54</height>
+					<textcolor>FFe8d9d9</textcolor>
+					<selectedcolor>ff7ef1ff</selectedcolor>
+					<aligny>center</aligny>
+					<font>Font_SetContentList</font>
+					<align>center</align>
+					<info>ListItem.Label</info>
+				</control>
+			</focusedlayout>
+		</control>
+
+
+		<control type="button" id="6">
+			<description>settings button</description>
+			<posx>1092</posx>
+			<posy>219</posy>
+			<width>175</width>
+			<height>61</height>
+			<font>Font_SetContentMenu</font>
+			<label>5</label>
+			<align>left</align>
+			<textcolor>FFf5f5f5</textcolor>
+			<focusedcolor>FF262728</focusedcolor>
+			<selectedcolor>FF262728</selectedcolor>
+			<textoffsetx>19</textoffsetx>
+			<onleft>4</onleft>
+			<onright>3</onright>
+			<onup>28</onup>
+			<ondown>29</ondown>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
+		</control>
+		<control type="button" id="29">
+			<description>cancel button</description>
+			<posx>1092</posx>
+			<posy>280</posy>
+			<width>175</width>
+			<height>61</height>
+			<font>Font_SetContentMenu</font>
+			<label>222</label>
+			<align>left</align>
+			<textcolor>FFf5f5f5</textcolor>
+			<focusedcolor>FF262728</focusedcolor>
+			<selectedcolor>FF262728</selectedcolor>
+			<textoffsetx>19</textoffsetx>
+			<onleft>4</onleft>
+			<onright>3</onright>
+			<onup>6</onup>
+			<ondown>28</ondown>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
+		</control>
+		<control type="button" id="28">
+			<description>ok button</description>
+			<posx>1092</posx>
+			<posy>342</posy>
+			<width>175</width>
+			<height>61</height>
+			<font>Font_SetContentMenu</font>
+			<label>186</label>
+			<align>left</align>
+			<textcolor>FFf5f5f5</textcolor>
+			<focusedcolor>FF262728</focusedcolor>
+			<selectedcolor>FF262728</selectedcolor>
+			<textoffsetx>19</textoffsetx>
+			<onleft>4</onleft>
+			<onright>3</onright>
+			<onup>29</onup>
+			<ondown>6</ondown>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
+		</control>
+
+
+		<control type="image">
+			<description>foreground image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1305</width>
+			<height>428</height>
+			<texture>dialogs/setcontent_front.png</texture>
+		</control>
+	
+	</control>
+	
+	</controls>
+</window>

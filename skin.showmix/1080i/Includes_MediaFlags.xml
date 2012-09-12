@@ -1,0 +1,520 @@
+<includes>
+
+	<include name="ShowcaseMediaFlagLightShade">
+		<colordiffuse>74000000</colordiffuse>	
+		<textcolor>74000000</textcolor>
+	</include>
+	<include name="ShowcaseMediaFlagNightShade">
+		<colordiffuse>e1e1e1e1</colordiffuse>	
+		<textcolor>e1e1e1e1</textcolor>
+	</include>
+
+	<include name="Furniture_MultiplexMediaFlagsVars">
+		<height>50</height>
+		<width>74</width>
+		<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+	</include>
+	<include name="Furniture_MultiplexMediaFlagsVarsGerman">
+		<height>67</height>
+		<aspectratio>keep</aspectratio>
+		<include>Animation_CommonFade</include>
+		<include>Animation_HideMultiplex</include>
+		<visible>[Control.IsVisible(50) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+		<animation effect="zoom" end="80,80" center="auto" time="0" condition="Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)" >Conditional</animation>
+	</include>
+	<include name="Furniture_MultiplexMediaFlagsVars_stars_text">
+		<posy>935</posy>
+		<posx>40</posx>
+		<width>165</width>
+		<height>34</height>
+		<font>Font_RatingFloor</font>
+		<include>Animation_CommonFade</include>
+		<include>Animation_HideMultiplex</include>
+		<visible>[Control.IsVisible(50) |Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552)] +!Container.Content(seasons)</visible>
+		<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+	</include>
+	<include name="Furniture_MultiplexMediaFlagsVars_stars">
+		<posy>477</posy>
+		<width>138</width>
+		<height>30</height>
+		<include>Animation_CommonFade</include>
+		<include>Animation_HideMultiplex</include>
+		<visible>[Control.IsVisible(50) |Control.IsVisible(53 |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552)] +!Container.Content(seasons)</visible>
+		<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
+		<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+		<animation effect="zoom" end="95,95" center="auto" time="0" condition="Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)" >Conditional</animation>
+	</include>
+
+	<include name="Furniture_MultiplexMediaFlagsBlack">
+		<posy>930</posy>
+		<width>165</width>
+		<height>108</height>
+		<include>Animation_CommonFade</include>
+		<include>Conditions_ShowcaseIsVisible</include>
+	</include>
+
+	<include name="Furniture_MovieInfoFlagSource">
+		<posx>6</posx>
+		<posy>883</posy>
+		<width>139</width>
+		<height>45</height>
+		<colordiffuse>FF7c7c7c</colordiffuse>
+	</include>
+
+	<include name="Furniture_MovieInfoFlagSound">
+		<posx>172</posx>
+		<posy>883</posy>
+		<width>196</width>
+		<height>45</height>
+		<colordiffuse>FF7c7c7c</colordiffuse>
+		<animation effect="slide" start="-148,0" end="-148,0" time="0" condition="Control.IsVisible(9101) + !Control.IsVisible(9102)">Conditional</animation>
+		<animation effect="slide" start="-111,0" end="-111,0" time="0" condition="!Control.IsVisible(9101)">Conditional</animation>			
+	</include>
+
+	<include name="Furniture_MovieInfoFlagSubs">
+		<posx>394</posx>
+		<posy>883</posy>
+		<width>58</width>
+		<height>45</height>
+		<colordiffuse>FF7c7c7c</colordiffuse>
+		<animation effect="slide" start="-111,0" end="-111,0" time="0" condition="!Control.IsVisible(9101) + Control.IsVisible(9102)">Conditional</animation>		
+		<animation effect="slide" start="-259,0" end="-259,0" time="0" condition="!Control.IsVisible(9101) + !Control.IsVisible(9102)">Conditional</animation>		
+		<animation effect="slide" start="-148,0" end="-148,0" time="0" condition="Control.IsVisible(9101) + !Control.IsVisible(9102)">Conditional</animation>
+	</include>
+
+	<include name="Furniture_FlagUpright">
+		<posy>-18r</posy>		
+		<width>1</width>
+		<height>70</height>
+		<texture>info/info_flagupright.png</texture>
+		<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>	
+	</include>
+
+	<include name="Furniture_FlagUprightCertification">
+		<posy>90</posy>		
+		<width>1</width>
+		<height>81</height>
+		<texture>info/info_flagupright.png</texture>
+		<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(lite)">Conditional</animation>	
+	</include>
+	
+	<include name="Furniture_Multiplex_MediaFlags">
+<!--		<control type="group">
+			<visible>[Control.IsVisible(53) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)] + !Skin.HasSetting(nomediaflags) + ![Control.HasFocus(61) | Control.HasFocus(62)| Control.HasFocus(63) | Control.HasFocus(94)]</visible>
+			<include>Animation_CommonFade</include>
+			<control type="image">
+				<posx>0</posx>
+				<posy>569</posy>
+				<width>298</width>
+				<height>151</height>
+				<texture>multiplex/flagshade.png</texture>
+				<include>Animation_HideShowcase</include>
+				<visible>!Skin.HasSetting(darkshowcase)</visible>
+			</control>
+			<control type="image">
+				<posx>982</posx>
+				<posy>569</posy>
+				<width>298</width>
+				<height>151</height>
+				<texture flipx="true">multiplex/flagshade.png</texture>
+				<include>Animation_HideShowcase</include>
+				<visible>!Skin.HasSetting(darkshowcase)</visible>				
+			</control>	
+		</control>-->
+		<control type="group">
+			<visible>[[[!Window.IsActive(24)+Container.Content(movies) + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Window.IsActive(24)+Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Window.IsActive(24)+Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Window.IsActive(24)+Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])]] + [Control.IsVisible(551)|Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | [[Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Control.HasFocus(606) | Control.HasFocus(607) | Control.HasFocus(608) | Control.HasFocus(609) | Control.HasFocus(610)]]] | [[Container.Content(movies) + stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(tvshows) + stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(seasons) + stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(episodes) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])]] | [ControlGroup(7000).HasFocus()|Control.HasFocus(7011)|Control.HasFocus(7012)|Control.HasFocus(7013)] + [[Container.Content(movies)+stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(tvshows)+stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]|[Container.Content(seasons) + stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(episodes) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]]] | [Control.IsVisible(50)|Control.IsVisible(550)|Control.IsVisible(53)|Control.IsVisible(505) | Control.IsVisible(52)]</visible>
+			<animation effect="slide" start="0,-750" end="0,0" time="400" delay="1500" condition="[Control.IsVisible(551)|Control.IsVisible(552)]+[[Container.Content(movies) + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])]]">WindowOpen</animation>			
+			<animation effect="slide" start="0,0" end="0,-750" time="400" condition="!Control.IsVisible(53)+!Control.IsVisible(550)+!Control.IsVisible(50)">WindowClose</animation>
+			<animation effect="slide" start="0,-750" end="0,0" time="400" condition="!Control.IsVisible(53)+!Control.IsVisible(550)+!Control.IsVisible(50)">VisibleChange</animation>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+
+				<camera x="960" y="450" />
+			<animation type="Conditional" condition="Control.HasFocus(603)|Control.HasFocus(604)|Control.HasFocus(605)|[Player.HasVideo+Control.HasFocus(607)]|Control.HasFocus(608)" reversible="false">
+				<effect type="rotatey" center="960,0" start="0" end="180" time="1000" delay="0"/>
+				<effect type="fade" start="100" end="0" time="100" delay="400"/>
+			</animation>
+
+			<animation type="Conditional" condition="!Player.HasVideo+[Control.IsVisible(551)|Control.IsVisible(552)]+[!ControlGroup(7000).HasFocus()+!Control.HasFocus(7011)+!Control.HasFocus(7012)+!Control.HasFocus(7013)+!Control.HasFocus(7014)]+![Control.HasFocus(551)|Control.HasFocus(552)|Control.HasFocus(61)|Control.HasFocus(65)|Control.HasFocus(603)|Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(611)|Control.HasFocus(612)|Control.HasFocus(613)|Control.HasFocus(614)|Control.HasFocus(615)|Control.HasFocus(616)|Control.HasFocus(617)|Control.HasFocus(618)|Control.HasFocus(619)|Control.HasFocus(111)|Control.HasFocus(112)|Control.HasFocus(113)|Control.HasFocus(114)|Control.HasFocus(115)|Control.HasFocus(116)|Control.HasFocus(117)|Control.HasFocus(118)]" reversible="false">
+				<effect type="fade" start="0" end="100" time="100" delay="1000"/>
+				<effect type="rotatey" center="960,0" start="90" end="0" time="500" delay="1000"/>
+			</animation>
+
+			<animation type="Conditional" condition="![Control.HasFocus(53)|Control.HasFocus(50)|Control.HasFocus(550)]+[Window.IsActive(2001)|Window.IsActive(2002)|Window.IsActive(2003)|Window.IsActive(135)]" reversible="true">
+				<effect type="rotatey" center="960,0" start="0" end="180" time="1000" delay="100"/>
+				<effect type="fade" start="100" end="0" time="200" delay="500"/>
+			</animation>
+
+
+			<control type="group">
+				<posx>10</posx>
+				<animation effect="slide" end="455,-485" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="130,-397" time="0" condition="Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]" >Conditional</animation>
+				<animation effect="slide" end="1150,-397" time="0" condition="Control.IsVisible(551)+Container.Content(tvshows)+stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])" >Conditional</animation>
+				<animation effect="slide" end="870,-397" time="0" condition="[Control.IsVisible(552)+Container.Content(tvshows)+stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<animation effect="slide" end="90,-70" time="0" condition="[Control.IsVisible(505)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(505)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[!Control.IsVisible(558) + !Control.IsVisible(599) + !Control.IsVisible(550) +!Control.IsVisible(50)]+!Container.Content(seasons)</visible>
+				<control type="image">
+					<posy>984</posy>
+					<width>138</width>
+					<height>30</height>
+					<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
+					<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+					<info>ListItem.StarRating</info>
+					<visible>!Skin.HasSetting(noimdbflag) + !Skin.HasSetting(movieratingtext)</visible>
+				</control>
+				<control type="label">
+					<posy>970</posy>
+					<posx>30</posx>
+					<width>138</width>
+					<height>30</height>
+					<font>Font_RatingFloor</font>
+					<include condition="!Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagLightShade</include>
+					<include condition="Skin.HasSetting(darkshowcase)">ShowcaseMediaFlagNightShade</include>
+					<label>$INFO[ListItem.Rating]</label>
+					<visible>!Skin.HasSetting(noimdbflag) + Skin.HasSetting(movieratingtext)</visible>
+					<animation effect="slide" end="6,18" time="0" condition="true" >Conditional</animation>
+				</control>
+			</control>				
+
+			<control type="group">
+				<animation effect="slide" end="305,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="1090,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="470,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="190,-400" time="0" condition="Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]" >Conditional</animation>
+				<animation effect="slide" end="1150,-400" time="0" condition="Control.IsVisible(551)+Container.Content(tvshows)+stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])" >Conditional</animation>
+				<animation effect="slide" end="880,-400" time="0" condition="[Control.IsVisible(552)+Container.Content(tvshows)+stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<animation effect="slide" end="90,-70" time="0" condition="[Control.IsVisible(505)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(505)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(505) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>155</posx>
+				<!-- UK Certification -->
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_U_Certificate_UK.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:U)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_PG_Certificate_UK.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:PG)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_12_Certificate_UK.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:12) + !substring(listitem.mpaa,UK:12A)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_12A_Certificate_UK.png</texture>
+<!--					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>-->
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:12A)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_15_Certificate_UK.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:15)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/uk/BBFC_18_Certificate_UK.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,UK:18)</visible>
+				</control>				
+
+				<!-- US Certification -->
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/MPAA_G_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:G) | substring(listitem.mpaa,USA:G) | substring(listitem.mpaa,Rated G)]</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/MPAA_PG_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:PG) | substring(listitem.mpaa,USA:PG) | [substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)]]</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/MPAA_PG-13_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:PG-13) | substring(listitem.mpaa,USA:PG-13) | substring(listitem.mpaa,Rated PG-13)]</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/MPAA_R_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:R) | substring(listitem.mpaa,USA:R) | substring(listitem.mpaa,Rated R)]</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/MPAA_NC-17_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + [substring(listitem.mpaa,US:NC-17) | substring(listitem.mpaa,USA:NC-17) | substring(listitem.mpaa,Rated NC-17)]</visible>
+				</control>				
+
+				<!-- Germany Certification -->
+				<control type="image">
+					<posx>-25</posx>
+					<posy>-10</posy>
+					<include>Furniture_MultiplexMediaFlagsVarsGerman</include>
+					<texture>flags/rating/de/FSK-0.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:0) | substring(listitem.mpaa,o.A)</visible>
+				</control>				
+				<control type="image">
+					<posx>-25</posx>
+					<posy>-10</posy>
+					<include>Furniture_MultiplexMediaFlagsVarsGerman</include>
+					<texture>flags/rating/de/FSK-6.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:6) | substring(listitem.mpaa,ab 6)</visible>
+				</control>				
+				<control type="image">
+					<posx>-25</posx>
+					<posy>-10</posy>
+					<include>Furniture_MultiplexMediaFlagsVarsGerman</include>
+					<texture>flags/rating/de/FSK-12.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:12) | substring(listitem.mpaa,ab 12)</visible>
+				</control>
+				<control type="image">
+					<posx>-25</posx>
+					<posy>-10</posy>
+					<include>Furniture_MultiplexMediaFlagsVarsGerman</include>
+					<texture>flags/rating/de/FSK-16.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:16) | substring(listitem.mpaa,ab 16)</visible>
+				</control>				
+				<control type="image">
+					<posx>-25</posx>
+					<posy>-10</posy>
+					<include>Furniture_MultiplexMediaFlagsVarsGerman</include>
+					<texture>flags/rating/de/FSK-18.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,Germany:18) | substring(listitem.mpaa,ab 18)</visible>
+				</control>				
+
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/TV-G_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-G)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/TV-PG_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-PG)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/TV-14_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-14)]</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/rating/us/TV-MA_Certificate_US.png</texture>
+					<visible>!Skin.HasSetting(nocertflag) + substring(listitem.mpaa,TV-MA)]</visible>
+				</control>				
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="340,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="1090,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="485,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="250,-400" time="0" condition="Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]" >Conditional</animation>
+				<animation effect="slide" end="1150,-400" time="0" condition="Control.IsVisible(551)+Container.Content(tvshows)+stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])" >Conditional</animation>
+				<animation effect="slide" end="890,-400" time="0" condition="[Control.IsVisible(552)+Container.Content(tvshows)+stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<animation effect="slide" end="90,-70" time="0" condition="[Control.IsVisible(505)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(505)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(505) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>240</posx>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[listitem.studio,flags/studios/,.png]</texture>
+<!--					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>-->
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture fallback="flags/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
+					<visible>Container.Content(episodes) + IsEmpty(ListItem.VideoResolution)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture fallback="flags/sdtv.png">$INFO[ListItem.studio,flags/studios/,.png]</texture>
+					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,480) | substring(ListItem.VideoResolution,540)]</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture fallback="flags/hdtv.png">$INFO[ListItem.studio,flags/studios/,_hd.png]</texture>
+					<visible>Container.Content(episodes) + [substring(ListItem.VideoResolution,720) | substring(ListItem.VideoResolution,1080)]</visible>
+				</control>
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="370,5" time="0" condition="Control.IsVisible(550)">Conditional</animation>
+				<animation effect="slide" end="1085,0" time="0" condition="Control.IsVisible(50)">Conditional</animation>
+				<animation effect="slide" end="495,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="330,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="900,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<animation effect="slide" end="90,-70" time="0" condition="[Control.IsVisible(505)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(505)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(505) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>330</posx>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>
+				</control>				
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="-645,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="35,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="-540,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="-295	,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="-310,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(505)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(505)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<animation effect="slide" end="90,-70" time="0" condition="[Control.IsVisible(505)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(505)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(505) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>1465</posx>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/screen/trailer.png</texture>
+					<visible>!IsEmpty(ListItem.Trailer)</visible>
+				</control>				
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="-525,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="-440,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="-185	,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>1465</posx>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/screen/cc.png</texture>
+<!--					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>-->
+					<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
+				</control>				
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="-485,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="40,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="-425,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="-155,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(505) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>1545</posx>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.VideoResolution,flags/screen/,p.png]</texture>
+<!--					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>-->
+				</control>				
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="-470,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="20,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="-435,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>975</posy>
+				<posx>1650</posx>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.AudioCodec,flags/sound/,.png]</texture>
+<!--					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>-->
+				</control>	
+			</control>
+			<control type="group">
+				<animation effect="slide" end="-470,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="15,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="-435,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]">Conditional</animation>
+				<animation effect="slide" end="-155,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posy>980</posy>
+				<posx>1730</posx>		
+				<control type="image">
+					<height>40</height>
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.AudioChannels,flags/sound/,ch.png]</texture>
+				</control>
+			</control>
+
+			<control type="group">
+				<animation effect="slide" end="-450,5" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation effect="slide" end="0,0" time="0" condition="Control.IsVisible(50)" >Conditional</animation>
+				<animation effect="slide" end="-440,-487" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]]|[[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(episodes)]+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(551)+Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | [Control.IsVisible(551)+[Container.Content(tvshows)|Container.Content(seasons)]]" >Conditional</animation>
+				<animation effect="slide" end="-150,-400" time="0" condition="[Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Control.IsVisible(552)+Container.Content(episodes)+[stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])]]" >Conditional</animation>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53) |Control.IsVisible(550) | Control.IsVisible(551)|Control.IsVisible(552) | Control.IsVisible(553)] +!Container.Content(seasons)</visible>
+				<include>Animation_CommonFade</include>
+				<include>Animation_HideMultiplex</include>
+				<posx>1830</posx>
+				<posy>975</posy>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.VideoCodec,flags/codec/,.png]</texture>
+					<visible>!substring(listitem.filename,dvd) + !substring(listitem.filename,bluray) + !substring(listitem.filename,hdtv) + !substring(listitem.filename,blu-ray) + !substring(listitem.filename,bdrip) + !substring(listitem.filename,hddvd) + !substring(listitem.filename,.iso,Right) + !substring(listitem.filename,.ifo,Right)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/source/hddvd.png</texture>
+					<visible>substring(listitem.filename,hddvd)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/source/bluray.png</texture>
+<!--					<texture>$INFO[ListItem.VideoAspect,flags/screen/aspect_,.png]</texture>-->
+					<visible>substring(listitem.filename,bluray)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/source/dvd.png</texture>
+					<visible>substring(listitem.filename,sddvd)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/source/hdtv.png</texture>
+					<visible>substring(listitem.filename,hdtv)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>flags/source/divx.png</texture>
+					<visible>substring(listitem.filename,divx)</visible>
+				</control>				
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.Property(Label),flags/recordlabels/,.png]</texture>
+					<visible>!Control.IsVisible(550)</visible>
+				</control>
+				<control type="image">
+					<include>Furniture_MultiplexMediaFlagsVars</include>
+					<texture>$INFO[ListItem.Property(AlbumLabel),flags/recordlabels/,.png]</texture>
+					<visible>!Control.IsVisible(550)</visible>
+				</control>
+			</control>
+		</control>
+
+		
+
+
+	</include>
+</includes>
+

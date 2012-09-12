@@ -1,0 +1,145 @@
+<includes>
+
+
+
+
+<include file="custom4_Theme_Menu.xml" />
+<include file="Includes_Assistant_LabelsButtons.xml" />
+<include file="Defaults.xml" />
+<include file="Includes_Animations.xml" />
+<include file="Includes_Backgrounds.xml" />
+<include file="Includes_Conditions.xml" />
+<include file="Includes_Dialogs.xml" />
+<include file="Includes_Objects.xml" />
+<include file="Includes_Reset.xml" />
+<include file="Includes_Furniture.xml" />
+<include file="Includes_Colours.xml" />
+<include file="Includes_Settings_Welcome.xml" />
+<include file="Includes_MediaFlags.xml" />
+<include file="Viewtype_StripShow.xml" />
+<include file="Viewtype_Multiplex.xml" />
+<include file="Viewtype_Multiplex_Music.xml" />
+<include file="Viewtype_Multiplex_Movies.xml" />
+<include file="Viewtype_HalfWall.xml" />
+<include file="Viewtype_BigPlex.xml" />
+<include file="Viewtype_Classic_Multiplex.xml" />
+<include file="Viewtype_Multiplex_TVShows.xml" />
+<include file="Viewtype_Multiplex_Video_Info.xml" />
+<include file="Viewtype_Multiplex_Music_Info.xml" />
+<include file="Viewtype_TV_Banner.xml" />
+<include file="Viewtype_List.xml" />
+<include file="Viewtype_LowList.xml" />
+<include file="Viewtype_Addons.xml" />
+<include file="Viewtype_Wall.xml" />
+<include file="Viewtype_List2.xml" />
+<include file="Includes_Widget_Weather.xml" />
+<include file="Includes_VerticalMenu.xml" />
+<include file="Includes_CDWall.xml"/>
+<include name="no_tv_Themes"> 
+<include file="customDialogFavourites.xml" />
+<include file="custom5_themes.xml" />
+<include file="custom_Edit.xml" />
+
+
+	<onfocus>SetFocus(50)</onfocus> 
+</include> 
+<include name="yes_tv_theme"> 
+	<onfocus>XBMC.RunScript(script.tvtunes,backend=True&amploop=False)</onfocus>
+	<onfocus>SetFocus(50)</onfocus> 
+</include> 
+
+<!-- Video info custom_edit ================================== -->
+<include name="dialog_Windowtitle">
+	<posx>51</posx>
+	<posy>42</posy>
+	<font>Font_ContextMenuButton</font>
+	<align>center</align>
+	<aligny>center</aligny>
+	<height>45</height>
+	<textcolor>FF929292</textcolor>
+	<scroll>false</scroll>
+</include>
+<include name="dialog_CommonList">
+	<posy>95</posy>
+	<height>60</height>
+	<texture border="3">dialogs/context_nofocus.png</texture>
+</include>
+<include name="dialog_CommonListFocus">
+	<posy>95</posy>
+	<height>60</height>
+	<texture border="3">dialogs/context_highlight.png</texture>
+</include>
+<include name="dialog_CommonListItem">
+	<posx>223</posx>
+	<height>53</height>
+	<font>Font_ContextMenuButton</font>
+	<aligny>center</aligny>
+	<textcolor>FF929292</textcolor>
+	<selectedcolor>77FFFFFF</selectedcolor>
+	<align>center</align>
+</include>
+	<include name="dialog_CommonListItemFocus">
+		<posx>223</posx>
+		<height>53</height>
+		<font>Font_ContextMenuButton</font>
+		<aligny>center</aligny>
+		<textcolor>FF262728</textcolor>
+		<selectedcolor>77FFFFFF</selectedcolor>
+		<align>center</align>
+	</include>
+<!-- Video info custom_edit ================================== -->
+<!-- Global time and weather panel ================================== -->
+
+<include name="Window-Files">
+	<control type="label" id="12">
+		<posx>70</posx>
+		<posy>580</posy>
+		<label>-</label>
+		<font>objects</font>
+		<textcolor>59FFFFFF</textcolor>
+		<include>common-fade-quick</include>
+		<visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(552) + !Control.IsVisible(551) + !Control.IsVisible(554) + !Control.IsVisible(52)+ !Control.IsVisible(44) + !Control.IsVisible(599) + !Control.IsVisible(58) + !Control.IsVisible(53)</visible>
+	</control>
+</include>
+
+<!-- Menu styles ================================== -->
+
+<include name="filemanmenugroup">
+	<posx>100</posx>
+	<posy>895</posy>
+	<width>1717</width>
+	<height>60</height>
+	<itemgap>0</itemgap>
+	<orientation>horizontal</orientation>
+	<onup>21</onup>
+	<ondown>21</ondown>
+	<include>common-fade-quick</include>
+</include>
+
+<include name="browsermenugroup">
+	<posx>100</posx>
+	<posy>565</posy>
+	<width>1717</width>
+	<height>60</height>
+	<itemgap>0</itemgap>
+	<orientation>horizontal</orientation>
+	<onup>450</onup>
+	<ondown>450</ondown>
+	<include>common-fade-quick</include>
+</include>
+
+<include name="selectmenugroup">
+	<posx>453</posx>
+	<posy>857</posy>
+	<width>1717</width>
+	<height>60</height>
+	<itemgap>0</itemgap>
+	<orientation>horizontal</orientation>
+	<onup>450</onup>
+	<ondown>450</ondown>
+	<include>common-fade-quick</include>
+</include>
+
+
+
+</includes>

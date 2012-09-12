@@ -1,0 +1,137 @@
+<includes>
+
+<include name="Colour_BlackAlpha80">
+	<textcolor>dc000000</textcolor>
+</include>
+
+<include name="Colour_WhiteAlpha80">
+	<textcolor>dcFFFFFF</textcolor>
+</include>
+
+<include name="Colour_RSS">
+	<textcolor>a9000000</textcolor>
+	<headlinecolor>a9000000</headlinecolor>
+	<highlightcolor>a9000000</highlightcolor>
+	<titlecolor>a9000000</titlecolor>
+</include>
+
+<include name="Colour_RSSLight">
+	<textcolor>bcFFFFFF</textcolor>
+	<headlinecolor>bcFFFFFF</headlinecolor>
+	<highlightcolor>bcFFFFFF</highlightcolor>
+	<titlecolor>bcFFFFFF</titlecolor>
+</include>
+
+<include name="Colour_ListItemUnfocused">
+	<textcolor>9bFFFFFF</textcolor>
+	<selectedcolor>9b3cd2fd</selectedcolor>
+</include>
+
+<include name="Colour_ListItemFocused">
+	<textcolor>FFFFFFFF</textcolor>
+	<selectedcolor>9b3cd2fd</selectedcolor>
+</include>
+
+<include name="Colour_ListItemTrackUnfocused">
+	<textcolor>35ffffff</textcolor>
+	<selectedcolor>35ffffff</selectedcolor>
+</include>
+
+<include name="Colour_OffWhite">
+	<textcolor>FFececec</textcolor>
+</include>
+
+<include name="Colour_Grey">
+	<textcolor>FF868686</textcolor>
+	<focusedcolor>FFececec</focusedcolor>
+	<disabledcolor>d0505050</disabledcolor>
+</include>
+
+<include name="Colour_DarkGrey">
+	<textcolor>FF5b6366</textcolor>
+</include>
+
+<include name="Colour_ShowcaseLabelLightShade">
+	<textcolor>d01a1a1c</textcolor>	
+</include>
+
+<include name="Colour_ShowcaseLabelNightShade">
+	<textcolor>FFe1e1e1</textcolor>	
+</include>	
+
+<!-- Text colours ================================== -->
+
+<include name="subcolornofocus">
+	<textcolor>ff969696</textcolor>
+	<selectedcolor>ff969696</selectedcolor>
+</include>
+
+<include name="listcolornofocus">
+	<textcolor>dcffffff</textcolor>
+	<selectedcolor>9b3cd2fd</selectedcolor>
+</include>
+
+<include name="subcolorfocus">
+	<textcolor>ff2e2e2e</textcolor>
+	<selectedcolor>ff2e2e2e</selectedcolor>
+</include>
+
+<include name="listcolorfocus">
+	<textcolor>ff2e2e2e</textcolor>
+	<selectedcolor>ff2e2e2e</selectedcolor>
+</include>
+
+<include name="detailcolornofocus">
+	<textcolor>dcbdbdbd</textcolor>
+	<selectedcolor>9b3cd2fd</selectedcolor>
+</include>
+
+<include name="listobjects">
+	<textcolor>ff969696</textcolor>
+</include>
+
+<include name="detailcolorfocus">
+	<textcolor>ff2e2e2e</textcolor>
+	<selectedcolor>ff2e2e2e</selectedcolor>
+</include>
+
+<include name="playsymbol">
+	<textcolor>00FFFFFF</textcolor>
+	<selectedcolor>10FFFFFF</selectedcolor>
+</include>
+
+<include name="playlistcolor1">
+	<textcolor>FFFFFFFF</textcolor>
+	<selectedcolor>e1b1e021</selectedcolor>
+</include>
+
+<include name="playlistcolor2">
+	<textcolor>FFFFFFFF</textcolor>
+	<selectedcolor>e1b1e021</selectedcolor>
+</include>
+
+<include name="settingsmenufont">
+	<textcolor>FFa8a8a8</textcolor>
+	<selectedcolor>e1b1e021</selectedcolor>
+	<focusedcolor>ffffffff</focusedcolor>
+</include>
+
+<include name="settingsmenubar">
+	<textcolor>FFffffff</textcolor>
+	<focusedcolor>FFffff00</focusedcolor>
+	<selectedcolor>FFffff00</selectedcolor>
+</include>
+
+<include name="osdfont">
+	<textcolor>FFffffff</textcolor>
+	<focusedcolor>FFababab</focusedcolor>
+	<selectedcolor>FFababab</selectedcolor>
+</include>
+
+<include name="osdfont2">
+	<textcolor>FFb8b8b8</textcolor>
+	<focusedcolor>FFFFFFFF</focusedcolor>
+	<selectedcolor>FFFFFFFF</selectedcolor>
+</include>
+
+</includes>

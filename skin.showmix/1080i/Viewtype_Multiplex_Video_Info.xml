@@ -1,0 +1,1087 @@
+<includes>
+<!--  Multiplex Info Window -->
+	<include name="MultiplexInfoLabel_Left">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>225</width>
+		<height>20</height>
+		<align>left</align>
+		<font>Font_InfoPanelLabel</font>	
+		<textcolor>ABFFFFFF</textcolor>
+	</include>
+	<include name="MultiplexInfoLabel_Right">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>225</width>
+		<height>20</height>
+		<align>right</align>
+		<font>Font_InfoPanelLabel</font>	
+		<textcolor>ABFFFFFF</textcolor>
+	</include>
+	<include name="MultiplexInfoValueVars">
+		<posx>0</posx>
+		<posy>30</posy>
+		<height>13</height>
+		<font>Font_InfoPanelValue</font>	
+		<textcolor>FFFFFFFF</textcolor>
+		<scrollspeed>10</scrollspeed>
+		<scrollout>true</scrollout>
+		<pauseatend>3000</pauseatend>
+		<scroll>true</scroll>
+	</include>
+	<include name="MultiplexInfoValue">
+		<include>MultiplexInfoValueVars</include>
+		<width>555</width>
+	</include>
+
+	<include name="Viewtype_VideoInfoPanel">
+		<control type="group">
+			<visible>[[Window.IsActive(25)+Container.Content(movies) + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Window.IsActive(24)+Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Window.IsActive(24)+Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Window.IsActive(24)+Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])] | [!Skin.HasSetting(nomultiplexpopup) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)] + ![stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078]) | stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]+Window.IsActive(24)+[substring(Container.PluginName,Apple Movie Trailers Lite)|substring(Container.PluginName,iplayer)]]] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)] + !Container.Content(genres) + !Control.HasFocus(197) + [Control.IsVisible(109) | [[Control.IsVisible(550) + [Control.HasFocus(115) | Control.HasFocus(116) | Control.HasFocus(117) | Control.HasFocus(118) | Control.HasFocus(611) | Control.HasFocus(612) | Control.HasFocus(613) | Control.HasFocus(614) | Control.HasFocus(615) | Control.HasFocus(616) | Control.HasFocus(617) | Control.HasFocus(618) | Control.HasFocus(619) | Control.HasFocus(620)]] | [[Control.IsVisible(551)|Control.IsVisible(552)] + [Control.HasFocus(111) | Control.HasFocus(112) | Control.HasFocus(113) | Control.HasFocus(114) | Control.HasFocus(601) | Control.HasFocus(602) | Control.HasFocus(603) | Control.HasFocus(604) | Control.HasFocus(605) | Control.HasFocus(606) | Control.HasFocus(607) | Control.HasFocus(608) | Control.HasFocus(609) | Control.HasFocus(610)]]] | [[!Control.IsVisible(53)+Container.Content(movies) + stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [!Control.IsVisible(53)+Container.Content(tvshows) + stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [!Control.IsVisible(53)+Container.Content(seasons) + stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [!Control.IsVisible(53)+Container.Content(episodes) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])]] | [[ControlGroup(7000).HasFocus()|Control.HasFocus(7011)|Control.HasFocus(7012)|Control.HasFocus(7013)] + [!Control.IsVisible(53)+[Container.Content(movies)+stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(tvshows)+stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]|[Container.Content(seasons) + stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])] | [Container.Content(episodes) + stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])]]]]</visible>
+			<animation effect="slide" start="0,-750" end="0,0" time="400" delay="1500" condition="[Container.Content(movies) + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])] | [![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])]">WindowOpen</animation>			
+			<animation effect="slide" start="0,0" end="0,-750" time="400">WindowClose</animation>
+			<animation effect="slide" start="0,-750" end="0,0" time="400">VisibleChange</animation>
+			<include>Animation_CommonFade</include>
+
+			<!-- LARGE WINDOW -->
+			<control type="group">
+				<visible>[Control.IsVisible(551) + Container.Content(movies) + [stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044]) | stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])]] | 
+				[Control.IsVisible(552) + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])]] | 
+				[[Control.IsVisible(551)|Control.IsVisible(552)] + [Container.Content(tvshows)|Container.Content(seasons)] + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])|stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])]]</visible>
+				<camera x="960" y="450" />
+				<animation type="Conditional" condition="Control.HasFocus(603)|Control.HasFocus(604)|Control.HasFocus(605)" reversible="false">
+					<effect type="rotatey" center="960,0" start="0" end="180" time="1000" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="!Player.HasVideo+![Control.HasFocus(550)+Control.HasFocus(551)+Control.HasFocus(552)+Control.HasFocus(65)+Control.HasFocus(603)+Control.HasFocus(604)+Control.HasFocus(605)+Control.HasFocus(111)+Control.HasFocus(112)+Control.HasFocus(113)+Control.HasFocus(114)+Control.HasFocus(115)+Control.HasFocus(116)+Control.HasFocus(117)+Control.HasFocus(118)+ControlGroup(7000).HasFocus()+Control.HasFocus(7011)+Control.HasFocus(7012)+Control.HasFocus(7013)+Control.HasFocus(7014)]" reversible="false">
+					<effect type="rotatey" center="960,0" start="180" end="0" time="1000" delay="500"/>
+				</animation>
+				<animation type="Conditional" condition="Window.IsActive(2001)|Window.IsActive(2002)|Window.IsActive(2003)|Window.IsActive(135)" reversible="true">
+					<effect type="rotatey" center="960,0" start="0" end="180" time="1000" delay="100"/>
+					<effect type="fade" start="100" end="0" time="200" delay="500"/>
+				</animation>
+
+				<animation effect="zoom" center="960,0" start="100,100" end="67,100" time="250" delay="0" condition="Player.HasVideo+Container.Content(episodes)" reversible="true">Conditional</animation>
+
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="image">
+						<posx>112</posx>
+						<posy>7</posy>
+						<width>1699</width>
+						<height>655</height>
+						<texture>multiplex/multiplex_poster_mask.png</texture>
+						<visible>Control.IsVisible(551)+!Skin.HasSetting(multiplexthin)</visible>
+					</control>
+					<control type="image">
+						<posx>112</posx>
+						<posy>7</posy>
+						<width>1699</width>
+						<height>655</height>
+						<texture>multiplex/multiplex_wide_mask.png</texture>
+						<visible>Control.IsVisible(552)+!Skin.HasSetting(multiplexthin)</visible>
+					</control>
+					<control type="image">
+						<posx>112</posx>
+						<posy>7</posy>
+						<width>1699</width>
+						<height>655</height>
+						<texture>multiplex/night/multiplex_poster.png</texture>
+						<visible>Control.IsVisible(551)+Skin.HasSetting(darkwindow)</visible>				
+					</control>
+					<control type="image">
+						<posx>112</posx>
+						<posy>7</posy>
+						<width>1699</width>
+						<height>655</height>
+						<texture>multiplex/night/multiplex_wide.png</texture>
+						<visible>Control.IsVisible(552)+Skin.HasSetting(darkwindow)</visible>				
+					</control>
+					<control type="image">
+						<posx>112</posx>
+						<posy>7</posy>
+						<width>1699</width>
+						<height>655</height>
+						<texture>multiplex/lite/multiplex_poster.png</texture>
+						<visible>Control.IsVisible(551)+!Skin.HasSetting(darkwindow)</visible>				
+					</control>
+					<control type="image">
+						<posx>112</posx>
+						<posy>7</posy>
+						<width>1699</width>
+						<height>655</height>
+						<texture>multiplex/lite/multiplex_wide.png</texture>
+						<visible>Control.IsVisible(552)+!Skin.HasSetting(darkwindow)</visible>				
+					</control>
+					<control type="image">
+						<posx>862</posx>
+						<posy>30</posy>
+						<width>1</width>
+						<height>528</height>
+						<texture>common/vert_panel_line.png</texture>
+						<visible>Control.IsVisible(551)</visible>				
+					</control>
+					<control type="image">
+						<posx>862</posx>
+						<posy>30</posy>
+						<width>1</width>
+						<height>609</height>
+						<texture>common/vert_panel_line.png</texture>
+						<visible>Control.IsVisible(552)</visible>				
+					</control>
+
+					<control type="image">
+						<posx>484</posx>
+						<posy>30</posy>
+						<width>1</width>
+						<height>165</height>
+						<texture>common/vert_panel_line.png</texture>
+						<visible>Container.Content(movies)|Container.Content(episodes)</visible>				
+					</control>
+					<control type="image">
+						<posx>136</posx>
+						<posy>195</posy>
+						<width>727</width>
+						<height>1</height>
+						<texture>common/horiz_panel_line.png</texture>
+						<visible>Container.Content(movies)|Container.Content(episodes)</visible>				
+					</control>
+
+					<control type="image">
+						<posx>484</posx>
+						<posy>30</posy>
+						<width>1</width>
+						<height>75</height>
+						<texture>common/vert_panel_line.png</texture>
+						<visible>Container.Content(tvshows)</visible>				
+					</control>
+					<control type="image">
+						<posx>136</posx>
+						<posy>105</posy>
+						<width>727</width>
+						<height>1</height>
+						<texture>common/horiz_panel_line.png</texture>
+						<visible>Container.Content(tvshows)</visible>				
+					</control>
+
+					<control type="image">
+						<posx>136</posx>
+						<posy>559</posy>
+						<width>657</width>
+						<height>1</height>
+						<texture>common/horiz_panel_line.png</texture>
+						<visible>Control.IsVisible(551)</visible>				
+					</control>
+					<control type="image">
+						<posx>1128</posx>
+						<posy>559</posy>
+						<width>660</width>
+						<height>1</height>
+						<texture>common/horiz_panel_line.png</texture>
+						<visible>Control.IsVisible(551)</visible>				
+					</control>
+					<control type="image">
+						<posx>136</posx>
+						<posy>558</posy>
+						<width>1650</width>
+						<height>1</height>
+						<texture>common/horiz_panel_line.png</texture>
+						<visible>Control.IsVisible(552)+![Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]</visible>				
+					</control>
+					<control type="image">
+						<posx>864</posx>
+						<posy>558</posy>
+						<width>924</width>
+						<height>1</height>
+						<texture>common/horiz_panel_line.png</texture>
+						<visible>Control.IsVisible(552)+[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]</visible>				
+					</control>
+				</control>
+
+				<control type="group">
+					<posy>30</posy>
+					<control type="group">
+						<posx>157</posx>
+						<control type="group">
+							<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+							<posy>7</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31402]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.Director]</label>
+							</control>			
+						</control>
+						<control type="group">
+							<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+							<posy>90</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31401]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.Writer]</label>
+							</control>			
+						</control>
+						<control type="group">
+							<visible>Container.Content(movies)</visible>
+							<posy>7</posy>
+							<posx>360</posx>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31417]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.MPAA]</label>
+							</control>					
+						</control>
+
+						<control type="group">
+							<visible>Container.Content(movies)</visible>
+							<posx>360</posx>
+							<posy>90</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31408]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
+							</control>			
+						</control>				
+
+
+						<control type="group">
+							<visible>Container.Content(tvshows)</visible>
+							<posy>7</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31407]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.Date]</label>
+							</control>			
+						</control>
+						<control type="group">
+							<visible>Container.Content(tvshows)</visible>
+							<posy>7</posy>
+							<posx>360</posx>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31408]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
+							</control>			
+						</control>
+
+						<control type="label">
+							<posx>0</posx>
+							<posy>547</posy>
+							<include>MultiplexFloorDetailLabelLeft</include>
+							<label>[UPPERCASE][COLOR ABFFFFFF]$LOCALIZE[20161]:[/COLOR] $INFO[ListItem.Episode] $LOCALIZE[20360][/UPPERCASE]</label>
+							<visible>[Container.Content(tvshows)|Container.Content(seasons)] + !stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>547</posy>
+							<include>MultiplexFloorDetailLabelLeft</include>
+							<label>[UPPERCASE]$INFO[ListItem.Episode] $LOCALIZE[20360] [COLOR ABFFFFFF]$LOCALIZE[20161]: [/COLOR][/UPPERCASE]</label>
+							<visible>[Container.Content(tvshows)|Container.Content(seasons)]+stringcompare(system.language,Hebrew)</visible>
+						</control>
+
+						<control type="label">
+							<posx>1600</posx>
+							<posy>547</posy>
+							<include>MultiplexFloorDetailLabelRight</include>
+							<label>[UPPERCASE][COLOR ABFFFFFF]$LOCALIZE[31439]:[/COLOR] $INFO[ListItem.Property(WatchedEpisodes)] / [COLOR ABFFFFFF]$LOCALIZE[31440]:[/COLOR] $INFO[ListItem.Property(UnwatchedEpisodes)][/UPPERCASE]</label>
+							<visible>Container.Content(seasons)+!stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>1600</posx>
+							<posy>547</posy>
+							<include>MultiplexFloorDetailLabelRight</include>
+							<label>[UPPERCASE]$INFO[ListItem.Property(WatchedEpisodes)] [COLOR ABFFFFFF]$LOCALIZE[31439]:[/COLOR] / $INFO[ListItem.Property(UnwatchedEpisodes)] [COLOR ABFFFFFF]$LOCALIZE[31440]:[/COLOR][/UPPERCASE]</label>
+							<visible>Container.Content(seasons)+stringcompare(system.language,Hebrew)</visible>
+						</control>
+
+						<control type="group">
+						<visible>Container.Content(episodes)</visible>
+							<posx>360</posx>
+							<posy>7</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31407]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[ListItem.Date]</label>
+							</control>			
+						</control>
+						<control type="group">
+						<visible>Container.Content(episodes)</visible>
+							<posx>360</posx>
+							<posy>90</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[20360]:</label>
+							</control>
+							<control type="label">
+								<width>300</width>
+								<include>MultiplexInfoValue</include>				
+								<label fallback="31425">$INFO[Container().NumItems]</label>
+							</control>			
+						</control>
+					</control>
+
+					<control type="textbox">
+						<posx>157</posx>
+						<posy>175</posy>
+						<width>682</width>
+						<height>342</height>
+						<font>Font_InfoPanelPlot</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044]) | stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])]</visible>	
+					</control>			
+					<control type="textbox">
+						<posx>157</posx>
+						<posy>90</posy>
+						<width>682</width>
+						<height>424</height>
+						<font>Font_InfoPanelPlot</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(tvshows)</visible>	
+					</control>			
+
+					<control type="textbox">
+						<posx>157</posx>
+						<posy>15</posy>
+						<width>682</width>
+						<height>495</height>
+						<font>Font_InfoPanelPlot</font>
+						<info>Container.ShowPlot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(seasons)</visible>	
+					</control>
+
+					<control type="textbox">
+						<posx>157</posx>
+						<posy>175</posy>
+						<width>682</width>
+						<height>425</height>
+						<font>Font_InfoPanelPlot</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<visible>Container.Content(episodes)</visible>	
+					</control>			
+
+					<!-- IMAGES FOR THUMB VIEW -->
+					<control type="group">
+						<posx>870</posx>
+						<posy>7</posy>
+						<visible>[Container.Content(movies) + [stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])]] | Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)</visible>				
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>910</width>
+							<height>512</height>
+							<texture diffuse="multiplex/multiplex_fanart_mask.png">common/black.png</texture>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>	
+						<control type="multiimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>906</width>
+							<height>508</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<timeperimage>4000</timeperimage>					
+							<imagepath diffuse="multiplex/multiplex_fanart_mask.png">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+							<visible>Container.Content(movies) + !substring(ListItem.Path,stack)+stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])</visible>	
+						</control>			
+						<control type="multiimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>906</width>
+							<height>508</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<timeperimage>4000</timeperimage>					
+							<imagepath background="true" diffuse="multiplex/multiplex_fanart_mask.png">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
+							<visible>Container.Content(movies) + substring(ListItem.Path,stack)+stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])</visible>	
+						</control>			
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>906</width>
+							<height>508</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture diffuse="multiplex/multiplex_fanart_mask.png">$INFO[listitem.property(fanart_image)]</texture>
+							<visible>[Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])] | [!stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045]) + Container.Content(episodes)] | Container.Content(tvshows)</visible>				
+						</control>
+
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>906</width>
+							<height>508</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<visible>Container.Content(seasons)</visible>
+							<texture diffuse="multiplex/multiplex_fanart_mask.png">$INFO[Fanart.Image]</texture>
+						</control>
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>906</width>
+							<height>508</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture diffuse="multiplex/multiplex_fanart_mask.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+							<visible>!stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045]) + Container.Content(episodes)</visible>
+						</control>
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>906</width>
+							<height>508</height>
+							<aspectratio>stretch</aspectratio>
+							<fadetime>400</fadetime>
+							<texture diffuse="multiplex/multiplex_fanart_mask.png">$INFO[listitem.thumb]</texture>
+							<visible>stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045]) + Container.Content(episodes)</visible>
+						</control>
+					</control>
+				</control>
+				<control type="image">
+					<visible>Control.IsVisible(552)</visible>
+					<visible>Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(607)|Control.HasFocus(608)|Control.HasFocus(609)|Control.HasFocus(614)|Control.HasFocus(615)|Control.HasFocus(617)|Control.HasFocus(618)|Control.HasFocus(619)</visible>
+					<animation effect="fade" start="0" end="100" time="200" delay="300" condition="Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(615)" reversible="false">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="300" delay="900" condition="![Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(615)]+!Player.HasVideo" reversible="false">Conditional</animation>
+					<posx>112</posx>
+					<posy>7</posy>
+					<width>1698</width>
+					<height>654</height>
+					<texture>multiplex/multiplex_wide_trailer_mask.png</texture>
+				</control>
+				<control type="image">
+					<visible>Control.IsVisible(551)</visible>
+					<visible>Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(607)|Control.HasFocus(608)|Control.HasFocus(609)|Control.HasFocus(614)|Control.HasFocus(615)|Control.HasFocus(617)|Control.HasFocus(618)|Control.HasFocus(619)</visible>
+					<animation effect="fade" start="0" end="100" time="200" delay="300" condition="Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(615)" reversible="false">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="300" delay="900" condition="![Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(615)]+!Player.HasVideo" reversible="false">Conditional</animation>
+					<posx>112</posx>
+					<posy>7</posy>
+					<width>1698</width>
+					<height>654</height>
+					<texture>multiplex/multiplex_poster_trailer_mask.png</texture>
+				</control>
+			</control>
+			<!-- END LARGE PANEL -->
+
+<!--			<control type="group">
+				<visible>!Player.HasVideo + [[Container.Content(movies)+!IsEmpty(ListItem.Trailer)]|[Container.Content(episodes)+Skin.HasSetting(tvpreview)]]+[Control.IsVisible(551)|Control.IsVisible(552)]</visible>
+				<include>Animation_CommonFade</include>
+				<camera x="960" y="450" />
+				<animation type="Conditional" condition="Control.HasFocus(603)|Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(607)|Control.HasFocus(608)" reversible="false">
+					<effect type="rotatey" center="960" start="0" end="180" time="1000" delay="0"/>
+					<effect type="fade" start="100" end="0" time="100" delay="400"/>
+				</animation>
+				<animation type="Conditional" condition="!Player.HasVideo+![Control.HasFocus(550)+Control.HasFocus(551)+Control.HasFocus(552)+Control.HasFocus(65)+Control.HasFocus(603)+Control.HasFocus(604)+Control.HasFocus(605)+Control.HasFocus(111)+Control.HasFocus(112)+Control.HasFocus(113)+Control.HasFocus(114)+Control.HasFocus(115)+Control.HasFocus(116)+Control.HasFocus(117)+Control.HasFocus(118)+ControlGroup(7000).HasFocus()+Control.HasFocus(7011)+Control.HasFocus(7012)+Control.HasFocus(7013)+Control.HasFocus(7014)]" reversible="false">
+					<effect type="fade" start="0" end="100" time="100" delay="1000"/>
+					<effect type="rotatey" center="960,0" start="90" end="0" time="500" delay="1000"/>
+				</animation>
+
+				<control tye="image">
+					<posx>826</posx>
+					<posy>0</posy>
+					<align>center</align>
+					<width>262</width>
+					<height>45</height>
+					<texture>list/progress_back.png</texture>
+					<animation effect="zoom" center="auto" end="120,100" time="0" condition="Skin.HasSetting(tvpreview) + Container.Content(episodes) + !Player.HasMedia">Conditional</animation>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>10</posy>
+					<align>center</align>
+					<width>1920</width>
+					<height>30</height>
+					<font>trailer</font>
+					<label>$LOCALIZE[32011] $LOCALIZE[32013]</label>
+					<colordiffuse>d0FFFFFF</colordiffuse>
+					<visible>Container.Content(movies)+!IsEmpty(ListItem.Trailer)</visible>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>10</posy>
+					<align>center</align>
+					<width>1920</width>
+					<height>37</height>
+					<font>trailer</font>
+					<label>$LOCALIZE[32011] $LOCALIZE[32014]</label>
+					<colordiffuse>d0FFFFFF</colordiffuse>
+					<visible>Container.Content(episodes)+Skin.HasSetting(tvpreview)</visible>
+				</control>
+			</control>-->
+
+
+			<!-- 4 EXTRA THUMBS -->
+				<control type="group">
+				<visible>[[Control.IsVisible(53)|Control.IsVisible(551)]+Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])]|[[Control.IsVisible(53)|Control.IsVisible(552)] + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]+Skin.HasSetting(tvepisodeposterview)] | [[Control.IsVisible(551)|Control.IsVisible(552)] + [[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]] + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31984])]]</visible>
+					<control type="largeimage">
+						<posx>1510</posx>
+						<posy>39</posy>
+						<width>387</width>
+						<height>552</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture diffuse="lowlist/movie_thumb_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
+						<visible>Container.Content(movies)</visible>
+					</control>
+					<control type="largeimage">
+						<posx>1510</posx>
+						<posy>39</posy>
+						<width>387</width>
+						<height>552</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture diffuse="lowlist/movie_thumb_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container.SeasonThumb]</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="largeimage">
+						<posx>1510</posx>
+						<posy>39</posy>
+						<width>387</width>
+						<height>552</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture diffuse="lowlist/movie_thumb_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container.TVShowThumb]</texture>
+						<visible>Container.Content(seasons)</visible>
+					</control>
+					<control type="image">
+						<posx>1491</posx>
+						<posy>21</posy>
+						<width>425</width>
+						<height>589</height>
+						<fadetime>400</fadetime>
+						<texture>lowlist/movie_thumb_glass.png</texture>
+						<visible>Container.Content(movies)|Container.Content(seasons)|Container.Content(episodes)</visible>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>39</posy>
+						<width>387</width>
+						<height>552</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">sctretch</aspectratio>
+						<texture diffuse="lowlist/movie_thumb_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[container.tvshowthumb]</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<posx>1</posx>
+						<posy>21</posy>
+						<width>425</width>
+						<height>589</height>
+						<fadetime>400</fadetime>
+						<texture>lowlist/movie_thumb_glass.png</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<visible>[[Control.IsVisible(53)|Control.IsVisible(551)]+Container.Content(movies) + [stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])]]</visible>
+					<posx>22</posx>
+					<posy>43</posy>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+						<visible>!substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+						<visible>substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="image">
+						<posx>-17</posx>
+						<posy>-21</posy>
+						<width>425</width>
+						<height>289</height>
+						<fadetime>400</fadetime>
+						<texture>multiplex/extras_thumb_glass.png</texture>
+						<visible>Container.Content(movies)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<posx>22</posx>
+					<posy>314</posy>
+					<visible>[[Control.IsVisible(53)|Control.IsVisible(551)]+Container.Content(movies) + [stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])]]|[[Control.IsVisible(53)|Control.IsVisible(552)] + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]+!Skin.HasSetting(tvepisodeposterview)] | [[Control.IsVisible(551)|Control.IsVisible(552)] + [[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]] + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31984])]]</visible>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+						<visible>!substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+						<visible>substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Container.TVShowThumb]</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<posx>-17</posx>
+						<posy>-21</posy>
+						<width>425</width>
+						<height>289</height>
+						<fadetime>400</fadetime>
+						<texture>multiplex/extras_thumb_glass.png</texture>
+						<visible>Container.Content(movies)|Container.Content(episodes)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<visible>[[Control.IsVisible(53)|Control.IsVisible(551)]+Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])]</visible>
+					<posx>1507</posx>
+					<posy>43</posy>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
+						<visible>!substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb3.jpg]</texture>
+						<visible>substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="image">
+						<posx>-17</posx>
+						<posy>-21</posy>
+						<width>425</width>
+						<height>289</height>
+						<fadetime>400</fadetime>
+						<texture>multiplex/extras_thumb_glass.png</texture>
+						<visible>Container.Content(movies)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<posx>1507</posx>
+					<posy>314</posy>
+					<visible>[[Control.IsVisible(53)|Control.IsVisible(551)]+Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])]|[[Control.IsVisible(53)|Control.IsVisible(552)] + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]+!Skin.HasSetting(tvepisodeposterview)] | [[Control.IsVisible(551)|Control.IsVisible(552)] + [[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)]|[Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)]] + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31984])]]</visible>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
+						<visible>!substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb4.jpg]</texture>
+						<visible>substring(ListItem.Path,stack)+Container.Content(movies)</visible>	
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Container.SeasonThumb]</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="largeimage">
+						<width>390</width>
+						<height>247</height>
+						<fadetime>400</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="multiplex/extras_thumb_mask.png" fallback="DefaultExtras.png">$INFO[Container.TVShowThumb]</texture>
+						<visible>Container.Content(seasons)</visible>
+					</control>
+					<control type="image">
+						<posx>-17</posx>
+						<posy>-21</posy>
+						<width>425</width>
+						<height>289</height>
+						<fadetime>400</fadetime>
+						<texture>multiplex/extras_thumb_glass.png</texture>
+						<visible>Container.Content(movies)|Container.Content(seasons)|Container.Content(episodes)</visible>
+					</control>
+				</control>
+			<!-- 4 EXTRA THUMBS -->
+
+
+
+			<control type="group">
+				<visible>Control.IsVisible(53)|Control.IsVisible(550)| [Window.IsActive(24)+[Control.IsVisible(551)|Control.IsVisible(552)]+[substring(Container.PluginName,Apple Movie Trailers Lite)|substring(listitem.filenameandpath,PLUGIN://VIDEO/IPLAYER/?PID)]] | [Window.IsActive(25) + Control.IsVisible(551) + Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]] | [Control.IsVisible(552) + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])] | [[Control.IsVisible(551)|Control.IsVisible(552)] + [Container.Content(tvshows)|Container.Content(seasons)] + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31984])]]</visible>
+				<camera x="960" y="450" />
+				<animation effect="slide" end="0,75" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation type="Conditional" condition="Control.HasFocus(603)|Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(613)|Control.HasFocus(614)|Control.HasFocus(615)" reversible="false">
+					<effect type="rotatey" center="960,0" start="0" end="180" time="1000" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="!Player.HasVideo+![Control.HasFocus(550)+Control.HasFocus(551)+Control.HasFocus(552)+Control.HasFocus(65)+Control.HasFocus(603)+Control.HasFocus(604)+Control.HasFocus(605)+Control.HasFocus(111)+Control.HasFocus(112)+Control.HasFocus(113)+Control.HasFocus(114)+Control.HasFocus(115)+Control.HasFocus(116)+Control.HasFocus(117)+Control.HasFocus(118)+ControlGroup(7000).HasFocus()+Control.HasFocus(7011)+Control.HasFocus(7012)+Control.HasFocus(7013)+Control.HasFocus(7014)]" reversible="false">
+					<effect type="rotatey" center="960,0" start="180" end="0" time="1000" delay="500"/>
+				</animation>
+
+				<animation type="Conditional" condition="Window.IsActive(2001)|Window.IsActive(2002)|Window.IsActive(2003)|Window.IsActive(135)" reversible="true">
+					<effect type="rotatey" center="960,0" start="0" end="180" time="1000" delay="100"/>
+					<effect type="fade" start="100" end="0" time="200" delay="500"/>
+				</animation>
+
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="group">
+						<posx>421</posx>
+						<posy>30</posy>
+						<control type="image">
+							<width>1080</width>
+							<height>544</height>
+							<texture>lowlist/LowList_Info_Mask.png</texture>
+							<visible>[Control.IsVisible(550)+!Skin.HasSetting(listpanelthin)] | [[Control.IsVisible(551)|Control.IsVisible(552)]+!Skin.HasSetting(multiplexthin)]</visible>
+							<include>Animation_CommonFade</include>
+						</control>			
+
+						<!-- COMMON BACKGRROUND -->
+						<control type="image">
+							<width>1080</width>
+							<height>544</height>
+							<texture>lowlist/lite/LowList_Info_Pannel.png</texture>
+							<visible>!Skin.HasSetting(darkwindow)</visible>				
+						</control>
+						<control type="image">
+							<width>1080</width>
+							<height>544</height>
+							<texture>lowlist/night/LowList_Info_Pannel.png</texture>
+							<visible>Skin.HasSetting(darkwindow)</visible>				
+						</control>
+					</control>
+
+					<control type="group">
+						<posx>421</posx>
+						<posy>30</posy>
+						<control type="image">
+							<posx>21</posx>
+							<posy>115</posy>
+							<width>1038</width>
+							<height>1</height>
+							<texture>common/horiz_panel_line.png</texture>
+							<animation effect="slide" end="0,-30" time="0" condition="Container.Content(seasons)">Conditional</animation>
+						</control>
+						<control type="image">
+							<posx>21</posx>
+							<posy>442</posy>
+							<width>1038</width>
+							<height>1</height>
+							<texture>common/horiz_panel_line.png</texture>
+							<visible>[Control.IsVisible(551)+Container.Content(movies)] | [[Control.IsVisible(551)|Control.IsVisible(552)]+[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]</visible>
+						</control>
+					</control>
+				</control>
+
+				<control type="group">
+					<posx>459</posx>
+					<posy>39</posy>
+					<visible>!Player.HasVideo</visible>
+					<animation effect="fade" start="0" end="100" time="400" delay="200" condition="!Player.HasVideo+![Window.Previous(2001)|Window.Previous(2002)|Window.Previous(2003)|Window.Previous(135)]" reversible="true">Conditional</animation>
+					<control type="group">
+						<posy>27</posy>
+						<visible>Container.Content(movies) | Container.Content(episodes) | substring(Container.PluginName,Apple Movie Trailers Lite) | substring(Container.PluginName,iplayer)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[20339]</label>
+						</control>
+						<control type="label">
+							<width>435</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Director]</label>
+						</control>
+						<control type="label">
+							<posx>457</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31401]</label>
+						</control>
+						<control type="label">
+							<posx>457</posx>
+							<width>532</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Writer]</label>
+						</control>
+					</control>
+
+					<control type="group">
+						<posy>27</posy>
+						<description>TVSHOWS</description>
+						<control type="label">
+							<posx>0</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31438]</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<width>675</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Genre]</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>810</posx>
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31407]</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>810</posx>
+							<width>675</width>
+							<include>MultiplexInfoValue</include>
+							<label fallback="-">$INFO[ListItem.Date]</label>
+							<visible>Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>-7</posy>
+							<align>center</align>
+							<width>990</width>
+							<font>Font_List</font>	
+							<label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
+							<visible>Container.Content(seasons)</visible>
+						</control>
+						<control type="label">
+							<posx>990</posx>
+							<posy>427</posy>
+							<include>MultiplexFloorDetailLabelRight</include>
+							<label>[UPPERCASE][COLOR ABFFFFFF]$LOCALIZE[20161]:[/COLOR] $INFO[ListItem.Episode] $LOCALIZE[20360][/UPPERCASE]</label>
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(tvshows) + !stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>990</posx>
+							<posy>427</posy>
+							<include>MultiplexFloorDetailLabelRight</include>
+							<label>[UPPERCASE]$INFO[ListItem.Episode] $LOCALIZE[20360] [COLOR ABFFFFFF]$LOCALIZE[20161]: [/COLOR][/UPPERCASE]</label>
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(tvshows)+stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>427</posy>
+							<include>MultiplexFloorDetailLabelLeft</include>
+							<label>[UPPERCASE][COLOR ABFFFFFF]$LOCALIZE[20161]:[/COLOR] $INFO[ListItem.Episode] $LOCALIZE[20360][/UPPERCASE]</label>
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(seasons) + !stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>427</posy>
+							<include>MultiplexFloorDetailLabelLeft</include>
+							<label>[UPPERCASE]$INFO[ListItem.Episode] $LOCALIZE[20360] [COLOR ABFFFFFF]$LOCALIZE[20161]: [/COLOR][/UPPERCASE]</label>
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(seasons)+stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>1000</posx>
+							<posy>427</posy>
+							<include>MultiplexFloorDetailLabelRight</include>
+							<label>[UPPERCASE][COLOR ABFFFFFF]$LOCALIZE[31439]:[/COLOR] $INFO[ListItem.Property(WatchedEpisodes)] / [COLOR ABFFFFFF]$LOCALIZE[31440]:[/COLOR] $INFO[ListItem.Property(UnwatchedEpisodes)][/UPPERCASE]</label>
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(seasons)+!stringcompare(system.language,Hebrew)</visible>
+						</control>
+						<control type="label">
+							<posx>1000</posx>
+							<posy>427</posy>
+							<include>MultiplexFloorDetailLabelRight</include>
+							<label>[UPPERCASE]$INFO[ListItem.Property(WatchedEpisodes)] [COLOR ABFFFFFF]$LOCALIZE[31439]:[/COLOR] / $INFO[ListItem.Property(UnwatchedEpisodes)] [COLOR ABFFFFFF]$LOCALIZE[31440]:[/COLOR][/UPPERCASE]</label>
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(seasons)+stringcompare(system.language,Hebrew)</visible>
+						</control>
+					</control>
+
+					<control type="group">
+						<control type="textbox">
+							<description>-- MAIN PANEL TEXT --</description>
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>990</width>
+							<height>305</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="10000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>[Window.IsActive(25) + Control.IsVisible(551)+Container.Content(movies)] | [[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(episodes)]</visible>	
+						</control>
+						<control type="textbox">
+							<description>-- MAIN PANEL TEXT --</description>
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>990</width>
+							<height>385</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="10000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>[Window.IsActive(24)+[Control.IsVisible(551)|Control.IsVisible(552)]+[substring(Container.PluginName,Apple Movie Trailers Lite)| substring(Container.PluginName,iplayer)]]</visible>	
+						</control>
+						<control type="textbox">
+							<description>-- MAIN PANEL TEXT --</description>
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>990</width>
+							<height>387</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="10000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>!Window.IsActive(2003)+[Control.IsVisible(53)|Control.IsVisible(550)]+[Container.Content(movies) | Container.Content(episodes) | substring(Container.PluginName,Apple Movie Trailers Lite)]</visible>	
+						</control>
+	
+						<control type="textbox">
+							<description>-- MAIN PANEL TEXT --</description>
+							<posx>0</posx>
+							<posy>123</posy>
+							<width>990</width>
+							<height>382</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>![Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(tvshows)</visible>	
+						</control>
+						<control type="textbox">
+							<description>-- MAIN PANEL TEXT --</description>
+							<posx>0</posx>
+							<posy>123</posy>
+							<width>990</width>
+							<height>310</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(tvshows)</visible>	
+						</control>
+						<control type="textbox">
+							<posx>0</posx>
+							<posy>83</posy>
+							<width>990</width>
+							<height>420</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>Container.ShowPlot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>![Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(seasons)</visible>	
+						</control>
+						<control type="textbox">
+							<posx>0</posx>
+							<posy>83</posy>
+							<width>990</width>
+							<height>348</height>
+							<font>Font_InfoPanelPlot</font>
+							<info>Container.ShowPlot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+							<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(seasons)</visible>	
+						</control>
+					</control>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(607)|Control.HasFocus(608)|Control.HasFocus(609)|Control.HasFocus(614)|Control.HasFocus(615)|Control.HasFocus(617)|Control.HasFocus(618)|Control.HasFocus(619)</visible>
+					<animation effect="fade" start="0" end="100" time="200" delay="300" condition="Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(614)|Control.HasFocus(615)" reversible="false">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="300" delay="900" condition="![Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(614)|Control.HasFocus(615)]+!Player.HasVideo" reversible="false">Conditional</animation>
+					<posx>441</posx>
+					<posy>52</posy>
+					<width>1038</width>
+					<height>501</height>
+					<texture diffuse="lowlist/LowList_Trailer_Mask.png">common/black.png</texture>
+				</control>
+			</control>
+
+			<control type="videowindow">
+				<visible>Player.HasVideo+[Control.IsVisible(551) + Container.Content(movies) + [stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044]) | stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])]]</visible>
+				<animation effect="slide" end="0,75" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<posx>111</posx>
+				<posy>30</posy>
+				<width>1698</width>
+				<height>528</height>
+			</control>
+			<control type="videowindow">
+				<visible>Player.HasVideo+[Control.IsVisible(552) + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])]]]</visible>
+				<animation effect="slide" end="0,75" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<posx>109</posx>
+				<posy>30</posy>
+				<width>1698</width>
+				<height>610</height>
+			</control>
+			<control type="videowindow">
+				<visible>Player.HasVideo+[Control.IsVisible(550)|[Control.IsVisible(551) + Container.Content(movies)+[stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])|stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])]]|[Control.IsVisible(552) + Container.Content(episodes) + [stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31046]) | stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])]]]</visible>
+				<animation effect="slide" end="0,75" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<posx>442</posx>
+				<posy>52</posy>
+				<width>1035</width>
+				<height>498</height>
+			</control>
+<!--			<control type="group">
+				<visible>[Control.IsVisible(551)|Control.IsVisible(552)]+Container.Content(episodes)+Skin.HasSetting(tvpreview)</visible>
+				<animation effect="slide" end="0,75" time="0" condition="Control.IsVisible(550)" >Conditional</animation>
+				<animation type="Conditional" condition="[Control.IsVisible(552)+!Player.HasVideo+Container.Content(episodes)] | [Control.IsVisible(551)+!Player.HasVideo+Container.Content(movies)]" reversible="false">
+					<effect type="fade" start="100" end="0" time="250" delay="400"/>
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(603)|Control.HasFocus(604)|Control.HasFocus(605)|Control.HasFocus(607)|Control.HasFocus(608)" reversible="false">
+					<effect type="fade" start="0" end="100" time="250" delay="500"/>
+				</animation>
+				<control type="image">
+					<posx>843</posx>
+					<posy>0</posy>
+					<width>235</width>
+					<height>45</height>
+					<texture>list/progress_back.png</texture>
+				</control>
+				<control type="label">
+					<posx>442</posx>
+					<posy>10</posy>
+					<width>1038</width>
+					<height>30</height>
+					<font>trailer</font>
+					<align>center</align>
+					<label>$LOCALIZE[32015] $LOCALIZE[32016]</label>
+					<colordiffuse>d0FFFFFF</colordiffuse>
+				</control>
+			</control>	-->		
+		</control>			
+	</include>	
+</includes>

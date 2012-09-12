@@ -1,0 +1,1585 @@
+<includes>
+	<include name="MultiplexIconDimensionsMusicWrap">
+		<posx>23</posx>
+		<posy>23</posy>
+		<width>325</width>
+		<height>325</height>	
+	</include>
+	<include name="MultiplexIconDimensionsMusicWrapReflect">
+		<posx>23</posx>
+		<posy>348</posy>
+		<width>325</width>
+		<height>325</height>	
+		<colordiffuse>aaFFFFFF</colordiffuse>		
+	</include>	
+
+<!-- Music Multiplex Variables: Main thumbs -->
+	<include name="MultiplexMusicThumbDimensions">
+		<align>center</align>
+		<posx>-195</posx>
+		<posy>0</posy>
+		<width>390</width>
+		<height>390</height>
+	</include>
+<!-- Music Multiplex Variables: Thumb glass overlays -->
+	<include name="MultiplexMusicGlassRight">
+		<align>center</align>
+		<posx>-222</posx>
+		<posy>-29</posy>
+		<width>445</width>
+		<height>448</height>
+		<texture>multiplex/music_thumb_glass.png</texture>
+	</include>
+	<include name="MultiplexMusicGlassLeft">
+		<align>center</align>
+		<posx>-182</posx>
+		<posy>-23</posy>
+		<width>364</width>
+		<height>366</height>
+		<texture flipx="true">multiplex/music_thumb_glass.png</texture>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+
+	<include name="MultiplexMusicThumbKeep">
+		<aspectratio scalediffuse="false">keep</aspectratio>	
+	</include>
+	<include name="MultiplexMusicThumbStretch">
+		<aspectratio scalediffuse="false">stretch</aspectratio>	
+	</include>	
+	<include name="MultiplexMusicThumb">
+		<include>MultiplexMusicThumbDimensions</include>
+		<texture diffuse="multiplex/music_thumb_mask.png">DefaultAudio.png</texture>
+		<include condition="Window.IsActive(2)">MultiplexMusicThumbKeep</include>
+		<include condition="!Window.IsActive(2)">MultiplexMusicThumbStretch</include>		
+		<visible>!Container.Content(genres)</visible>
+	</include>
+	<include name="Musicshadeblack">
+		<control type="image">
+			<include>MultiplexMusicThumbDimensions</include>
+			<texture diffuse="multiplex/music_thumb_mask.png">common/black.png</texture>
+		</control>
+	</include>
+	<include name="MusicshadeblackReflection">
+		<control type="image">
+			<posy>390</posy>
+			<include>MultiplexMusicThumbDimensions</include>
+			<colordiffuse>d0FFFFFF</colordiffuse>
+			<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">common/black.png</texture>
+			<animation effect="fade" start="50" end="50" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>		
+		</control>
+	</include>	
+	<include name="MultiplexMusicThumbReflection">
+		<posy>390</posy>
+		<include>MultiplexMusicThumbDimensions</include>
+		<colordiffuse>d0FFFFFF</colordiffuse>
+		<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">DefaultAudio.png</texture>
+		<include condition="Window.IsActive(2)">MultiplexMusicThumbKeep</include>
+		<include condition="!Window.IsActive(2)">MultiplexMusicThumbStretch</include>	
+		<visible>!Container.Content(genres)</visible>
+	</include>
+	<include name="MultiplexMusicGenreDefaultThumb">
+		<include>MultiplexMusicThumbDimensions</include>
+		<texture flipy="true" diffuse="multiplex/music_thumb_mask.png">special://skin/media/musicgenre/default.jpg</texture>
+		<include condition="Window.IsActive(2)">MultiplexMusicThumbKeep</include>
+		<include condition="!Window.IsActive(2)">MultiplexMusicThumbStretch</include>		
+		<visible>Container.Content(genres)</visible>
+	</include>
+	<include name="MultiplexMusicGenreThumb">
+		<include>MultiplexMusicThumbDimensions</include>
+		<include condition="Window.IsActive(2)">MultiplexMusicThumbKeep</include>
+		<include condition="!Window.IsActive(2)">MultiplexMusicThumbStretch</include>	
+		<visible>Container.Content(genres)</visible>
+	</include>
+	<include name="MultiplexMusicGenreThumbReflection">
+		<posy>390</posy>
+		<include>MultiplexMusicThumbDimensions</include>
+		<colordiffuse>d0FFFFFF</colordiffuse>
+		<include condition="Window.IsActive(2)">MultiplexMusicThumbKeep</include>
+		<include condition="!Window.IsActive(2)">MultiplexMusicThumbStretch</include>	
+		<visible>Container.Content(genres)</visible>
+	</include>
+	
+
+	<include name="MusicMultiplexOverlay">
+		<include>MultiplexMusicThumbDimensions</include>
+		<colordiffuse>4e000000</colordiffuse>
+		<texture>-</texture>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<visible>![Control.HasFocus(553) | Control.HasFocus(71) | Control.HasFocus(85)]</visible>
+		<include>Animation_CommonFade</include>
+	</include>
+
+	<include name="MultiplexMusic">
+		<control type="group" id="5101">
+			<posy>585</posy>
+			<camera x="960" y="810" />
+			<visible>Control.IsVisible(553) + Container.OnNext + !Skin.HasSetting(flattenmultiplex)</visible>
+			<animation effect="slide" end="-130,0" time="250" reversible="false">Hidden</animation>
+			<control type="group">
+				<posx>250</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,12)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,12)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="-200" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-7).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-7).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-7).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-7).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>380</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,12)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,10)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,10)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>510</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,10)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,8)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,8)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="70" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>640</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,8)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,6)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,6)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="200" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>770</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,6)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,4)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,4)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="330" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+ 				<posx>900</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,4)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,2)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,2)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="460" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			
+			 <!-- image off screen to stop lag of fading new item -->
+			<control type="group">
+				<posx>2500</posx>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1) | stringcompare(Container.NumItems,2) | stringcompare(Container.NumItems,3) | stringcompare(Container.NumItems,4) | stringcompare(Container.NumItems,5) | stringcompare(Container.NumItems,6) | stringcompare(Container.NumItems,7) | stringcompare(Container.NumItems,8) | stringcompare(Container.NumItems,9) | stringcompare(Container.NumItems,10) | stringcompare(Container.NumItems,11) | stringcompare(Container.NumItems,12) | stringcompare(Container.NumItems,13) | stringcompare(Container.NumItems,14) | stringcompare(Container.NumItems,15) | stringcompare(Container.NumItems,16) | stringcompare(Container.NumItems,17)]]</visible>
+				<control type="image">
+					<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+					<info>ListItem(7).Thumb</info>
+				</control>
+			</control>
+			
+			<control type="group">
+				<posx>1800</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,11)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,11)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="2230" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1670</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,11)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,9)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,9)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="2110" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1540</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,9)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,7)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,7)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1980" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1410</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,7)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,5)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,5)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1850" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1280</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,5)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,3)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,3)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1720" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1150</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,3)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,1)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1590" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1020</posx>
+				<posy>35</posy>
+				<visible>Container.OnNext</visible>
+				<animation effect="rotatey" center="1460" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+					<effect type="rotatey" center="1320" start="0" end="-60" time="250"/>
+					<effect type="zoom" start="100" end="111" time="250"/>
+					<effect type="slide" start="0,0" end="0,-54" time="250"/>
+				</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>960</posx>
+				<visible>Container.OnNext</visible>
+				<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+					<effect type="rotatey" center="720" start="0" end="-60" time="250"/>
+					<effect type="zoom" start="100" end="88" time="250"/>
+					<effect type="slide" start="0,0" end="0,66" time="250"/>
+				</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<control type="group" id="5102">
+			<posy>585</posy>
+			<camera x="960" y="810" />
+			<visible>Control.IsVisible(553) + Container.OnPrevious + !Skin.HasSetting(flattenmultiplex)</visible>
+			<animation effect="slide" end="130,0" time="250" reversible="false">Hidden</animation>
+			<control type="group">
+				<posx>1670</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,11)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,11)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="2110" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(7).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(7).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(7).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(7).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1540</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,11)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,9)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,9)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1980" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1410</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,9)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,7)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,7)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1850" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1280</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,7)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,5)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,5)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1720" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1150</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,5)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,3)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,3)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1590" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1020</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,3)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,1)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1460" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+
+
+			<!-- image off screen to stop lag of fading new item -->
+			<control type="group">
+				<posx>-400</posx>
+				<control type="image">
+					<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+					<info>ListItem(-7).Thumb</info>
+				</control>
+			</control>
+		
+			<control type="group">
+				<posx>120</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,12)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,12)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="-320" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>250</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,12)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,10)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,10)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="-190" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>380</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,10)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,8)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,8)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="-60" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>510</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,8)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,6)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,6)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="70" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>640</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,6)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,4)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,4)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="200" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>770</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,4)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,2)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,2)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="330" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>900</posx>
+				<posy>35</posy>
+				<visible>Container.OnPrevious</visible>
+					<animation effect="rotatey" center="460" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+					<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+						<effect type="rotatey" center="600" start="0" end="60" time="250"/>
+						<effect type="zoom" start="100" end="111" time="250"/>
+						<effect type="slide" start="0,0" end="0,-54" time="250"/>
+					</animation>
+				<control type="group">
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,2)] | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,1)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmusic) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>960</posx>
+				<visible>Container.OnPrevious</visible>
+				<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+					<effect type="rotatey" center="1200" start="0" end="60" time="250"/>
+					<effect type="zoom" start="100" end="88" time="250"/>
+					<effect type="slide" start="0,0" end="0,66" time="250"/>
+				</animation>
+				<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + ![stringcompare(Container.NumItems,0) | stringcompare(Container.NumItems,1)]]</visible>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<control type="group" id="5100">
+			<posy>585</posy>
+			<camera x="960" y="810" />
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<visible>Control.IsVisible(553) + !Control.IsVisible(5101) + !Control.IsVisible(5102) + !Skin.HasSetting(flattenmultiplex)</visible>
+			<control type="group">
+				<posx>250</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="-190" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,12)]</visible>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>380</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="-60" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,10)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>510</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="70" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,8)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>640</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="200" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,6)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>770</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="330" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,4)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>900</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="460" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,2)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			
+			<control type="group">
+				<posx>1670</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="2110" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,11)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1540</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1980" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,9)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1410</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1850" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,7)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1280</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1720" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,5)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1150</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1590" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,3)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1020</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1460" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmusic) | [Skin.HasSetting(dynamicflowmusic) + IntegerGreaterThan(Container.NumItems,1)]</visible>
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>960</posx>
+				<control type="group">
+					<include condition="Window.IsActive(2)">Musicshadeblack</include>				
+					<control type="largeimage">
+						<include condition="!Skin.HasSetting(musicgenres)">MultiplexMusicThumb</include>
+						<include condition="Skin.HasSetting(musicgenres)">MultiplexMusicGenreDefaultThumb</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumb</include>
+						<texture diffuse="multiplex/music_thumb_mask.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMusicGlassRight</include>
+					</control>
+					<include condition="Window.IsActive(2)">MusicshadeblackReflection</include>						
+					<control type="largeimage">
+						<include>MultiplexMusicThumbReflection</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="image">
+						<include>MultiplexMusicGenreThumbReflection</include>
+						<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+
+	<include name="Viewtype_Multiplex_Music">
+		<control type="wraplist" id="553">
+			<viewtype label="Multiplex">list</viewtype>
+			<posx>97</posx>
+			<posy>636</posy>
+			<width>1710</width>
+			<height>570</height>	
+			<onleft>553</onleft>
+			<onright>553</onright>
+			<onup>111</onup>
+			<ondown>61</ondown>
+			<pagecontrol>61</pagecontrol>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>	
+			<scrolltime>250</scrolltime>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include> -->
+			<visible>Window.IsActive(501) | Window.IsActive(502)</visible>
+			<itemlayout width="340" height="500">
+				<control type="image">
+					<include>MultiplexIconDimensionsMusicWrap</include>
+					<texture background="true" diffuse="multiplex/music_thumb_mask.png">DefaultAudio.png</texture>
+					<include condition="Window.IsActive(2)">MultiplexMusicThumbKeep</include>
+					<include condition="!Window.IsActive(2)">MultiplexMusicThumbStretch</include>		
+					<info>ListItem.Icon</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>371</width>
+					<height>371</height>
+					<texture>multiplex/music_thumb_glass.png</texture>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
+				</control>
+				<control type="image">
+					<include>MultiplexIconDimensionsMusicWrapReflect</include>
+					<texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">DefaultAudio.png</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
+				</control>				
+				<control type="image">
+					<posx>173</posx>
+					<posy>0</posy>
+					<width>35</width>
+					<height>35</height>
+					<include>detailcolorfocus</include>
+					<info>ListItem.Overlay</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="340" height="500">
+				<control type="image">
+					<include>MultiplexIconDimensionsMusicWrap</include>
+					<texture background="true" diffuse="multiplex/music_thumb_mask.png">DefaultAudio.png</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<info>ListItem.Icon</info>
+					<include>Animation_MultiplexMusicFocusZoom</include>					
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
+				</control>							
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>371</width>
+					<height>371</height>
+					<texture>multiplex/music_thumb_glass.png</texture>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
+					<include>Animation_MultiplexMusicFocusZoom</include>					
+				</control>
+				<control type="image">
+					<include>MultiplexIconDimensionsMusicWrapReflect</include>
+					<texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">DefaultAudio.png</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100)</visible>
+					<include>Animation_MultiplexMusicFocusZoom</include>					
+				</control>					
+				<control type="image">
+					<posx>173</posx>
+					<posy>0</posy>
+					<width>35</width>
+					<height>35</height>
+					<info>ListItem.Overlay</info>
+					<include>Animation_MultiplexMusicFocusZoom</include>	
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5100) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+				</control>
+			</focusedlayout>			
+		</control>
+	</include>
+</includes>

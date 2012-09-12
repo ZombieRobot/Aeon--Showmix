@@ -1,0 +1,122 @@
+<window id="100">
+	<defaultcontrol>10</defaultcontrol>
+	<zorder>4</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+
+	<control type="group">
+		<posx>577</posx>
+		<posy>600</posy>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>720</width>
+			<height>202</height>
+			<texture>dialogs/yesno_backg.png</texture>		
+		</control>	
+		<include>Dialogs_Exclam</include>
+	
+		<control type="label" id="1">
+			<description>heading label</description>
+			<include>Dialogs_Pos1</include>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<posx>151</posx>
+			<width>532</width>
+			<height>31</height>
+			<textcolor>FFBBBBBB</textcolor>
+			<align>center</align>
+			<font>Font_ProgressLabel</font>		
+			<scroll>true</scroll>
+			<label>13406</label>
+		</control>
+
+		<control type="label" id="2">
+			<description>dialog line 1</description>
+			<include>Dialogs_Pos2</include>
+			<posx>151</posx>
+			<width>532</width>
+			<height>21</height>
+			<textcolor>FFBBBBBB</textcolor>
+			<align>center</align>
+			<font>Font_ProgressLabel</font>		
+			<scroll>true</scroll>
+			<label>-</label>
+		</control>
+
+		<control type="label" id="3">
+			<description>dialog line 2</description>
+			<include>Dialogs_Pos3</include>
+			<posx>151</posx>
+			<width>532</width>
+			<height>31</height>
+			<textcolor>FFBBBBBB</textcolor>
+			<align>center</align>
+			<font>Font_ProgressLabel</font>		
+			<scroll>true</scroll>
+			<label>-</label>
+		</control>
+		<control type="label" id="4">
+			<description>dialog line 3</description>
+			<include>Dialogs_Pos4</include>
+			<posx>110</posx>
+			<width>532</width>
+			<height>31</height>
+			<textcolor>FFBBBBBB</textcolor>
+			<align>left</align>
+			<font>Font_ProgressLabel</font>		
+			<scroll>true</scroll>
+			<label>-</label>
+		</control>
+	
+		<control type="button" id="10">
+			<description>No button</description>
+			<posx>220</posx>
+			<posy>137</posy>
+			<width>142</width>
+			<height>52</height>
+			<label>106</label>
+			<font>Font_ProgressLabel</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>dd262728</textcolor>
+			<focusedcolor>FFf5f5f5</focusedcolor>
+			<selectedcolor>FFf5f5f5</selectedcolor>
+			<pulseonselect>true</pulseonselect>
+			<texturefocus>dialogs/yesno_button_pressed.png</texturefocus>
+			<texturenofocus>dialogs/yesno_button.png</texturenofocus>
+			<onleft>11</onleft>
+			<onright>11</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+		</control>
+		<control type="button" id="11">
+			<description>Yes button</description>
+			<posx>363</posx>
+			<posy>137</posy>
+			<width>142</width>
+			<height>52</height>
+			<label>107</label>
+			<font>Font_ProgressLabel</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>dd262728</textcolor>
+			<focusedcolor>FFf5f5f5</focusedcolor>
+			<selectedcolor>FFf5f5f5</selectedcolor>
+			<pulseonselect>true</pulseonselect>
+			<texturefocus>dialogs/yesno_button_pressed.png</texturefocus>
+			<texturenofocus>dialogs/yesno_button.png</texturenofocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>11</onup>
+			<ondown>11</ondown>
+		</control>
+	</control>
+
+	</controls>
+</window>

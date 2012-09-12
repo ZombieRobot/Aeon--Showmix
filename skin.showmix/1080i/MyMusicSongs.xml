@@ -1,0 +1,112 @@
+<window id="501">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50,550,53,553</views>
+	<controls>
+		<include>CommonMusicBackground</include>
+		<include>MediaBackdropsFanart</include>
+		<include>MediaBackdropsMusicGenres</include>
+
+		<include>Furniture_WallBackground</include>
+		<include>Furniture_Time</include>		
+		<include>Furniture_WallRSS</include>		
+
+		<include>Animation_OpenCloseZoom</include>
+		<include>Furniture_Stage</include>
+
+		<include>Viewtype_LowList</include>
+		<include>Viewtype_Multiplex</include>
+		<include>Viewtype_List</include>
+		<include>Viewtype_Wall</include>
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
+
+		<!-- Movies/TvShows VideoNav Menu-->
+		<control type="group">
+			
+			<!-- Second Columns -->
+			<include>VerticalMenu_SecondColumnViewChange</include>
+			
+			<!-- Background Image -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>375</width>
+				<height>1080</height>
+				<texture>common/menupanel_vertical.png</texture>
+				<include>Animation_MediaMenuSlideVertical</include>
+			</control>
+			
+			<control type="image">
+				<posx>15</posx> 
+				<posy>22</posy>
+				<width>66</width>
+				<height>45</height>
+				<include>Animation_MediaMenuSlideVertical</include>
+				<include>common-fade-quick</include>
+				<texture>windows/logo_music.png</texture>
+			</control>
+		
+			<!-- Menu Title: Music-->
+			<control type="label">
+				<label>31037</label>
+				<include>VerticalMenu_Label</include>
+			</control>
+
+			<!-- Main Menu (First Column) -->
+			<control type="grouplist" id="7000">
+				<posx>0</posx>
+				<posy>82</posy>
+				<width>387</width>
+				<height>1080</height>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+				<scroll>false</scroll>
+				<onleft>50</onleft>
+				<onup>7000</onup>
+				<ondown>7000</ondown>
+				<include>Animation_CommonFade</include>
+				<include>Animation_MediaMenuSlideVertical</include>
+				<visible>!Skin.HasSetting(kiosk)</visible>
+				
+				<!--###### Buttons ######-->
+				<control type="button"  id="900">
+					<include>VerticalMenu_Button2</include>
+					<label>$LOCALIZE[31050] $INFO[Container.Viewmode]</label>
+					<onright>SetFocus(7011)</onright>
+					<onclick>SetFocus(7011)</onclick>
+				</control>
+				
+				<control type="label" id="3070">
+					<include>VerticalMenu_GroupTitle</include>
+					<label>$LOCALIZE[31971]</label>
+				</control>
+				
+				<include>VerticalMenu_PosterThumbButtons</include>
+				<include>VerticalMenu_ListButtons</include>
+				<include>VerticalMenu_WallGridButton</include>
+				<include>VerticalMenu_FanartButtons</include>
+				
+				<control type="label" id="30501">
+					<include>VerticalMenu_GroupTitle</include>
+					<label>$LOCALIZE[31967]</label>
+				</control>
+								
+				<include>VerticalMenu_SortButton</include>
+				<include>VerticalMenu_FilterButton</include>
+				<include>VerticalMenu_SearchButton</include>
+				<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_LibraryButtons</include>
+				<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_FilesButtons</include>
+				<include condition="!Skin.HasSetting(nomenusettings)">VerticalMenu_SetupButtons</include>
+
+				<control type="label" id="30502">
+					<include>VerticalMenu_GroupTitle</include>
+					<label>DEBUG</label>
+					<visible>Skin.HasSetting(debug)</visible>
+				</control>
+				<include condition="Skin.HasSetting(debug)">VerticalMenu_MediaDebugButtons</include>
+			</control>
+		</control>
+	
+	</controls>
+</window>

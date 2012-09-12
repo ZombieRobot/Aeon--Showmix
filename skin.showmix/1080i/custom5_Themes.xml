@@ -1,0 +1,236 @@
+﻿<!-- Aeon Showmix -->
+
+<window id="622">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+	<controls>
+		<include>CommonSettingsBackground</include>
+		<include>GlobalBackgroundShade</include>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false" condition="!Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(18) + !Window.Previous(19) + !Window.Previous(17) + !Window.Previous(604) + !Window.Previous(56) + !Window.Previous(34)">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>	
+			<include>Animation_CommonFade</include>
+			<include>Furniture_SettingsBackPanel</include>
+			<control type="image">
+				<include>Furniture_SettingsInternalBackPanel</include>
+				<include>Animation_SettingsInternalPanel</include>
+			</control>
+			<control type="label">
+				<description>sectiontitle</description>
+				<posx>80</posx>
+				<posy>105</posy>
+				<width>1404</width>
+				<height>73</height>
+				<textcolor>FFbec0c2</textcolor>
+				<font>Font_SettingsSectionTitle</font>
+				<include>Animation_CommonFadeOpenClose</include>
+				<label>$LOCALIZE[32081]</label>
+			</control>
+			<control type="label">
+				<description>sectiontitle</description>
+				<posx>95</posx>
+				<posy>160</posy>
+				<width>1404</width>
+				<height>73</height>
+				<textcolor>FFbec0c2</textcolor>
+				<font>Font_SettingsSectionMenuButtonSubtitle</font>
+				<include>Animation_CommonFadeOpenClose</include>
+				<label>$LOCALIZE[32082]</label>
+			</control>
+			<control type="group">
+				<posx>498</posx>
+				<posy>87</posy>
+				<width>1260</width>
+				<height>870</height>
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>backdrops/virtualtheme/default</imagepath>
+					<visible>Container(51).HasFocus(1)</visible>
+				</control>
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>backdrops/virtualtheme/classic</imagepath>
+					<visible>Container(51).HasFocus(2)</visible>
+				</control>
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>backdrops/virtualtheme/showmixnew</imagepath>
+					<visible>Container(51).HasFocus(3)</visible>
+				</control>
+			</control>
+			
+  
+			
+				
+ 
+  <!-- SetFocus -->
+			<control type="grouplist" id="50">
+				<control type="button" id="151">					
+					<onfocus>SetFocus(51)</onfocus>
+				</control>
+			</control>
+  
+  <!-- View Type Video -->
+			<control type="group">
+				<posy>75</posy>
+				<include>Animation_CommonFadeOpenClose</include>
+				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
+				
+				<control type="group">
+					<control type="list" id="51">
+						<posx>63</posx>
+						<posy>135</posy>
+						<height>975</height>
+						<width>375</width>
+						<onleft>50</onleft>
+						<onright>50</onright>
+						<onup>51</onup>
+						<ondown>51</ondown>
+						<viewtype>list</viewtype>
+						<orientation>vertical</orientation>
+						<focusposition>0</focusposition>
+						<scrolltime>200</scrolltime>
+						<visible>true</visible>
+						<itemlayout width="324" height="76">
+							<control type="label">
+								<posx>30</posx>
+								<posy>4</posy>
+								<include>Objects_SettingsSectionMenuButton</include>
+								<info>ListItem.Label</info>
+							</control>
+							<control type="label">
+								<posx>30</posx>
+								<posy>42</posy>
+								<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+								<info>ListItem.Label2</info>
+							</control>
+						</itemlayout>
+						<focusedlayout width="324" height="76">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>324</width>
+								<height>81</height>
+								<texture>settings/settings_leftmenufocus.png</texture>
+								<visible>Skin.HasSetting(aeon_leather)</visible>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>324</width>
+								<height>81</height>
+								<texture>settings/settings_leftmenufocus.png</texture>
+								<visible>!Skin.HasSetting(aeon_leather) + !Skin.HasSetting(aeon_classic)</visible>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>324</width>
+								<height>81</height>
+								<texture>settings/settings_leftmenufocus.png</texture>
+								<visible>Skin.HasSetting(aeon_classic)</visible>
+							</control>
+							
+							<control type="label">
+								<posx>30</posx>
+								<posy>4</posy>
+								<include>Objects_SettingsSectionMenuButtonFocused</include>
+								<textcolor>FF262728</textcolor>
+								<info>ListItem.Label</info>
+							</control>
+							<control type="label">
+								<posx>30</posx>
+								<posy>42</posy>
+								<align>left</align>
+								<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+								<textcolor>FF262728</textcolor>
+								<info>ListItem.Label2</info>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<description>Showmix New Theme</description>
+								<label>32063</label>
+								<label2>32083</label2>
+								<icon>-</icon>
+								<onclick>Skin.Reset(aeon_classic)</onclick>
+								<onclick>Skin.Reset(aeon_new)</onclick>
+								<onclick>Skin.SetBool(aeon_leather)</onclick>
+							</item>
+							<item id="2">
+								<description>Showmix Classic Theme</description>
+								<label>32062</label>
+								<label2>32084</label2>
+								<icon>-</icon>
+								<onclick>Skin.Reset(aeon_leather)</onclick>
+								<onclick>Skin.Reset(aeon_new)</onclick>
+								<onclick>Skin.SetBool(aeon_classic)</onclick>
+							</item>	
+							<item id="3">
+								<description>Showmix New Theme</description>
+								<label>38001</label>
+								<label2>38002</label2>
+								<icon>-</icon>
+								<onclick>Skin.Reset(aeon_leather)</onclick>
+								<onclick>Skin.Reset(aeon_classic)</onclick>
+								<onclick>Skin.SetBool(aeon_new)</onclick>
+							</item>	
+						</content>
+					</control>
+				</control>
+			</control>
+		<include>Furniture_SettingsFrontPanel</include>
+		<control type="group">
+				<control type="image">
+					<description>background image</description>
+					<posx>63</posx>
+					<posy>42</posy>
+					<width>1794</width>
+					<height>976</height>
+					<texture>settings/settings_panelfront.png</texture>
+				</control>
+				<control type="image">
+					<posx>496</posx>
+					<posy>64</posy>
+					<width>1263</width>
+					<height>951</height>
+					<texture>settings/settings_intframe_top.png</texture>
+					<include>Animation_SettingsInternalPanel</include>
+				</control>
+			</control>
+			<control type="group">
+				<description>Settings Labels - Tier 1: Movies</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(51).HasFocus(1)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>32085</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>32086</label>
+				</control>
+			</control>
+				
+			<control type="group">
+				<description>Settings Labels - Tier 1: Music</description>
+				<include>Labels_MainLabelGroup</include>
+				<visible>Container(51).HasFocus(2)</visible>
+				<control type="label">
+					<include>Labels_MainLabelBigVars</include>
+					<label>32087</label>
+				</control>
+				<control type="label">
+					<include>Labels_MainLabelSmallVars</include>
+					<label>32088</label>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

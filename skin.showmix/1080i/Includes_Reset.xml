@@ -1,0 +1,88 @@
+<includes>
+
+<include name="PurgeSettings">
+		<onclick>Skin.SetBool(lowermainmenu)</onclick>
+		<onclick>Skin.SetString(MovieInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(TVShowsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(TVSeasonsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(TVEpisodesInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(MusicAlbumsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(MusicArtistsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(MusicSongsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(CommonInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+		<onclick>Skin.SetString(LowListMovieInfoStyle,$LOCALIZE[32009])</onclick>
+		<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31046])</onclick>
+		<onclick>Skin.SetString(TVInfoStyle,$LOCALIZE[31984])</onclick>
+		<onclick>Skin.SetString(MusicInfoStyle,$LOCALIZE[31044])</onclick>
+		<onclick>Skin.SetBool(multiplextvfanart)</onclick>
+		<onclick>Skin.SetBool(movieplot)</onclick>
+		<onclick>Skin.SetBool(tvepisodeslistfull)</onclick>
+		<onclick>Skin.SetBool(musicsongslistfull)</onclick>
+		<onclick>Skin.SetBool(Weather_ani)</onclick>
+		<onclick>Skin.SetBool(CustomWeatherConditions)</onclick>
+		<onclick>Skin.SetBool(open_playlists)</onclick>
+		<onclick>Skin.SetBool(allowscroll)</onclick>
+		<onclick>Skin.SetBool(inforatings)</onclick>
+		<onclick>Skin.SetBool(darkshowcase)</onclick>
+		<onclick>Skin.SetBool(nocurtains)</onclick>
+		<onclick>Skin.SetBool(tvpreview)</onclick>
+		<onclick>Skin.SetBool(movietrailers)</onclick>
+		<onclick>Skin.SetBool(tvshowposterview)</onclick>
+		<onclick>Skin.SetBool(tvseasonposterview)</onclick>
+		<onclick>Skin.SetBool(tvepisodeposterview)</onclick>
+		<onclick>Skin.SetBool(listpanelthin)</onclick>
+		<onclick>Skin.SetBool(multiplexthin)</onclick>
+		<onclick>Skin.SetBool(dynamicflowtv)</onclick>
+		<onclick>Skin.SetBool(dynamicflowmovie)</onclick>
+		<onclick>Skin.SetBool(dynamicflowmusic)</onclick>
+		<onclick>Skin.SetString(playlist,playlists=window)</onclick>
+		<onclick>Skin.SetString(extra_widget_set,ShowMix News)</onclick>
+		<onclick>Skin.SetBool(extra_widget_on)</onclick>
+		<onclick>Skin.SetString(Pictures_widget_set,Deviantart)</onclick>
+		<onclick>Skin.SetBool(Pictures_widget_on)</onclick>
+		<onclick>Skin.SetBool(defaultsset)</onclick>
+</include>
+
+	<include name="SetDefaults">
+		<onfocus>Skin.SetBool(lowermainmenu)</onfocus>
+		<onfocus>Skin.SetString(MovieInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(TVShowsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(TVSeasonsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(TVEpisodesInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(MusicAlbumsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(MusicArtistsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(MusicSongsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(CommonInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onfocus>
+		<onfocus>Skin.SetString(LowListMovieInfoStyle,$LOCALIZE[32009])</onfocus>
+		<onfocus>Skin.SetString(MovieInfoStyle,$LOCALIZE[31046])</onfocus>
+		<onfocus>Skin.SetString(TVInfoStyle,$LOCALIZE[31984])</onfocus>
+		<onfocus>Skin.SetString(MusicInfoStyle,$LOCALIZE[31044])</onfocus>
+		<onfocus>Skin.SetBool(tvepisodeslistfull)</onfocus>
+		<onfocus>Skin.SetBool(musicsongslistfull)</onfocus>
+		<onfocus>Skin.SetBool(Weather_ani)</onfocus>
+		<onfocus>Skin.SetBool(CustomWeatherConditions)</onfocus>
+		<onfocus>Skin.SetBool(open_playlists)</onfocus>
+		<onfocus>Skin.SetBool(allowscroll)</onfocus>
+		<onfocus>Skin.SetBool(inforatings)</onfocus>
+		<onfocus>Skin.SetBool(darkshowcase)</onfocus>
+		<onfocus>Skin.SetBool(nocurtains)</onfocus>
+		<onfocus>Skin.SetBool(tvpreview)</onfocus>
+		<onfocus>Skin.SetBool(movietrailers)</onfocus>
+		<onfocus>Skin.SetBool(tvshowposterview)</onfocus>
+		<onfocus>Skin.SetBool(tvseasonposterview)</onfocus>
+		<onfocus>Skin.SetBool(tvepisodeposterview)</onfocus>
+		<onfocus>Skin.SetBool(listpanelthin)</onfocus>
+		<onfocus>Skin.SetBool(multiplexthin)</onfocus>
+		<onfocus>Skin.SetBool(dynamicflowtv)</onfocus>
+		<onfocus>Skin.SetBool(dynamicflowmovie)</onfocus>
+		<onfocus>Skin.SetBool(dynamicflowmusic)</onfocus>
+		<onfocus>Skin.SetString(playlist,playlists=window)</onfocus>
+		<onfocus>Skin.SetString(extra_widget_set,ShowMix News)</onfocus>
+		<onfocus>Skin.SetBool(extra_widget_on)</onfocus>
+		<onfocus>Skin.SetString(Pictures_widget_set,Deviantart)</onfocus>
+		<onfocus>Skin.SetBool(Pictures_widget_on)</onfocus>
+		<onfocus>Skin.SetBool(defaultsset)</onfocus>
+	</include>
+
+</includes>
+

@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- $Revision: 204$ -->
+<!--  strings 31000 thru 31999 reserved for skins  -->
+
+ <strings>
+	<string id="31002">静音</string>
+	<string id="31003">此版本中天气界面选项无效</string>
+	<string id="31004">重置背景</string>
+	<string id="31005">项</string>
+	<string id="31006">正在播放</string>
+	<string id="31007">暂停</string>
+	<string id="31008">温度</string>
+	<string id="31009">单位</string>
+  
+<!-- Main Menu -->
+  
+	<string id="31010">音乐</string>
+	<string id="31011">游戏</string>
+	<string id="31012">图片</string>
+	<string id="31013">电影</string>
+	<string id="31014">电视</string>
+	<string id="31015">视频</string>
+	<string id="31016">设置</string>
+	<string id="31017">天气</string>
+	<string id="31018">光盘</string>
+	<string id="31019">关机</string>
+	<string id="31020">脚本</string>
+	<string id="31021">助手</string>
+
+  <string id="31024">页</string>
+  <string id="31025">项</string>
+
+<!-- Media Window titles -->
+ 
+	<string id="31030">游戏</string> 
+	<string id="31031">图片</string>
+	<string id="31032">电影</string> 
+	<string id="31033">电视</string>
+	<string id="31034">视频</string>
+	<string id="31035">天气</string>
+	<string id="31036">脚本</string>
+	<string id="31037">音乐</string>
+	<string id="31038">播放列表</string>
+	<string id="31039">编辑器</string>
+	<string id="31040">播放：</string>
+	<string id="31041">艺术家：</string>
+
+<!-- Media Window options -->
+
+	<string id="31050">视图：</string> 
+	<string id="31051">随机播放</string>
+	<string id="31052">粗</string> 
+	<string id="31053">细</string> 
+	<string id="31054">设置</string> 
+	<string id="31055">堆叠</string> 
+	<string id="31056">缩略图：SQUARE</string>
+	<string id="31057">文件浏览</string>
+	<string id="31058">隐藏已观看</string>
+	<string id="31059">缩略图：海报</string>
+	<string id="31060">布局：平铺</string>
+	<string id="31061">布局：流动</string>
+	<string id="31062">季</string>
+	<string id="31063">集</string>
+	<string id="31064">同人画</string>
+	<string id="31065">面板</string>
+	<string id="31066">已看标记</string>
+	<string id="31067">背景</string>
+	<string id="31068">资料库</string>
+	<string id="31069">媒体标识</string>
+	<string id="31070">资料窗</string>
+	<string id="31071">精简</string>
+	<string id="31072">完整</string>
+	<string id="31073">默认</string>
+	<string id="31074">最多</string>
+	<string id="31075">布局</string>
+	<string id="31076">网格</string>
+	<string id="31077">开</string>
+	<string id="31078">关</string>
+	<string id="31079">自动隐藏</string>
+	
+<!-- Aeon Customisation Virtual Home page labels -->
+  
+	<string id="31080">背景</string>
+	<string id="31081">更改背景</string>
+	<string id="31082">按左/右键浏览，确认键更改</string>
+	<string id="31083">自定义背景</string>
+	<string id="31084">选择背景类型</string>
+	<string id="31085">按上键选单背景图，下键选多背景图目录</string>
+	<string id="31086">快捷方式</string>
+	<string id="31087">开关主界面菜单快捷方式</string>
+	<string id="31088">按左/右键浏览，确认键切换开关</string>
+	<string id="31089">菜单位置</string>
+	<string id="31090">调整主界面对象</string>
+	<string id="31091">按左/右键浏览，确认键重新定位</string>
+	<string id="31092">按确认键重定位主菜单条</string>
+	<string id="31093">按确认键组合时间条</string>
+	<string id="31094">按确认键解除时间条组合</string>
+	<string id="31095">按确认键组合 RSS FEED</string>
+	<string id="31096">按确认键解除 RSS FEED 组合</string>
+	<string id="31097">清除设置</string>
+	<string id="31098">清除所有设置</string>
+	<string id="31099">按左/右键复原原始按钮设置</string>
+	<string id="31100">注意：此操作无法撤销</string>
+	<string id="31101">按方向键取消，确认键执行</string>
+	<string id="31102">选择</string>
+	<string id="31103">背景类型</string>
+	<string id="31104">切换</string>
+	<string id="31105">快捷方式</string>
+	<string id="31106">定制 OSD 菜单项</string>
+	<string id="31107">按左/右键浏览，确认键切换开关</string>
+	<string id="31108">切换上部详细信息栏模式（当前：小）</string>
+	<string id="31109">切换进度条开关（当前：开）</string>
+	<string id="31110">切换时间信息显示（当前：关）</string>
+	<string id="31111">切换上部详细信息栏模式（当前：大）</string>
+	<string id="31112">切换进度条开关（当前：关）</string>
+	<string id="31113">切换时间信息显示（当前：开）</string>	
+  
+<!-- Aeon Customisation Menu labels -->
+  
+	<string id="31120">个性背景</string>
+	<string id="31121">个性化 AEON 皮肤</string>
+	<string id="31122">主菜单项</string>
+	<string id="31123">定制主界面菜单项</string>
+	<string id="31124">首页调整</string> 
+	<string id="31125">调整时间和滾动信息栏</string>
+	<string id="31126">清除设置</string> 
+	<string id="31127">清除个性化设置</string>
+	<string id="31128">音乐 OSD</string>
+	<string id="31129">定制播放音乐显示信息</string>
+
+
+<!-- XBMC Settings Menu labels -->
+  
+	<string id="31140">视频</string>
+	<string id="31141">回放和资料库</string>
+	<string id="31142">音乐</string>
+	<string id="31143">回放和资料库</string>
+	<string id="31144">程序</string>
+	<string id="31145">游戏和应用程序</string>
+	<string id="31146">图片</string>
+	<string id="31147">浏览和幻灯片</string>
+	<string id="31148">天气</string>
+	<string id="31149">地点和表现形式</string>
+	<string id="31150">网络</string>
+	<string id="31151">本地和互联网</string>
+	<string id="31152">系统</string>
+	<string id="31153">缓存和硬件</string>
+	<string id="31154">外观</string>
+	<string id="31155">界面和显示</string>
+	<string id="31156">定制</string>
+	<string id="31157">个性化 AEON</string>
+	<string id="31158">高级选项</string>
+	<string id="31159">AEON 扩展选项</string>
+	<string id="31160">配置文件</string>
+	<string id="31161">用户帐号及配置</string>
+	<string id="31162">登录画面</string>
+	<string id="31163">选项</string>
+	<string id="31164">登录画面</string>
+	<string id="31165">用户</string>
+	<string id="31166">管理配置文件</string>
+
+<!--  Button / Shutdown Menu  --> 
+
+	<string id="31200">设置</string> 
+	<string id="31201">定制</string>
+	<string id="31202">助手</string> 
+	<string id="31203">背景特效：关</string>
+	<string id="31204">背景特效：开</string> 
+	<string id="31205">正在播放</string>
+	<string id="31206">定时关机</string> 
+	<string id="31207">重启</string> 
+	<string id="31208">关机</string>
+	<string id="31209">注销</string>
+	<string id="31210">弹出</string>
+
+<!--  Set Content / Add Source dialogs  --> 
+  
+	<string id="31220">内容类型：</string>
+	<string id="31221">输入或浏览媒体目录的路径</string>
+	<string id="31222">为此共享定义一个名称</string>
+	<string id="31223">列表</string>
+	<string id="31224">平铺</string>
+
+<!-- Aeon Advanced Menu labels -->
+  
+	<string id="31230">AEON</string> 
+	<string id="31231">选项</string>
+	<string id="31232">常规</string>
+	<string id="31233">全局选项设置</string>
+	<string id="31234">主界面</string>
+	<string id="31235">首页选项设置</string>
+	<string id="31236">视图</string>
+	<string id="31237">媒体浏览设置</string>
+	<string id="31238">预设</string>
+	<string id="31239">快速配置</string>
+	<string id="31240">同人画</string>
+	<string id="31241">相关插画图片</string>
+	<string id="31242">全部启用</string>
+	<string id="31243">全部禁用</string>
+	<string id="31244">菜单</string>
+	<string id="31245">浏览菜单设置</string>
+	<string id="31246">SHOWMIX</string>
+	<string id="31247">修改版特别设置</string>
+	<string id="31248">子菜单项</string>
+	<string id="31229">增加删除菜单项目</string>
+
+
+  
+<!-- Aeon Advanced options -->
+
+	<string id="31249">启用媒体标识切换</string>
+	<string id="31250">启用多布局切换（同人画，剧情，海报，缩略图）</string>
+	<string id="31251">启用多信息显示方式切换（开，关，自动，触发）</string>
+	<string id="31252">主界面菜单渐变特效</string>
+	<string id="31253">将游戏快捷方式指向“LAUNCHER”插件</string>
+	<string id="31258">在电影信息页面显示电影评分（IMDB 等）</string>
+	<string id="31259">显示媒体标识的默认图标（否则不显示）</string>
+	<string id="31260">显示时间条</string>
+	<string id="31261">主界面显示天气信息</string>
+	<string id="31262">音乐的相关插画图片（同人画）</string>
+	<string id="31264">电影的相关插画图片（同人画）</string>
+	<string id="31265">电视的相关插画图片（同人画）</string>
+	<string id="31266">图片的相关插画图片（同人画）</string>
+	<string id="31268">在“封面墙”视图显示RSS/正在播放栏</string>
+	<string id="31270">缩放使用动态特效</string>
+	<string id="31271">在“封面/列表”视图中菜单栏使用淡入淡出特效</string>
+	<string id="31278">允许滾动显示剧情介绍/评论信息等</string>
+	<string id="31279">全屏信息页的相关插画图片（同人画）</string>
+	<string id="31280">开发模式</string>
+	<string id="31281">显示媒体标识（出品人图标，音视频格式等）</string>
+	<string id="31284">主界面视觉特效</string>
+	<string id="31285">以文本方式显示电影评分（否则以5星显示）</string>
+	<string id="31286">以文本方式显示音乐评分（否则以5星显示）</string>	
+	<string id="31287">禁用媒体窗口的菜单栏</string>
+	<string id="31288">启用电影搜索（电影资料库）</string>
+	<string id="31289">启用电视搜索（电视资料库）</string>
+	<string id="31290">启用设置快捷方式（所有媒体）</string>
+	<string id="31291">启用已观看/未观看电影切换（电影资料库）</string>
+	<string id="31292">启用已观看/未观看电视切换（电视资料库）</string>
+	<string id="31293">启用文件视图快捷方式（电影和电视资料库）</string>
+	<string id="31294">显示大键盘/数字键区</string>
+	<string id="31295">大时间条和RSS滾动信息栏</string>
+	<string id="31296">打开亮/暗主题切换</string>
+	<string id="31297">音乐“列表”视图使用单层封面略缩图</string>
+	<string id="31298">电影“列表”视图使用单层封面略缩图</string>
+	<string id="31299">在“展览”视图显示RSS/正在播放栏</string>
+	
+<!-- XBMC Settings Menu headings -->
+	
+	<string id="31300">视频</string>
+	<string id="31301">图片</string>
+	<string id="31302">外观</string>
+	<string id="31303">网络</string>
+	<string id="31304">系统</string>
+	<string id="31305">音乐</string>
+	<string id="31306">天气</string>
+	<string id="31307">程序</string>
+	<string id="31308">选项</string>
+	
+<!-- XBMC Settings Subtitles -->
+	
+	<string id="31320">查看常规选项</string>
+	<string id="31321">数据库控制选项</string>
+	<string id="31322">视频质量和调校</string>
+	<string id="31323">字体和颜色</string>
+	<string id="31324">标签信息和显示</string>
+	<string id="31325">计时和特效设置</string>
+	<string id="31326">皮肤和RSS设置</string>
+	<string id="31327">语言和区域</string>
+	<string id="31328">分辨率和校准</string>
+	<string id="31329">文件浏览选项设置</string>
+	<string id="31330">屏保模式及延时</string>
+	<string id="31331">代理和信息查询</string>
+	<string id="31332">Web服务器</string>
+	<string id="31333">工作组和登录设置</string>
+	<string id="31334">客户端和共享服务</string>
+	<string id="31335">端口和计时设置</string>
+	<string id="31336">除错和自动关机</string>
+	<string id="31337">自动运行和播放</string>
+	<string id="31338">音频输出选项设置</string>
+	<string id="31339">密码和安全设置</string>
+	<string id="31340">模拟/数字</string>
+	<string id="31341">内容限制</string>
+	<string id="31342">录音和视觉效果</string> 
+	<string id="31343">数据库控制选项</string> 
+	<string id="31344">音频硬件和音量设置</string> 
+	<string id="31345">音乐标签和查找</string> 
+	<string id="31346">歌曲提交和帐号设置</string> 
+	<string id="31347">抓取目录和编码设置</string>
+	<string id="31348">歌词显示和字体</string> 
+	<string id="31349">地区编码和区域</string>
+	<string id="31350">文件浏览默认项</string>
+	<string id="31351">在线数据源设置</string>
+
+<!--  Fullscreen info panel  -->
+
+	<string id="31400">无海报？[CR][CR]请确认有独立的“BIG”图片[CR]与电影文件存放在一起[CR]同时应遵循命名规范：[CR](BARBARELLA.MKV-BIG.PNG)[CR][CR]更多帮助参阅 AEON 用户手册</string>
+	<string id="31401">编剧</string>
+	<string id="31402">导演</string>
+	<string id="31403">集数</string>
+	<string id="31404">出品：</string>
+	<string id="31405">主演</string>
+	<string id="31406">集数</string>
+	<string id="31407">公映</string>
+	<string id="31408">评分</string>
+	<string id="31409">预告片段</string>
+	<string id="31410">资料更新</string>
+	<string id="31411">观看影片</string>
+	<string id="31412">同人画作</string>
+	<string id="31413">人气</string>
+	<string id="31414">无详细剧情</string>
+	<string id="31415">无传记资料</string>
+	<string id="31416">类别</string>
+	<string id="31417">评级</string>
+	<string id="31418">电影海报</string>
+	<string id="31419">刷新</string>
+	<string id="31420">继续播放</string>
+	<string id="31421">播放</string>
+	<string id="31422">评注</string>
+	<string id="31423">标签</string>
+	<string id="31424">无专辑评论</string>
+	<string id="31425">无此信息</string>
+	<string id="31426">音轨</string>
+	<string id="31427">片长</string>
+	<string id="31428">无评论</string>
+	<string id="31429">专辑信息</string>
+	<string id="31430">评论</string>
+	<string id="31431">PUSH LEFT OR RIGHT TO CHANGE RATING</string>
+	<string id="31432">季</string>
+	<string id="31433">集</string>
+	<string id="31434">片长</string>
+	<string id="31435">无演员表信息</string>
+	<string id="31436">年份</string>
+	<string id="31438">风格</string>
+	<string id="31439">已观看</string>
+	<string id="31440">未观看</string>
+	<string id="31441">无日期信息</string>
+	<string id="31442">无修改日期信息</string>
+	<string id="31443">无分辨率</string>
+	<string id="31444">无文件大小信息</string>
+	
+<!--  Aeon Assistant  -->
+
+	<string id="31500">新闻</string>
+	<string id="31501">AEON 在线更新</string>
+	<string id="31502">核心</string>
+	<string id="31503">XBMC 统计信息</string>
+	<string id="31504">制作</string>
+	<string id="31505">开发者与致谢</string>
+	<string id="31510">助手</string>
+	<string id="31511">最后更新</string>
+	<string id="31512">来自 AEON 服务器的定期更新信息</string>
+	<string id="31520">漫游 AEON</string>
+	<string id="31521">AEON 欢迎页面</string>
+	<string id="31522">回归实质</string>
+	<string id="31523">按确认键重播 AEON 导言和漫游</string>
+	<string id="31524">正在连接 AEON 服务器</string>
+	
+<!--  Aeon Assistant Tutorials  -->
+
+	<!-- 31550-31590 RESERVED -->
+	
+<!-- Aeon Assistant vitals -->
+
+	<string id="31598">XBMC 编译日期[CR]AEON 版本[CR]当前主题[CR]语言[CR]屏幕分辨率[CR]可用内存[CR]系统盘空间[CR]CPU 温度[CR]GPU 温度[CR]系统开机时间[CR]联网状态[CR]IP 地址[CR]外置存储</string>
+	
+<!-- Debug mode -->
+
+	<string id="31600">AEON 版本：1.0</string>
+	<string id="31601">空闲系统内存：</string>
+	<string id="31602">XBMC 编译日期：</string>
+	<string id="31603">FPS:</string>
+	<string id="31604">当前窗口 ID：</string>
+	<string id="31605">当前焦点：</string>
+	<string id="31606">活动视图类型：</string>
+	<string id="31607">刷新</string>
+	<string id="31608">信息 开/关</string>
+	<string id="31609">此资料库无内容</string>
+	<string id="31610">放到视频窗口</string>
+	<string id="31611">放到文件窗口</string>
+
+<!-- Welcome screen / Aeon Tour -->
+<!-- ENSURE LOWER/UPPER CASE IS OBEYED --> 
+
+	<string id="31650">欢迎使用 Aeon，一个全新的家庭娱乐中心。[CR]Aeon 将改变您欣赏电影、电视节目、音乐和照片的方式。[CR]我们为您提供了一个精彩的功能介绍便于您对 Aeon 的了解。[CR]感兴趣吗？请按确认键。如果您想跳过，请按退格键。</string>
+	<string id="31651">Aeon 主界面的水平滚动菜单可以让您方便快捷的进入各个不同的娱乐环境。[CR]每个选项的背景都可以随心所欲的定制为单张图片亦或是动态的幻灯展示。[CR]只需要按下一个键，您就可以切换菜单的上下不同位置。[CR]时间条和RSS信息栏同样可以重新定位并且组合在一起。</string>
+	<string id="31652">您可以通过四种不同的视图浏览电影和音乐。每一种视图都为[CR]了专门的用途而设计。“展示”视图提供最大可能的视觉欣赏；[CR]“封面”视图提供更多的常规封面略缩图查看方式；“列表”视图[CR]简洁清爽；而“封面墙”视图则可以满足您迅速定位影片的需求。</string>
+	<string id="31653">Aeon 钟情于精美的封面和海报展示。其视觉原则完全围绕着[CR]不同使用者的嗜好和兴趣。喜欢激烈的动作影片？刺激的游戏？[CR]紧张的电视剧？用钟爱的海报或者封面来装扮您的界面吧，[CR]它们将以高解析度精美的呈现在您面前。</string>
+	<string id="31654">您可以为电影、电视剧或者音乐生成媒体库，把 XBMC 的[CR]威力完全发挥出来，为您提供豪华而多样化的浏览体验。[CR]您可以从 IMDb、Allmusic或者其他您选择的信息来源[CR]站点获取影片剧情介绍、音乐专辑评论等资料。</string>	
+	<string id="31655">按“确认”键开始漫游，按“退格”键跳过</string>
+	<string id="31656">按“下”键进入下一节，按“确认”键跳过</string>
+	<string id="31657">按“下”键进入下一节，按“上”键返回上一节，按“确认”键跳过</string>
+	<string id="31659">穿行于 Aeon 的视图和窗口中再容易不过。[CR]全局导航菜单随时随地为您提供相关设置、视图[CR]定制等快捷方式的访问，一个四方向的“罗盘”[CR]菜单让您可以轻松的在多种视图中切换。</string>
+	<string id="31660">Aeon 和 XBMC 的每一个特性都可以在后台进行配置。[CR]每个媒体环境都可以提供一个多特性设置界面，有针对性[CR]的选项划分让用户易于使用。虚拟界面为您提供直观的[CR]可视化参考，以满足您的个性需求。</string>
+	<string id="31661">Aeon 的背景壁纸没有任何数量上的限制，[CR]您可以为每个区域例如电影、图片的背景指[CR]定一个包含数千张图片的目录。图片将自动[CR]进行缩减或扩大以匹配当前的屏幕分辨率。</string>
+	<string id="31662">XBMC 的媒体播放精准控制让您不会漏掉精彩的每一秒。[CR]从字幕、画面宽高比到音画同步，都可以通过视频和音频[CR]播放时的“在屏显示(OSD)”菜单进行调整。收藏夹可以[CR]轻松的将您的书签永久的保存下来。</string>
+	<string id="31663">Aeon 项目官方网站为您提供了数百张专为 Aeon[CR]各个窗口设计的高品质精美壁纸，完全免费，[CR]也没有烦人的广告。您还可以通过 Aeon 助手[CR]获取官方新内容的更新消息。</string>
+
+<!-- OSD -->
+
+	<string id="31700">编码</string>
+	<string id="31701">比特率</string>
+	<string id="31702">采样率</string>
+	<string id="31703">声道</string>
+	<string id="31704">下一首</string>
+	<string id="31705">快退</string>
+	<string id="31706">快进</string>
+	<string id="31707">音量</string>
+	<string id="31708">位置</string>
+	<string id="31709">播放时间</string>
+	<string id="31710">结束时间</string>
+	<string id="31711">书签有效</string>
+	<string id="31712">上/下：菜单/书签[CR]左/右：菜单选项</string>
+	<string id="31713">播放列表项目</string>
+	<string id="31714">当前位置</string>
+	<string id="31715">上一首</string>
+	<string id="31716">歌曲名称</string>
+	<string id="31717">专辑名称</string>
+	<string id="31718">艺术家</string>
+	<string id="31719">已播时间</string>
+	<string id="31720">歌曲时长</string>
+	
+	<string id="31721">TAKEN (31721)</string>
+	<string id="31722">MODIFIED (31722)</string>
+<!-- View select -->
+
+	<string id="31750">封面墙</string>
+	<string id="31751">展览</string>
+	<string id="31752">列表</string>
+	<string id="31753">封面</string>	
+	<string id="31754">选择</string>	
+	<string id="31755">方向键选择视图[CR]按键退出</string>	
+	<string id="31756">仅列表视图对剧集有效</string>
+	<string id="31757">多元</string>
+	<string id="31578">STRIPSHOW</string>
+	<string id="31579">LOWLIST</string>
+
+<!-- Aeon Settings panel labels -->
+  
+	<string id="31800">外挂字幕</string>
+	<string id="31801">要使用外挂字幕，字幕文件的文件名必须和视频文件的文件名相同。例如，[CR]非诚勿扰.avi 的字幕文件名应为：非诚勿扰.srt（扩展名可以不同）。</string>
+	<string id="31802">音乐视频</string>
+	<string id="31803">XBMC 采用和电影相似的方式来管理音乐视频。在资料库模式，只要指定一个[CR]目录的内容为“音乐视频”，选择一个在线信息源，然后就交给 XBMC 处理吧。</string>
+	<string id="31804">模拟器</string>
+	<string id="31805">所有平台下的 XBMC 都可以启动模拟器，不过使用方法可能有所不同。[CR]请访问 XBMC 论坛（www.xbmc.org）获取相关软件和其他帮助。</string>
+	<string id="31806">按 EXIF 信息旋转照片</string>
+	<string id="31807">新型相机会在拍摄照片时会嵌入拍摄数据。如果启用了这个功能，照片在显示[CR]时将自动旋转到正确的状态。</string>
+	<string id="31808">实时天气预报</string>
+	<string id="31809">XBMC 可以同时显示三个地区的天气预报，感谢 weather.com 提供数据。[CR]根据你所选择的地区，你可以设定采取公制或美制显示天气数据。</string>
+	<string id="31810">简捷的操作方式</string>
+	<string id="31811">一键操作模式使 Aeon 菜单的调整轻松快捷。只需轻按上、下键切换位置，[CR]屏幕上的项目就会自动重新定位。</string>
+	<string id="31812">大容量外部存储</string>
+	<string id="31813">大容量（500GB+）移动硬盘是存放高清电影的理想存储设备。XBMC 可以[CR]从你定义的各种来源中处理数以千计的文件。</string>
+	<string id="31814">真正的高清媒体平台</string>
+	<string id="31815">Aeon 走在数字娱乐的最前端。提供原生的 1080p 高清支持，并向下兼容[CR]任何高清显示设备。</string>
+	<string id="31816">你的硬件够强么？</string>
+	<string id="31817">尽管播放高清视频显然有赖于强劲的 CPU，但 XBMC 在各种平台上对硬件的[CR]要求不算太高。强烈建议使用支持 Pixel Shader 3 技术的显示卡。</string>
+	<string id="31818">更完美的细节</string>	
+	<string id="31819">点击进入，进一步深入对 Aeon 体验。</string>
+	<string id="31820">多用户支持</string>
+	<string id="31821">XBMC 支持多用户帐号，允许不同的用户保存各自的配置。RSS 信源，外观设置[CR]和媒体资料库都可以独立保存。</string>
+	<string id="31822">更改你的 SHOWMIX 体验</string>
+	<string id="31823">设置你所想要的显示方式。</string>
+
+<!-- Credits -->
+
+	<string id="31900">贴图制作</string>
+	<string id="31901">默认背景</string>
+	<string id="31902">默认图标来源于</string>
+	<string id="31903">多语言翻译</string>
+	<string id="31904">测试</string>
+	<string id="31905">AEON 官方网站</string>
+	<string id="31906">感谢</string>
+	<string id="31907">XBMC 论坛的所有人</string>
+	<string id="31908">...还有你</string>
+	<string id="31909">AEON 新版本敬请期待</string>
+	<string id="31910">天气背景</string>
+	
+<!-- Submenu / Objects -->
+
+	<string id="31920">当前</string>
+	<string id="31921">标题</string>
+	<string id="31922">风格</string>
+	<string id="31923">年份</string>
+	<string id="31924">演员</string>
+	<string id="31925">导演</string>
+	<string id="31926">出品</string>
+	<string id="31927">艺术家</string>
+	<string id="31928">专辑</string>
+	<string id="31929">播放列表</string>
+	<string id="31930">TOP 100</string>
+	<string id="31931">视频</string>
+	<string id="31932">文件</string>
+	<string id="31933">展示</string>
+	<string id="31934">电影</string>
+	<string id="31935">项</string>
+	<string id="31936">音轨</string>
+	<string id="31937">季</string>
+	<string id="31938">集</string>
+	<string id="31939">歌曲</string>
+
+<!-- Home mod 31850 to 31899 -->
+
+	<string id="31850">插件</string>
+	<string id="31851">周末</string>
+	<string id="31852">36 小时</string>
+	<string id="31853">4 天</string>
+	<string id="31854">舞会</string>
+	<string id="31855">警报</string>
+	<string id="31856">计时器</string>
+	<string id="31857">新项目</string>
+	<string id="31858">子菜单</string>
+	<string id="31859">动画天气图标</string>
+	<string id="31860">晴</string>
+	<string id="31861">10 天</string>
+	<string id="31862">警报 关</string>
+	<string id="31863">最新 deviantart</string>
+	<string id="31864">打开播放列表</string>
+	<string id="31865">其他</string>
+	<string id="31866">专辑评论</string>
+	<string id="31867">主菜单</string>
+	<string id="31868">锁定</string>
+	<string id="31869">天气背景反映当前天气状况</string>
+	<string id="31870">-</string>
+  <string id="31871">随机挑选</string>
+	<string id="31872">-</string>
+	<string id="31873">未来 10 天</string>
+	<string id="31874">未来 36 小时</string>
+	<string id="31875">本周末</string>
+	<string id="31876">子菜单</string>
+	<string id="31877">退出</string>
+	<string id="31878">总计</string>
+	<string id="31879">最新加入</string>
+	<string id="31880">7 天</string>
+<!--  Shutdown Submenu  --> 
+	<string id="31211">重启</string> 
+	<string id="31212">挂起</string> 
+	<string id="31213">休眠</string>
+	<string id="31214">定时关机</string>
+
+<!-- ShowMix -->
+	<string id="31983">RSS 信源插件</string>
+	<string id="31984">海报</string>
+	<string id="31985">加宽</string>
+
+	<string id="31042">底部: 亮</string>
+	<string id="31043">底部: 暗</string>
+	<string id="31044">同人画</string>
+	<string id="31045">缩略图</string>
+	<string id="31046">剧情</string>
+	<string id="31047">样式</string>
+	<string id="31048">触发</string>
+	<string id="31049">自动</string>
+
+	<string id="31951">收藏夹</string>  <!-- FAVOURITES -->
+	<string id="31952">窗口</string>
+	<string id="31953">亮</string>
+	<string id="31954">暗</string>
+	<string id="31955">阴影</string>
+	<string id="31956">绿色</string>
+	<string id="31957">灰色</string>
+	<string id="31958">黑色</string>
+	<string id="31959">透明</string>
+	<string id="31960">海报</string>
+	<string id="31961">全屏多元</string>
+	<string id="31962">电视预览</string>
+	<string id="31963">电影预告片</string>
+	<string id="31964">电影分级标志</string>
+	<string id="31965">电影评分标志</string>
+	<string id="31966">-</string>
+	<string id="31969">开/关</string>
+	<string id="31967">其他选项</string>
+	<string id="31968">全屏显示</string>
+	<string id="31970">当前</string>
+	<string id="31971">视图选项</string>
+	<string id="31972">纵向菜单</string>
+	<string id="31973">电影文件目录</string>
+	<string id="31974">动态流动封面</string>
+	<string id="31995">流动封面</string>
+
+	<string id="31975">解锁全部电视视图</string>
+	<string id="31976">音乐图形视觉效果</string>
+	<string id="31977">-</string>
+	<string id="31978">-</string>
+	<string id="31979">电影风格插画图片（同人图）</string>
+	<string id="31980">音乐风格插画图片（同人图）</string>
+	<string id="31981">-</string>	
+	<string id="31986">增加和删除主菜单收藏夹/插件</string>	
+	<string id="31987">注意：修改完成后，XBMC 将自动退出。</string>	
+	<string id="31988">离开此菜单后，XBMC 将自动退出</string>	
+	<string id="31989">增加 &amp; 删除</string>	
+	<string id="31990">查看 &amp; 更名</string>	
+	<string id="31991">修改</string>
+	<string id="31992">插件</string>
+	<string id="31993">启用/禁用</string>
+	<string id="31994">随机未观看电影 &amp; 电视</string>
+	<string id="31996">CAST</string>
+
+	<string id="31997">TV SERIES POSTER VIEW</string>
+	<string id="31998">TV SEASON POSTER VIEW</string>
+	<string id="31999">TV EPISODE POSTER VIEW (LOWLIST ONLY)</string>
+
+	<string id="32001">VITAL INFORMATION</string>
+	<string id="32002">NO TRACK PLAYING</string>
+	<string id="32003">CODEC</string>
+	<string id="32004">KBPS</string>
+	<string id="32005">SAMPLERATE</string>
+	<string id="32006">KHZ</string>
+	<string id="32007">CHANNELS</string>
+	<string id="32008">NO THUMBS</string>
+	<string id="32009">2 THUMBS</string>
+	<string id="32010">4 THUMBS</string>
+
+	<string id="32011">PRESS DOWN TO</string>
+	<string id="32012">PRESS RIGHT TO</string>
+	<string id="32013">VIEW TRAILER</string>
+	<string id="32014">PREVIEW EPISODE</string>
+	<string id="32015">STOP</string>
+
+
+</strings>

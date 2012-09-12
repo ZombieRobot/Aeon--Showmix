@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="skin.showmix"
+  version="3.2.0"
+  name="Aeon Showmix 3.2"
+  provider-name="Zombie Robot">
+  <requires>
+    <import addon="xbmc.gui" version="3.0.1"/>
+    <import addon="script.recentlyadded" version="1.0.8"/>
+	<import addon="script.cdart" version="1.0.0"/>
+	
+	<import addon="script.favourites" version="3.2.2"/>
+	<import addon="script.logo-downloader" version="2.3.0"/>
+	<import addon="script.randomitems" version="1.0.3"/>
+	<import addon="script.artwork.downloader" version="1.0.13"/>
+  </requires>
+  <extension 
+    point="xbmc.gui.skin"
+    defaultthemename="textures.xbt" 
+	debugging="true"
+	effectslowdown="1.00">
+	<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+	</extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Aeon ShowMix, Coded by Andy Blackburn,Zombie Robot, Tested/Translated by Azido, Created by Duncan Harris</summary>
+    <summary lang="fr">ShowMix Aeon, Codé par Andy Blackburn, testé / Traduit par azido, créée par Duncan Harris</summary>
+	<summary lang="ge">Aeon ShowMix, von Andy Blackburn codiert, Geprüfte / Übersetzt von Azido, von Duncan Harris Erstellt</summary>
+	
+	<description>The Showmix Project (further called showmix) is an abbreviation of the groundbreaking "Aeon Auriga" skin for xbmc created by Duncan Harris aka DJ_H. Although this already was a wonderful new way of displaying media content on a htpc machine, Andrew Blackburn aka andyblac decided to dive deeper into it, modding and extending it's possiblities to his own view and taste. As time goes by, more and more mods of auriga hit the xmbc-forums, and andy took those he found being useful and eye-candy and implemented them to his version. this became a feature-rich, good-looking collection of modifications to auriga we all know as showmix.</description>
+    <description lang="fr">Le projet Showmix (encore appelé showmix) est une abréviation de l'inauguration "Aeon Auriga" skin pour XBMC créé par Duncan Harris DJ_H aka. Bien que ce qui était déjà une merveilleuse façon nouvelle d'afficher le contenu des médias sur une machine HTPC, Andrew Blackburn aka andyblac décidé de plonger plus profondément en elle, tuning et son extension de possiblities à son propre point de vue et le goût. Comme le temps passe, les mods de plus en plus d'Auriga frappé le xmbc-forums, et Andy a ceux qu'il a trouvé d'utile et d'eye-candy et les mises en œuvre pour sa version. c'est devenu un riche en fonctionnalités, la collecte de bonne mine des modifications apportées aux Auriga nous savons tous que showmix.</description>
+	<description lang="ge">Die Showmix Project (weitere showmix genannt) ist eine Abkürzung des bahnbrechenden "Aeon Auriga" Skin für XBMC erstellt von Duncan Harris aka DJ_H. Obwohl dies bereits ein wunderbarer neuer Weg der Darstellung der Medieninhalte in einem HTPC-Maschine, Andrew Blackburn aka andyblac tiefer in sie beschlossen, Modding und Verlängerung es Möglichkeiten, seine eigene Meinung und Geschmack. As time goes by, mehr und mehr Mods von Auriga Hit the xmbc-Foren und Andy übernahm, die er gefunden, nützlich und Eye-Candy und implementiert sie in seine Version. Dies zeigte eine feature-reiche, gut aussehende Sammlung von Modifikationen wir alle wissen, wie Auriga showmix.</description>
+	<disclaimer>Aeon Showmix, More info on the skin can be found at the XBMC Forums.</disclaimer>
+    <disclaimer lang="fr">Aeon Showmix, Plus d'infos sur la peau peuvent être trouvés sur les forums XBMC.</disclaimer>
+	<disclaimer lang="ge">Aeon Showmix, Mehr Infos auf der Haut kann an der XBMC-Foren gefunden werden.</disclaimer>
+	<platform>all</platform>
+  </extension>
+</addon>

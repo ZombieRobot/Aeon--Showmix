@@ -1,0 +1,41 @@
+<window id="20">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50,505,550,552,554,551,53,52,55,558,599</views>
+	<controls>
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+
+		</control>
+		
+		<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>$INFO[Skin.String(CustomAddons)]</texture>
+				<include>Furniture_SettingsBackPanel</include>
+				<visible>Control.IsVisible(550)</visible>
+			</control>
+		<control type="group">
+			
+			<include>Furniture_addonsBackPanel</include>
+			<include>Animation_OpenCloseZoomBrowsers</include>
+			<include>CommonAddonsBackground</include>
+		<include>Furniture_WallBackground</include>
+		<include>FullscreenDimensions</include>
+		<include>Animation_OpenCloseZoom</include>
+			<include>Furniture_Stage</include>
+			<include>Viewtype_LowList</include>
+		<include>Viewtype_List</include>
+		
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
+		<include>Furniture_WallTime</include>
+		<include>Furniture_WallRSS</include>		
+		<include>VerticalMenu</include>		
+	
+			<include>Viewtype_List_Addon</include>
+			<include>MediaPanel</include>
+			
+		</control>
+		
+	</controls>
+</window>

@@ -1,0 +1,279 @@
+<window id="3">
+	<defaultcontrol>20</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+
+	<controls>
+		<control type="multiimage">
+			  <include>FullscreenDimensions</include>
+			  <timeperimage>20000</timeperimage>
+			  <fadetime>400</fadetime>
+			  <randomize>true</randomize>
+			  <imagepath>special://skin/extras/backdrops/</imagepath>
+			  <info>Skin.String(CustomSettings)</info>
+			  <animation effect="fade" start="0" end="100" time="300" >WindowOpen</animation>
+			  <animation effect="fade" start="100" end="0" time="300" >WindowClose</animation>
+		  </control>
+
+		<include>Furniture_WallTime</include>
+	
+		<!-- LEFT PANEL -->
+		<control type="group">
+			<posx>10</posx>
+			<posy>75</posy>
+
+			<animation effect="fade" start="100" end="85" time="300" tween="quadratic" easing="inout" condition="!Control.HasFocus(20)" reversible="false">Conditional</animation>
+			<animation effect="slide" start="-640" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0" end="-640" time="300" tween="quadratic" easing="in">WindowClose</animation>
+		
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>930</width>
+				<height>970</height>
+				<texture>list/listpanel_back_noreflect.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>767</posx>
+				<posy>117</posy>
+				<width>140</width>
+				<height>800</height>
+				<texture>list/listpanel_detailwide.png</texture>
+			</control>
+			
+			<control type="label" id="101">
+				<posx>30</posx>
+				<posy>35</posy>
+				<width>807</width>
+				<font>Font_FileBrowserHeading</font>
+				<scroll>true</scroll>
+				<textcolor>ADFFFFFF</textcolor>
+			</control>
+			
+			<control type="label">
+				<posx>907</posx>
+				<posy>50</posy>
+				<align>right</align>
+				<font>Font_ListSmall</font>
+				<textcolor>ADFFFFFF</textcolor>
+				<label>$INFO[Container(20).NumItems] $LOCALIZE[31005]</label>
+			</control>
+		<!-- /Left Panel -->
+		
+		<!-- Left list -->
+			<control type="list" id="20">
+				<viewtype label="31752">list</viewtype>
+				<posx>22</posx> 
+				<posy>117</posy>
+				<width>907</width>
+				<height>787</height>
+				<scrolltime>0</scrolltime>
+				<onright>21</onright>
+				<!--<onleft>7000</onleft>-->
+				<onup>20</onup>
+				<ondown>20</ondown>
+				<itemlayout height="50">
+					<control type="image">
+						<posx>0</posx>
+						<posy>48</posy>
+						<height>1</height>
+						<width>877</width>
+						<texture>list/listpanel_line.png</texture>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<textcolor>FF949494</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>875</posx>
+						<posy>0</posy>
+						<width>130</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<align>right</align>
+						<aligny>center</aligny>	
+						<textcolor>FF949494</textcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					</control>
+				</itemlayout>					
+				<focusedlayout height="50">
+					<control type="image">
+						<posx>0</posx>
+						<posy>48</posy>
+						<height>1</height>
+						<width>877</width>
+						<texture>list/listpanel_line.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>-2</posy>
+						<width>885</width>
+						<height>54</height>
+						<texture>list/listpanel_selectbar.png</texture>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<textcolor>ff2e2e2e</textcolor>
+						<focusedcolor>FF949494</focusedcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>875</posx>
+						<posy>0</posy>
+						<width>130</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>ff2e2e2e</textcolor>
+						<focusedcolor>FF949494</focusedcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<!-- /left list -->
+		
+		<!-- Right Panel -->
+		<control type="group">
+			<posx>970</posx>
+			<posy>75</posy>
+
+			<animation effect="fade" start="100" end="85" time="300" tween="quadratic" easing="inout" condition="!Control.HasFocus(21	s)" reversible="false">Conditional</animation>
+			<animation effect="slide" start="640" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0" end="640" time="300" tween="quadratic" easing="in">WindowClose</animation>
+		
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>930</width>
+				<height>970</height>
+				<texture>list/listpanel_back_noreflect.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>767</posx>
+				<posy>117</posy>
+				<width>140</width>
+				<height>800</height>
+				<texture>list/listpanel_detailwide.png</texture>
+			</control>
+			
+			<control type="label" id="101">
+				<posx>30</posx>
+				<posy>35</posy>
+				<width>807</width>
+				<font>Font_FileBrowserHeading</font>
+				<scroll>true</scroll>
+				<textcolor>ADFFFFFF</textcolor>
+			</control>
+			
+			<control type="label">
+				<posx>907</posx>
+				<posy>50</posy>
+				<align>right</align>
+				<font>Font_ListSmall</font>
+				<textcolor>ADFFFFFF</textcolor>
+				<label>$INFO[Container(21).NumItems] $LOCALIZE[31005]</label>
+			</control>
+		<!-- /Left Panel -->
+		
+		<!-- Left list -->
+			<control type="list" id="21">
+				<viewtype label="31752">list</viewtype>
+				<posx>22</posx> 
+				<posy>117</posy>
+				<width>907</width>
+				<height>787</height>
+				<scrolltime>0</scrolltime>
+				<onleft>20</onleft>
+				<!--<onleft>7000</onleft>-->
+				<onup>21</onup>
+				<ondown>21</ondown>
+				<itemlayout height="50">
+					<control type="image">
+						<posx>0</posx>
+						<posy>48</posy>
+						<height>1</height>
+						<width>877</width>
+						<texture>list/listpanel_line.png</texture>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<textcolor>FF949494</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>875</posx>
+						<posy>0</posy>
+						<width>130</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<align>right</align>
+						<aligny>center</aligny>	
+						<textcolor>FF949494</textcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					</control>
+				</itemlayout>					
+				<focusedlayout height="50">
+					<control type="image">
+						<posx>0</posx>
+						<posy>48</posy>
+						<height>1</height>
+						<width>877</width>
+						<texture>list/listpanel_line.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>-2</posy>
+						<width>885</width>
+						<height>54</height>
+						<texture>list/listpanel_selectbar.png</texture>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<textcolor>ff2e2e2e</textcolor>
+						<focusedcolor>FF949494</focusedcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>875</posx>
+						<posy>0</posy>
+						<width>130</width>
+						<height>49</height>
+						<font>Font_List</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>ff2e2e2e</textcolor>
+						<focusedcolor>FF949494</focusedcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<!-- /Right list -->
+		
+	</controls>
+
+</window>

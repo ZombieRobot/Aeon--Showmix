@@ -1,0 +1,10 @@
+<window>
+	<defaultcontrol always="true">8999</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include condition="Skin.HasSetting(intro.enable)">intro_enabled</include>
+		<include condition="!Skin.HasSetting(intro.enable)">intro_Disable</include>
+		
+
+	</controls>
+</window>

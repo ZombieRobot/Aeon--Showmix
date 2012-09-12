@@ -1,0 +1,82 @@
+<window>
+	<id>121</id>
+	<defaultcontrol>2</defaultcontrol>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+		<effect type="fade" start="0" end="100" time="300" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+		<effect type="fade" start="100" end="0" time="300" />
+	</animation>		
+	<controls>
+	
+	<control type="image">
+		<description>Panel</description>
+		<posx>300</posx>
+		<posy>60</posy>
+		<width>1321</width>
+		<height>721</height>
+		<texture>osd/osd_settings_back.png</texture>
+	</control>
+
+	<control type="label" id="3">
+		<description>No Settings Label</description>
+		<posx>375</posx>
+		<posy>112</posy>
+		<width>1171</width>
+		<height>600</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label>13390</label>
+		<font>Font_OSDOptions</font>
+	</control>
+	
+	<control type="grouplist" id="5">
+		<description>control area</description>
+		<posx>375</posx>
+		<posy>112</posy>
+		<width>1171</width>
+		<height>660</height>
+		<texture>-</texture>
+		<itemgap>0</itemgap>
+	</control>
+	
+	<control type="button" id="7">
+		<description>default button</description>
+		<include>Objects_OSDSettingsButton</include>
+	</control>
+
+	<control type="radiobutton" id="8">
+		<description>default radiobutton</description>
+		<include>Objects_OSDSettingsButton</include>
+		<radiowidth>141</radiowidth>
+		<radioposx>1275</radioposx>
+		<radioheight>97</radioheight>
+		<textoffsetx>75</textoffsetx>		
+		<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+		<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+	</control>
+
+	<control type="spincontrolex" id="9">
+		<description>default spincontrolex</description>
+		<include>Objects_OSDSettingsButton</include>
+		<textureup>settings/spin-up.png</textureup>
+		<texturedown>settings/spin-down.png</texturedown>
+		<textureupfocus>settings/spin-up-focus.png</textureupfocus>
+		<texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
+		<spinposx>0</spinposx>
+		<spinposy>-7</spinposy>		
+		<spinwidth>60</spinwidth>
+		<spinheight>97</spinheight>
+		<reverse>yes</reverse>
+		<aligny>center</aligny>
+	</control>
+	
+	</controls>
+</window>

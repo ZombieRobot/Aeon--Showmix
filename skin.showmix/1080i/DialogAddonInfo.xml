@@ -1,0 +1,266 @@
+<window id="146">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+		
+		<control type="group">
+		<animation type="Conditional" condition="Window.IsActive(TextViewer)" reversible="false">
+			<effect type="rotatey" center="640" start="0" end="-90" time="350" tween="cubic" easing="in"/>
+			<effect type="rotatey" center="640" start="-90" end="90" time="0" delay="350"/>
+			<effect type="fade" start="100" end="0" time="0" delay="350"/>
+			<effect type="rotatey" center="640" start="90" end="0" time="350" delay="350" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="Conditional" condition="!Window.IsActive(TextViewer)" reversible="false">
+			<effect type="rotatey" center="640" start="0" end="90" time="350" tween="cubic" easing="in"/>
+			<effect type="rotatey" center="640" start="90" end="-90" time="0" delay="350"/>
+			<effect type="fade" start="0" end="100" time="0" delay="350"/>
+			<effect type="rotatey" center="640" start="-90" end="0" time="350" delay="350" tween="cubic" easing="out"/>
+		</animation>
+		
+		<visible>!Window.isVisible(AddonSettings)</visible>
+			<posx>217</posx>
+			<posy>216</posy>
+			<width>847</width>
+			<height>288</height>
+			<control type="image">
+				<posx>110</posx>
+				<posy>-180</posy>
+				<width>1138</width>
+				<height>970</height>
+				<texture>list/listpanel_back_noreflect.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>670</posx>
+				<posy>-55</posy>
+				<width>502</width>
+				<height>502</height>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+            
+			<control type="label">
+				<posx>340</posx>
+				<posy>-148</posy>
+				<width>675</width>
+				<align>center</align>
+				<font>Font_FileBrowserHeading</font>
+				<textcolor>DDced8da</textcolor>
+				<label>$INFO[ListItem.Property(Addon.Name)]</label>
+			</control>
+			
+			<control type="label">
+				<posx>175</posx>
+				<posy>-36</posy>
+				<width>675</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>DDced8da</textcolor>
+				<label>$LOCALIZE[146]</label>
+			</control>
+			<control type="label">
+				<posx>175</posx>
+				<posy>-3</posy>
+				<width>450</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<label fallback="416">$INFO[ListItem.Property(Addon.Type)]</label>
+			</control>
+			
+			<control type="label">
+				<posx>175</posx>
+				<posy>76</posy>
+				<width>450</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>DDced8da</textcolor>
+				<label>$LOCALIZE[21863]:</label>
+			</control>
+			<control type="label">
+				<posx>175</posx>
+				<posy>110</posy>
+				<width>450</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
+			</control>
+			
+			<control type="label">
+				<posx>175</posx>
+				<posy>200</posy>
+				<width>450</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>DDced8da</textcolor>
+				<label>$LOCALIZE[24051]</label>
+			</control>
+			<control type="label">
+				<posx>175</posx>
+				<posy>236</posy>
+				<width>450</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
+			</control>
+				
+			<control type="label">
+				<posx>175</posx>
+				<posy>421</posy>
+				<width>450</width>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>DDced8da</textcolor>
+				<label>$LOCALIZE[21821]:</label>
+			</control>
+			<control type="textbox">
+				<posx>175</posx>
+				<posy>483</posy>
+				<width>1020</width>
+				<height>140</height>
+				<align>left</align>
+				<font>Font_SetContentMenu</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<autoscroll delay="10000" time="1000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>
+				<label>$INFO[ListItem.Property(Addon.Description)]</label>
+			</control>		
+			<control type="group" id="9000">
+				<control type="button" id="6">
+					<posx>135</posx>
+					<posy>646</posy>
+					<width>201</width>
+					<height>115</height>
+					<texturefocus>list/filebrowser_button1down.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>Font_FileBrowserButton</font>
+					<label>24022</label>
+					<align>center</align>
+					<textcolor>FFb3b3b3</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<selectedcolor>FF262728</selectedcolor>
+					<disabledcolor>FF5a5a5a</disabledcolor>
+					<onleft>10</onleft>
+					<onright>7</onright>
+				</control>
+				
+				<control type="button" id="7">
+					<posx>332</posx>
+					<posy>646</posy>
+					<width>209</width>
+					<height>115</height>
+					<texturefocus>list/filebrowser_button1down.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>Font_FileBrowserButton</font>
+					<label>24022</label>
+					<align>center</align>
+					<textcolor>FFb3b3b3</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<selectedcolor>FF262728</selectedcolor>
+					<disabledcolor>FF5a5a5a</disabledcolor>
+					<onleft>6</onleft>
+					<onright>9</onright>
+				</control>
+								
+				<control type="button" id="9">
+					<posx>542</posx>
+					<posy>646</posy>
+					<width>201</width>
+					<height>115</height>
+					<texturefocus>list/filebrowser_button1down.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>Font_FileBrowserButton</font>
+					<label>24020</label>
+					<align>center</align>
+					<textcolor>FFb3b3b3</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<selectedcolor>FF262728</selectedcolor>
+					<disabledcolor>FF5a5a5a</disabledcolor>
+					<onleft>7</onleft>
+					<onright>8</onright>
+				</control>
+				
+				<control type="button" id="8">
+					<posx>740</posx>
+					<posy>646</posy>
+					<width>201</width>
+					<height>115</height>
+					<texturefocus>list/filebrowser_button1down.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>Font_FileBrowserButton</font>
+					<label>24069</label>
+					<align>center</align>
+					<textcolor>FFb3b3b3</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<selectedcolor>FF262728</selectedcolor>
+					<disabledcolor>FF5a5a5a</disabledcolor>
+					<onleft>9</onleft>
+					<onright>10</onright>
+				</control>
+				
+				<control type="button" id="10">
+					<posx>940</posx>
+					<posy>646</posy>
+					<width>207</width>
+					<height>115</height>
+					<texturefocus>list/filebrowser_button1down.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>Font_FileBrowserButton</font>
+					<label>24036</label>
+					<align>center</align>
+					<textcolor>FFb3b3b3</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<selectedcolor>FF262728</selectedcolor>
+					<disabledcolor>FF5a5a5a</disabledcolor>
+					<onleft>8</onleft>
+					<onright>6</onright>
+				</control>
+				
+				
+				
+				<control type="image">
+					<posx>122</posx>
+					<posy>645</posy>
+					<width>1159</width>
+					<height>125</height>
+					<texture>list/list_filebrowser_3buttons.png</texture>
+				</control>
+				<control type="image">
+					<posx>730</posx>
+					<posy>645</posy>
+					<width>1159</width>
+					<height>125</height>
+					<texture>list/list_filebrowser_2buttons.png</texture>
+				</control>
+			<control type="image">
+				<posx>640</posx>
+				<posy>-65</posy>
+				<width>555</width>
+				<height>545</height>
+				<texture>list/multiwall_music_border.png </texture>
+			</control>
+			<control type="image">
+				<posx>640</posx>
+				<posy>-65</posy>
+				<width>555</width>
+				<height>545</height>
+				<texture>list/multiwall_music_border.png </texture>
+			</control>
+			<control type="image">
+					<posx>130</posx>
+					<posy>645</posy>
+					<width>1100</width>
+					<height>1</height>
+					<texture>list/listpanel_line.png</texture>
+				</control>
+			</control>
+
+		</control>
+
+	</controls>
+</window>

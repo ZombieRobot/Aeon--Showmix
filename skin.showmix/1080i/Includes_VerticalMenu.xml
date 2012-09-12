@@ -1,0 +1,1548 @@
+<includes>
+<!-- id: 30000 - 30300 reserved for Vertical menu --->		
+		
+		<constant name="AllVideoWindows">Window.IsActive(28) | Window.IsActive(6) | Window.IsActive(25)</constant>
+		<constant name="AllMusicWindows">Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</constant>
+		
+		<include name="VerticalMenu_Button">
+			<height>35</height>
+			<width>366</width>
+			<pulseonselect>false</pulseonselect>
+			<textcolor>FF929292</textcolor>
+			<focusedcolor>FF363636</focusedcolor>
+			<disabledcolor>3cFFFFFF</disabledcolor>
+			<textoffsetx>15</textoffsetx>
+			<texturefocus>common/menubutton_focus.png</texturefocus>
+			<alttexturefocus>common/menubutton_focus.png</alttexturefocus>
+			<align>left</align>
+			<font>Font_MediaWindowMenu</font>
+		</include>
+
+		<include name="VerticalMenu_ButtonSecondColumn">
+			<height>35</height>
+			<width>366</width>
+			<pulseonselect>false</pulseonselect>
+			<textcolor>FF929292</textcolor>
+			<focusedcolor>FF363636</focusedcolor>
+			<textoffsetx>15</textoffsetx>
+			<texturefocus>common/menubutton_focus.png</texturefocus>
+			<align>center</align>
+			<font>Font_MediaWindowTitle</font>
+		</include>
+
+		<include name="VerticalMenu_Button2">
+			<height>35</height>
+			<width>366</width>
+			<pulseonselect>false</pulseonselect>
+			<textcolor>FF929292</textcolor>
+			<focusedcolor>FF363636</focusedcolor>
+			<disabledcolor>3cFFFFFF</disabledcolor>
+			<textoffsetx>15</textoffsetx>
+			<texturefocus>common/submenu_menubutton_focus.png</texturefocus>
+			<texturenofocus>common/submenu_menubutton_nofocus.png</texturenofocus>
+			<align>left</align>
+			<font>Font_MediaWindowMenu</font>
+		</include>
+
+		<include name="VerticalMenu_ToggleButton">
+			<height>35</height>
+			<width>366</width>
+			<pulseonselect>false</pulseonselect>
+			<textcolor>FF929292</textcolor>
+			<focusedcolor>FF363636</focusedcolor>
+			<disabledcolor>3cFFFFFF</disabledcolor>
+			<textoffsetx>15</textoffsetx>
+			<texturefocus>common/menubutton_focus.png</texturefocus>
+			<alttexturefocus>common/menubutton_focus.png</alttexturefocus>
+			<align>left</align>
+			<font>Font_MediaWindowMenu</font>
+		</include>
+		
+		<include name="VerticalMenu_RadioButton">
+			<height>35</height>
+			<width>366</width>
+			<font>Font_MediaWindowMenu</font>
+			<texturefocus>common/menubutton_focus.png</texturefocus>
+			<textcolor>FF929292</textcolor>
+			<focusedcolor>FF363636</focusedcolor>
+			<pulseonselect>false</pulseonselect>
+			<radiowidth>108</radiowidth>
+			<radioposx>269</radioposx>
+			<radioheight>75</radioheight>
+			<textoffsetx>15</textoffsetx>
+			<aligny>center</aligny>
+			<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+			<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+		</include>
+		
+		<include name="VerticalMenu_Label">		
+			<posx>105</posx> 
+			<posy>22</posy>
+			<height>35</height>
+			<font>Font_MediaWindowTitle</font>
+			<textcolor>d0FFFFFF</textcolor>
+			<visible allowhiddenfocus="true">!Control.HasFocus(88)</visible>
+			<align>left</align> 
+			<aligny>center</aligny>
+			<include>common-fade-quick</include>
+			<include>Animation_MediaMenuSlideVertical</include>
+		</include>
+		
+		<include name="VerticalMenu_GroupTitle">
+			<height>35</height>
+			<width>370</width>
+			<font>Font_MediaWindowTitle</font>
+			<textcolor>d0FFFFFF</textcolor>
+			<align>center</align> 
+			<aligny>center</aligny>
+		</include>
+		
+		<include name="VerticalMenu_ViewChangeImage">
+			<width>200</width>
+			<height>135</height>
+		</include>
+		
+		<include name="VerticalMenu_SecondColumnViewChange">
+			<control type="group">
+				<visible>Control.HasFocus(7011)</visible>
+				<include>Animation_ViewMenuSlideVertical</include>
+				<include>Animation_MediaMenuSlideVertical</include>
+				
+				<control type="image">
+					<posx>350</posx>
+					<posy>35</posy>
+					<width>240</width>
+					<height>1020</height>
+					<texture>common/menupanel_vertical2.png</texture>
+				</control>
+				
+				<control type="label">
+					<posx>365</posx>
+					<posy>825</posy>
+					<width>225</width>
+					<height>35</height>
+					<align>center</align>
+					<font>Font_MediaWindowMenu</font>
+					<textcolor>60FFFFFF</textcolor>
+					<label>$LOCALIZE[31970]:</label>
+				</control>
+				
+				<control type="group">
+					<posx>375</posx>
+					<posy>870</posy>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex.png</texture>
+						<visible>[Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553)]</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex.png</texture>
+						<visible>Control.IsVisible(51) + Window.IsActive(502)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_stripshow.png</texture>
+						<visible>Control.IsVisible(51) + Window.IsActive(2)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_list_window.png</texture>
+						<visible>Control.IsVisible(50)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist.png</texture>
+						<visible>Control.IsVisible(550)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_wall.png</texture>
+						<visible>Control.IsVisible(53)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_classic.png</texture>
+						<visible>Control.IsVisible(599)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_tv_banner.png</texture>
+						<visible>Control.IsVisible(505)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_HalfWall.png</texture>
+						<visible>Control.IsVisible(52)</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_HalfWall.png</texture>
+						<visible>Control.IsVisible(55)</visible>
+					</control>
+				</control>
+
+				<control type="list" id="7011">
+					<posx>360</posx>
+					<posy>90</posy>
+					<height>750</height>
+					<width>375</width>
+					<onleft>7000</onleft>
+					<onup>7011</onup>
+					<ondown>7011</ondown>
+					<viewtype>list</viewtype>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="225" height="185">
+						<control type="image">
+							<posx>15</posx>
+							<posy>15</posy>
+							<width>200</width>
+							<height>135</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</itemlayout>
+					<focusedlayout width="225" height="185">
+						<control type="image">
+							<posx>-7</posx>
+							<posy>0</posy>
+							<width>227</width>
+							<height>150</height>
+							<texture>viewselect/submenu_highlight.png</texture>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+						<control type="image">
+							<posx>15</posx>
+							<posy>15</posy>
+							<width>200</width>
+							<height>135</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<icon>viewselect/vs_icon_multiplex.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(551)</onclick>
+							<visible>!Control.IsVisible(551) + [Window.IsActive(25) | [Window.IsActive(24)+substring(Container.PluginName,Apple Movie Trailers Lite)]] + [[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | substring(Container.PluginName,IPlayer)]]</visible>
+						</item>
+						
+						<item id="2">
+							<icon>viewselect/vs_icon_multiplex.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(552)</onclick>
+							<visible>!Control.IsVisible(552) + [Window.IsActive(25) + [[Container.Content(tvshows)+!Skin.HasSetting(tvshowposterview)] | [Container.Content(seasons)+!Skin.HasSetting(tvseasonposterview)] | Container.Content(episodes)] | substring(Container.PluginName,iplayer)]</visible>
+						</item>
+						<item id="3">
+							<icon>viewselect/vs_icon_multiplex.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(553)</onclick>
+							<visible>!Control.IsVisible(553) + [Window.IsActive(501) | Window.IsActive(502)]</visible>
+						</item>
+
+						<item id="87">
+							<icon>viewselect/vs_icon_multiplex_classic.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(599)</onclick>
+							<visible>!Control.IsVisible(599)</visible>
+						</item>
+						<item id="88">
+							<icon>viewselect/vs_icon_HalfWall.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(52)</onclick>
+							<visible>!Control.IsVisible(52) + !Container.Content(tvshows)</visible>
+						</item>
+						<item id="90">
+							<icon>viewselect/vs_icon_HalfWall.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(55)</onclick>
+							<visible>!Control.IsVisible(55) + !Container.Content(tvshows)</visible>
+						</item>
+						<item id="89">
+							<icon>viewselect/vs_icon_tv_banner.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(505)</onclick>
+							<visible>!Control.IsVisible(505) + Container.Content(tvshows)</visible>
+						</item>
+						<item id="4">
+							<icon>viewselect/vs_icon_stripshow.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(51)</onclick>
+							<visible>!Control.IsVisible(51) + Window.IsActive(2)</visible>
+						</item>
+						<item id="5">
+							<icon>viewselect/vs_icon_list_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(50)</onclick>
+							<visible>!Control.IsVisible(50)</visible>
+						</item>
+						<item id="6">
+							<icon>viewselect/vs_icon_lowlist.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(550)</onclick>
+							<visible>!Control.IsVisible(550)</visible>
+						</item>
+						<item id="7">
+							<icon>viewselect/vs_icon_wall.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Container.SetViewMode(53)</onclick>
+							<visible>!Control.IsVisible(53)</visible>
+						</item>
+					</content>
+				</control>
+			</control>
+		</include>
+
+		<include name="VerticalMenu_SecondColumnMultiplexStyleChange">
+			<control type="group">
+				<visible>Control.HasFocus(30251) | Control.HasFocus(30252) | Control.HasFocus(7012)</visible>
+				<include>Animation_ViewMenuSlideVertical</include>
+				<include>Animation_MediaMenuSlideVertical</include>
+				
+				<control type="image">
+					<posx>350</posx>
+					<posy>35</posy>
+					<width>240</width>
+					<height>1020</height>
+					<texture>common/menupanel_vertical2.png</texture>
+				</control>
+				
+				<control type="label">
+					<posx>365</posx>
+					<posy>825</posy>
+					<width>225</width>
+					<height>35</height>
+					<align>center</align>
+					<font>Font_MediaWindowMenu</font>
+					<textcolor>60FFFFFF</textcolor>
+					<label>$LOCALIZE[31970]:</label>
+				</control>
+				
+				<control type="group">
+					<posx>375</posx>
+					<posy>870</posy>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist_noextras.png</texture>
+						<visible>Control.IsVisible(550) + Container.Content(movies) + stringcompare(Skin.String(LowListMovieInfoStyle),$LOCALIZE[32008])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist_2extras.png</texture>
+						<visible>Control.IsVisible(550) + Container.Content(movies) + stringcompare(Skin.String(LowListMovieInfoStyle),$LOCALIZE[32009])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_lowlist_4extras.png</texture>
+						<visible>Control.IsVisible(550) + Container.Content(movies) + stringcompare(Skin.String(LowListMovieInfoStyle),$LOCALIZE[32010])</visible>
+					</control>
+
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_movie_plot.png</texture>
+						<visible>[Control.IsVisible(53) | Control.IsVisible(551)] + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_movie_poster.png</texture>
+						<visible>[Control.IsVisible(53) | Control.IsVisible(551)] + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
+						<visible>Control.IsVisible(551) + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>Control.IsVisible(551) + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])</visible>
+					</control>
+
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_info_only.png</texture>
+						<visible>[[Control.IsVisible(551)|Control.IsVisible(552)] + [Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31984])] | [Control.IsVisible(553) + [Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + stringcompare(Skin.String(MusicInfoStyle),$LOCALIZE[31982])] | [Window.IsActive(25) + Container.Content(movies) + [Control.IsVisible(53)|Control.IsVisible(551)] + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])]</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_tv_poster.png</texture>
+						<visible>[Control.IsVisible(551)|Control.IsVisible(552)] + Container.Content(episodes) + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_window.png</texture>
+						<visible>[Control.IsVisible(551)|Control.IsVisible(552)] + Container.Content(episodes) + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>[Control.IsVisible(551)|Control.IsVisible(552)] + [Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])</visible>
+					</control>
+
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>Control.IsVisible(553) + [Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + stringcompare(Skin.String(MusicInfoStyle),$LOCALIZE[31044])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_plot_window.png</texture>
+						<visible>Control.IsVisible(599) + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_art_window.png</texture>
+						<visible>Control.IsVisible(599) + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31984])</visible>
+					</control>
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_thumb_window2.png</texture>
+						<visible>Control.IsVisible(599) + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31666])</visible>
+					</control>		
+					<control type="image">
+						<include>VerticalMenu_ViewChangeImage</include>
+						<texture>viewselect/vs_icon_multiplex_poster_window.png</texture>
+						<visible>Control.IsVisible(599) + Container.Content(movies) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31667])</visible>
+					</control>						
+				</control>
+					
+<!-- 30021 - 30040 reserved for MovieStylesButtons -->
+
+				<control type="list" id="7012">
+					<posx>360</posx>
+					<posy>90</posy>
+					<height>750</height>
+					<width>375</width>
+					<onleft>7000</onleft>
+					<onright>7012</onright>
+					<onup>7012</onup>
+					<ondown>7012</ondown>
+					<viewtype>list</viewtype>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="225" height="165">
+						<control type="image">
+							<posx>15</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>135</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</itemlayout>
+					<focusedlayout width="225" height="165">
+						<control type="image">
+							<posx>-7</posx>
+							<posy>0</posy>
+							<width>227</width>
+							<height>150</height>
+							<texture>viewselect/submenu_highlight.png</texture>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+						<control type="image">
+							<posx>15</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>135</height>
+							<info>ListItem.Icon</info>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="5">
+							<icon>viewselect/vs_icon_multiplex_info_only.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31982])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(53)|Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31982])</visible>
+						</item>
+						<item id="1">
+							<icon>viewselect/vs_icon_multiplex_movie_plot.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31046])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(53) | Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])</visible>
+						</item>
+						<item id="2">
+							<icon>viewselect/vs_icon_multiplex_movie_poster.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31960])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(53) | Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31960])</visible>
+						</item>
+						<item id="3">
+							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31044])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(551) + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31044])</visible>
+						</item>
+						<item id="4">
+							<icon>viewselect/vs_icon_multiplex_thumb_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31045])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(551) + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31045])</visible>
+						</item>
+						<item id="6">
+							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(TVInfoStyle,$LOCALIZE[31044])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + [Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + [Control.IsVisible(551)|Control.IsVisible(552)] + !stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31044])</visible>
+						</item>
+						<item id="7">
+							<icon>viewselect/vs_icon_multiplex_thumb_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(TVInfoStyle,$LOCALIZE[31045])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(episodes) + Control.IsVisible(552) + !stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31045])</visible>
+						</item>
+						<item id="8">
+							<icon>viewselect/vs_icon_multiplex_tv_poster.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(TVInfoStyle,$LOCALIZE[31960])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(episodes) + Control.IsVisible(552) + !stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31960])</visible>
+						</item>
+						<item id="9">
+							<icon>viewselect/vs_icon_multiplex_info_only.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(TVInfoStyle,$LOCALIZE[31984])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + [Container.Content(tvshows)|Container.Content(seasons)] + [Control.IsVisible(551)|Control.IsVisible(552)] + !stringcompare(Skin.String(TVInfoStyle),$LOCALIZE[31984])</visible>
+						</item>
+						<item id="10">
+							<icon>viewselect/vs_icon_lowlist_noextras.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(LowListMovieInfoStyle,$LOCALIZE[32008])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(550) + !stringcompare(Skin.String(LowListMovieInfoStyle),$LOCALIZE[32008])</visible>
+						</item>
+						<item id="11">
+							<icon>viewselect/vs_icon_lowlist_2extras.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(LowListMovieInfoStyle,$LOCALIZE[32009])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(550) + !stringcompare(Skin.String(LowListMovieInfoStyle),$LOCALIZE[32009])</visible>
+						</item>
+						<item id="12">
+							<icon>viewselect/vs_icon_lowlist_4extras.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(LowListMovieInfoStyle,$LOCALIZE[32010])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(550) + !stringcompare(Skin.String(LowListMovieInfoStyle),$LOCALIZE[32010])</visible>
+						</item>
+						<item id="13">
+							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MusicInfoStyle,$LOCALIZE[31044])</onclick>
+							<visible>Window.IsActive(502) + [Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + Control.IsVisible(553) + !stringcompare(Skin.String(MusicInfoStyle),$LOCALIZE[31044])</visible>
+						</item>
+						<item id="14">
+							<icon>viewselect/vs_icon_multiplex_info_only.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MusicInfoStyle,$LOCALIZE[31982])</onclick>
+							<visible>Window.IsActive(502) + [Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + Control.IsVisible(553) + !stringcompare(Skin.String(MusicInfoStyle),$LOCALIZE[31982])</visible>
+						</item>
+						<item id="15">
+							<icon>viewselect/vs_icon_multiplex_plot_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31046])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(599) + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])</visible>
+						</item>
+						<item id="16">
+							<icon>viewselect/vs_icon_multiplex_art_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31984])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(599) + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31984])</visible>
+						</item>
+						<item id="17">
+							<icon>viewselect/vs_icon_multiplex_thumb_window2.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31666])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(599) + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31666])</visible>
+						</item>	
+						<item id="18">
+							<icon>viewselect/vs_icon_multiplex_poster_window.png</icon>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<onclick>Skin.SetString(MovieInfoStyle,$LOCALIZE[31667])</onclick>
+							<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(599) + !stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31667])</visible>
+						</item>					
+					</content>
+				</control>
+			</control>
+		</include>
+
+<!-- 30061 - 30200 reserved for Additional Multiplex Info Buttons -->
+		<include name="VerticalMenu_SecondColumnInfoTrigger">
+			<control type="group">
+				<visible>Control.HasFocus(7013)</visible>
+				<include>Animation_ViewMenuSlideVertical</include>
+				<include>Animation_MediaMenuSlideVertical</include>
+					
+				<control type="image">
+					<posx>350</posx>
+					<posy>35</posy>
+					<width>200</width>
+					<height>260</height>
+					<texture>common/menupanel_vertical2_end.png</texture>
+				</control>
+					
+				<control type="list" id="7013">
+					<posx>370</posx>
+					<posy>60</posy>
+					<height>500</height>
+					<width>250</width>
+					<onleft>7000</onleft>
+					<onright>7013</onright>
+					<onup>7013</onup>
+					<ondown>7013</ondown>
+					<viewtype>list</viewtype>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="225" height="50">
+						<control type="label">
+							<posx>85</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>50</height>
+							<textcolor>FF929292</textcolor>
+							<focusedcolor>FF363636</focusedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_MediaWindowTitle</font>
+							<info>ListItem.Label</info>
+						</control>
+					</itemlayout>
+					<focusedlayout width="225" height="50">
+						<control type="image">
+							<posx>-10</posx>
+							<posy>1</posy>
+							<width>182</width>
+							<height>50</height>
+							<texture>common/menubutton_focus.png</texture>
+							<align>left</align> 
+							<aligny>center</aligny>
+						</control>
+						<control type="label">
+							<posx>85</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>50</height>
+							<textcolor>FF363636</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_MediaWindowTitle</font>
+							<info>ListItem.Label</info>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(MovieInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="2">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(MovieInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="3">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(MovieInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="4">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(MovieInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(MovieInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="5">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(TVShowsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="6">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(TVShowsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="7">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(TVShowsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="8">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(TVShowsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows) + !stringcompare(Skin.String(TVShowsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="9">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(TVSeasonsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="10">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(TVSeasonsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="11">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(TVSeasonsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="12">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(TVSeasonsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons) + !stringcompare(Skin.String(TVSeasonsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="13">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(TVEpisodesInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="14">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(TVEpisodesInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="15">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(TVEpisodesInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="16">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(TVEpisodesInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes) + !stringcompare(Skin.String(TVEpisodesInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="17">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(MusicSongsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(songs) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicSongsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="18">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(MusicSongsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicSongsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="19">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(MusicSongsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(songs) + [Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicSongsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="20">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(MusicSongsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(songs) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicSongsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="21">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(MusicArtistsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicArtistsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="22">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(MusicArtistsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicArtistsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="23">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(MusicArtistsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicArtistsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="24">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(MusicArtistsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(artists) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicArtistsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="25">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(MusicAlbumsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicAlbumsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="26">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(MusicAlbumsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicAlbumsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="27">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(MusicAlbumsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicAlbumsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="28">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(MusicAlbumsInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>Window.IsActive(502) + Container.Content(albums) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + !stringcompare(Skin.String(MusicAlbumsInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+						<item id="29">
+							<label>$LOCALIZE[31049]</label>
+							<onclick>Skin.SetString(CommonInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31049])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31049])</visible>
+						</item>
+						<item id="30">
+							<label>$LOCALIZE[31048]</label>
+							<onclick>Skin.SetString(CommonInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31048])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31048])</visible>
+						</item>
+						<item id="31">
+							<label>$LOCALIZE[31077]</label>
+							<onclick>Skin.SetString(CommonInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31077])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31077])</visible>
+						</item>
+						<item id="32">
+							<label>$LOCALIZE[31078]</label>
+							<onclick>Skin.SetString(CommonInfoPopup,$LOCALIZE[31070]: $LOCALIZE[31078])</onclick>
+							<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)] + !stringcompare(Skin.String(CommonInfoPopup),$LOCALIZE[31070]: $LOCALIZE[31078])</visible>
+						</item>
+					</content>
+				</control>
+			</control>
+		</include>
+
+	<!--############################################ VerticalMenu - Video Buttons ################################################-->
+	<!--##########################################################################################################################-->
+
+<!-- 30201 - 30500 reserved for Menu Buttons-->
+	
+<!-- 30211 - 30240 reserved for Info Buttons-->
+		<include name="VerticalMenu_InfoPopupButtons">
+			<control type="button" id="30211">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(MovieInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + Container.Content(movies) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)]</visible>
+			</control>
+			<control type="button" id="30212">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(TVShowsInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows)</visible>
+			</control>
+			<control type="button" id="30213">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(TVSeasonsInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons)</visible>
+			</control>
+			<control type="button" id="30214">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(TVEpisodesInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes)</visible>
+			</control>
+			<control type="button" id="30215">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(MusicArtistsInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>Window.IsActive(502) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + Container.Content(artists)</visible>
+			</control>
+			<control type="button" id="30216">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(MusicAlbumsInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>Window.IsActive(502) + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + Container.Content(albums)</visible>
+			</control>
+			<control type="button" id="30217">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(MusicSongsInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Window.IsActive(500)|Window.IsActive(502)] + [Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(553)] + Container.Content(songs)</visible>
+			</control>
+			<control type="button" id="30218">
+				<include>VerticalMenu_Button2</include>				
+				<label>$INFO[Skin.String(CommonInfoPopup)]</label>
+				<onclick>SetFocus(7013)</onclick>
+				<onright>SetFocus(7013)</onright>
+				<visible>[Control.IsVisible(53)|Control.IsVisible(550)|Control.IsVisible(551)|Control.IsVisible(552)|Control.IsVisible(553)|Control.IsVisible(599)] + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(artists)]</visible>
+			</control>
+		</include>
+		
+<!-- 30241 - 30250 reserved for Style Buttons-->
+		<include name="VerticalMenu_MultiplexStyleButtons">
+			<control type="button" id="30251">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $INFO[Skin.String(MovieInfoStyle)]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>[Window.IsActive(25)|Window.IsActive(28)] + [Control.IsVisible(53) | Control.IsVisible(551) | Control.IsVisible(599)] + Container.Content(movies)</visible>
+			</control>
+			<control type="button" id="30252">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $INFO[Skin.String(TVInfoStyle)]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + [Control.IsVisible(551) | Control.IsVisible(552)]</visible>
+			</control>		
+			<control type="button" id="30253">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $INFO[Skin.String(LowListMovieInfoStyle)]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>[Window.IsActive(25)|Window.IsActive(28)] + Container.Content(movies) + Control.IsVisible(550)</visible>
+			</control>
+			<control type="button" id="30254">
+				<include>VerticalMenu_Button2</include>				
+				<label>$LOCALIZE[31047]: $INFO[Skin.String(MusicInfoStyle)]</label>
+				<onclick>SetFocus(7012)</onclick>
+				<onright>SetFocus(7012)</onright>
+				<visible>Window.IsActive(502) + [Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + Control.IsVisible(553)</visible>
+			</control>
+
+		</include>
+
+
+		<include name="VerticalMenu_FlagsButton">
+			<control type="radiobutton" id="30263">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31069]</label>
+				<onclick>Skin.ToggleSetting(nomediaflags)</onclick>
+				<selected>!Skin.HasSetting(nomediaflags)</selected>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)]</visible>
+			</control>
+		</include>
+		
+
+		<include name="VerticalMenu_WallGridButton">
+			<control type="togglebutton" id="30264">
+				<include>VerticalMenu_Button</include>				
+				<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
+				<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
+				<usealttexture>!Skin.HasSetting(smallmoviewall)</usealttexture>
+				<onclick>Skin.ToggleSetting(smallmoviewall)</onclick>
+				<visible>Control.IsVisible(53) + [Window.IsActive(1) | Window.IsActive(24) | Window.IsActive(25)] + !Container.Content(episodes)</visible>
+			</control>
+			<control type="togglebutton" id="30265">
+				<include>VerticalMenu_Button</include>				
+				<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
+				<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
+				<usealttexture>!Skin.HasSetting(smallmusicwall)</usealttexture>
+				<onclick>Skin.ToggleSetting(smallmusicwall)</onclick>
+				<visible>Control.IsVisible(53) + [Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | [Window.IsActive(25) + Container.Content(episodes)]]</visible>
+			</control>		
+			<control type="togglebutton" id="30266">
+				<include>VerticalMenu_Button</include>				
+				<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
+				<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
+				<usealttexture>!Skin.HasSetting(stripshowmax)</usealttexture>
+				<onclick>Skin.ToggleSetting(stripshowmax)</onclick>
+				<visible>Control.IsVisible(51)</visible>
+			</control>		
+		</include>
+		
+
+		<include name="VerticalMenu_BackdropsButton">
+			<control type="radiobutton" id="30267">
+				<label>$LOCALIZE[31067]</label>
+				<include>VerticalMenu_RadioButton</include>
+				<onclick>Skin.ToggleSetting(transparentwall)</onclick>
+				<selected>Skin.HasSetting(transparentwall)</selected>
+				<visible>Control.IsVisible(53) + !Window.IsActive(500)</visible>
+			</control>
+			<control type="radiobutton" id="30268">
+				<include>VerticalMenu_RadioButton</include>		
+				<label>$LOCALIZE[31067]</label>
+				<onclick>Skin.ToggleSetting(nocurtains)</onclick>
+				<selected>Skin.HasSetting(nocurtains)</selected>
+				<visible>!Window.IsActive(500) + [Control.IsVisible(552) | Control.IsVisible(552) | Control.IsVisible(551) | Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(25) + [Container.Content(movies) | Container.Content(genres) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			</control>
+			<control type="radiobutton" id="30269">
+				<label>$LOCALIZE[38004]</label>
+				<include>VerticalMenu_RadioButton</include>
+				<onclick>Skin.ToggleSetting(ExtraFanMovies)</onclick>
+				<selected>Skin.HasSetting(ExtraFanMovies)</selected>
+				<visible>Window.IsActive(25) + Container.Content(movies)</visible>
+			</control>
+			<control type="radiobutton" id="30270">
+				<label>$LOCALIZE[32043]</label>
+				<include>VerticalMenu_RadioButton</include>
+				<onclick>Skin.ToggleSetting(Classic_Info)</onclick>
+				<selected>Skin.HasSetting(Classic_Info)</selected>
+				<visible>Window.IsActive(25) + Container.Content(movies)</visible>
+			</control>
+			<control type="radiobutton" id="30271">
+				<label>$LOCALIZE[31952] $LOCALIZE[31959]</label>
+				<include>VerticalMenu_RadioButton</include>
+				<onclick>Skin.ToggleSetting(multiplexthin)</onclick>
+				<selected>Skin.HasSetting(multiplexthin)</selected>
+				<visible>Window.IsActive(25) + Container.Content(movies)</visible>
+			</control>
+		</include>
+
+		<include name="VerticalMenu_FanartButtons">
+			<control type="radiobutton" id="33996">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[32000]</label>
+				<onclick>Skin.ToggleSetting(FullscreenPoster)</onclick>
+				<selected>!Skin.HasSetting(FullscreenPoster)</selected>
+				<visible>Control.IsVisible(599)</visible>
+			</control>	
+			<control type="radiobutton" id="33998">
+				<include>VerticalMenu_RadioButton</include>				
+				<label>$LOCALIZE[32045]</label>
+				<onclick>Skin.ToggleSetting(noinfo)</onclick>
+				<selected>!Skin.HasSetting(noinfo)</selected>
+				<visible>Control.IsVisible(599)</visible>
+			</control>
+	
+			<control type="radiobutton" id="30293">
+				<include>VerticalMenu_RadioButton</include>				
+				<label>$LOCALIZE[31064]</label>
+				<onclick>Skin.ToggleSetting(nomoviefanart)</onclick>
+				<onclick>Skin.SetBool(nocurtains)</onclick>
+				<selected>!Skin.HasSetting(nomoviefanart)</selected>
+				<visible>Window.IsActive(25) + Container.Content(movies)</visible>
+			</control>
+			<control type="radiobutton" id="33997">
+				<include>VerticalMenu_RadioButton</include>				
+				<label>$LOCALIZE[32044]</label>
+				<onclick>Skin.ToggleSetting(Dark)</onclick>
+				<selected>!Skin.HasSetting(Dark)</selected>
+				<visible>Control.IsVisible(599)</visible>
+			</control>		
+				
+			<control type="radiobutton" id="31996">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31995]</label>
+				<onclick>Skin.ToggleSetting(FullscreenPoster)</onclick>
+				<selected>!Skin.HasSetting(FullscreenPoster)</selected>
+				<visible>Window.IsActive(599)</visible>
+			</control>	
+					
+			<control type="radiobutton" id="30294">
+				<include>VerticalMenu_RadioButton</include>				
+				<label>$LOCALIZE[31064]</label>
+				<onclick>Skin.ToggleSetting(notvfanart)</onclick>
+				<onclick>Skin.SetBool(nocurtains)</onclick>
+				<selected>!Skin.HasSetting(notvfanart)</selected>
+				<visible>Window.IsActive(25) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			</control>
+			
+			<control type="radiobutton" id="30295">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31064]</label>
+				<onclick>Skin.ToggleSetting(nomusicfanart)</onclick>
+				<selected>!Skin.HasSetting(nomusicfanart)</selected>
+				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+			</control>	
+
+			
+		</include>
+
+	
+<!--		<include name="VerticalMenu_FullscreenButton">
+			<control type="radiobutton" id="30271">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenMovieMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenMovieMultiplex)</selected>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(movies)</visible>
+			</control>
+			<control type="radiobutton" id="30272">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenTVShowsMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenTVShowsMultiplex)</selected>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(tvshows)</visible>
+			</control>
+			<control type="radiobutton" id="30273">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenTVSeasonsMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenTVSeasonsMultiplex)</selected>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(seasons)</visible>
+			</control>
+			<control type="radiobutton" id="30274">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenTVEpisodesMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenTVEpisodesMultiplex)</selected>
+				<visible>[Control.IsVisible(551) | Control.IsVisible(552)] + Container.Content(episodes)</visible>
+			</control>
+			<control type="radiobutton" id="30275">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenSongsMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenSongsMultiplex)</selected>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50)] + Container.Content(songs)</visible>
+			</control>
+			<control type="radiobutton" id="30276">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenArtistsMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenArtistsMultiplex)</selected>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50)] + Container.Content(artists)</visible>
+			</control>
+			<control type="radiobutton" id="30277">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31968]</label>
+				<onclick>Skin.ToggleSetting(FullscreenAlbumsMultiplex)</onclick>
+				<selected>Skin.HasSetting(FullscreenAlbumsMultiplex)</selected>
+				<visible>[Control.IsVisible(553) | Control.IsVisible(50)] + Container.Content(albums)</visible>
+			</control>
+		</include> -->
+
+
+		<include name="VerticalMenu_ListButtons">
+			<control type="radiobutton" id="30281">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(movieslistfull)</onclick>
+				<selected>Skin.HasSetting(movieslistfull)</selected>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(movies)</visible>
+			</control>
+			<control type="radiobutton" id="30282">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(tvshowslistfull)</onclick>
+				<selected>Skin.HasSetting(tvshowslistfull)</selected>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(tvshows)</visible>
+			</control>
+			<control type="radiobutton" id="30283">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(tvseasonslistfull)</onclick>
+				<selected>Skin.HasSetting(tvseasonslistfull)</selected>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(seasons)</visible>
+			</control>
+			<control type="radiobutton" id="30284">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(tvepisodeslistfull)</onclick>
+				<selected>Skin.HasSetting(tvepisodeslistfull)</selected>
+				<visible>Control.IsVisible(50) + Window.IsActive(25) + Container.Content(episodes)</visible>
+			</control>
+			<control type="radiobutton" id="30285">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(musicalbumslistfull)</onclick>
+				<selected>Skin.HasSetting(musicalbumslistfull)</selected>
+				<visible>Control.IsVisible(50) + Container.Content(albums)</visible>
+			</control>
+			<control type="radiobutton" id="30286">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31072] $LOCALIZE[31752]</label>
+				<onclick>Skin.ToggleSetting(musicsongslistfull)</onclick>
+				<selected>Skin.HasSetting(musicsongslistfull)</selected>
+				<visible>Control.IsVisible(50) + [Container.Content(songs) | substring(container.folderpath,special://profile/playlists/music/,Left) | substring(container.folderpath,PLAYLISTMUSIC:,Left)]</visible>
+			</control>
+		</include>
+
+
+		
+<!--		<include name="VerticalMenu_DVDCaseButtons">
+			<control type="radiobutton" id="30288">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31951]</label>
+				<onclick>Skin.ToggleSetting(nomoviedvdcase)</onclick>
+				<selected>!Skin.HasSetting(nomoviedvdcase)</selected>
+				<visible>Container.Content(movies) + [Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)]</visible>
+			</control>
+					
+			<control type="radiobutton" id="30289">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31951]</label>
+				<onclick>Skin.ToggleSetting(notvdvdcase)</onclick>
+				<selected>!Skin.HasSetting(notvdvdcase)</selected>
+				<visible>Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)</visible>
+			</control>
+					
+			<control type="radiobutton" id="302290">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31951]</label>
+				<onclick>Skin.ToggleSetting(noseasondvdcase)</onclick>
+				<selected>!Skin.HasSetting(noseasondvdcase)</selected>
+				<visible>Container.Content(seasons)</visible>
+			</control>
+					
+			<control type="radiobutton" id="30291">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31951]</label>
+				<onclick>Skin.ToggleSetting(noepisodedvdcase)</onclick>
+				<selected>!Skin.HasSetting(noepisodedvdcase)</selected>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			
+			<control type="togglebutton" id="30292">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31952]</label>
+				<onclick>Skin.ToggleSetting(musicdvdcase)</onclick>
+				<selected>!Skin.HasSetting(musicdvdcase)</selected>
+				<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + [Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(550)]</visible>
+			</control>
+		</include> -->
+
+		<include name="VerticalMenu_FilesButtons">
+			<control type="button" id="30296">
+				<label>31057</label>
+				<include>VerticalMenu_Button</include>
+				<onclick>XBMC.ReplaceWindow(MyVideoFiles)</onclick>
+		
+			</control>
+			<control type="button" id="30297">
+				<label>31057</label>
+				<include>VerticalMenu_Button</include>
+				<onclick>XBMC.ReplaceWindow(MyMusicFiles)</onclick>
+			
+			</control>
+		</include>
+
+
+	
+
+		
+		<include name="VerticalMenu_SearchButton">
+			<control type="button" id="8">
+				<label>137</label>
+				<include>VerticalMenu_Button</include>
+				<visible>[Container.Content(movies) + !Skin.HasSetting(nomenumoviesearch)] | [[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(nomenutvsearch)] | Window.IsActive(502)</visible>					
+			</control>
+		</include>
+		
+
+		<include name="VerticalMenu_FilterButton">
+			<control type="button" id="19">
+				<label>587</label>
+				<include>VerticalMenu_Button</include>					
+			</control>
+		</include>
+		
+
+		<include name="VerticalMenu_SortButton">
+			<control type="button" id="3">
+				<label>103</label>
+				<include>VerticalMenu_Button</include>
+			</control>
+		</include>
+		
+		<include name="VerticalMenu_SlideShowButton">
+				<control type="button" id="6">
+					<description>Slideshow</description>
+					<include>VerticalMenu_Button</include>
+					<label>108</label>
+					<visible>Window.IsActive(2)</visible>
+			</control>
+				<control type="button" id="7">
+					<description>Recersive Slideshow</description>
+					<include>VerticalMenu_Button</include>
+					<label>361</label>
+					<visible>Window.IsActive(2)</visible>
+				</control>
+				<control type="radiobutton" id="9">
+					<description>Randomize Toggle</description>
+					<include>VerticalMenu_RadioButton</include>
+					<label>13319</label>
+					<visible>Window.IsActive(2)</visible>
+				</control>
+		</include>
+
+		<include name="VerticalMenu_WatchedButton">
+			<control type="radiobutton" id="14">
+				<description>Watched Toggle Button</description>
+				<label>$LOCALIZE[31058]</label>
+				<include>VerticalMenu_RadioButton</include>
+				<visible>[Container.Content(movies) + !Skin.HasSetting(nomenumoviewatched)] | [[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + !Skin.HasSetting(nomenutvwatched)]</visible>
+			</control>
+		</include>
+		
+
+		<include name="VerticalMenu_OverlayButton">
+			<control type="radiobutton" id="30300">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31066]</label>
+				<onclick>Skin.ToggleSetting(nooverlays)</onclick>
+				<selected>!Skin.HasSetting(nooverlays)</selected>
+				<visible>Window.IsActive(25) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)]</visible>
+			</control>
+		</include>
+		
+		<include name="VerticalMenu_CoverflowButton">
+			<control type="radiobutton" id="31995">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31995]</label>
+				<onclick>Skin.ToggleSetting(flattenmultiplex)</onclick>
+				<selected>!Skin.HasSetting(flattenmultiplex)</selected>
+				<visible>Control.IsVisible(551) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)]</visible>
+			</control>
+		</include>
+		
+		<include name="VerticalMenu_SetupButtons">
+			<control type="button" id="30301">
+				<label>31016</label>
+				<include>VerticalMenu_Button</include>
+				<onclick>XBMC.ActivateWindow(MusicSettings)</onclick>
+				<visible>Window.IsActive(502) | Window.IsActive(500) | Window.IsActive(501) + !Skin.HasSetting(nomenusettings)  </visible>
+			</control>
+			<control type="button" id="30302">
+				<label>31016</label>
+				<include>VerticalMenu_Button</include>
+				<onclick>XBMC.ActivateWindow(VideosSettings)</onclick>
+				<visible>Window.IsActive(24) | Window.IsActive(25) | Window.IsActive(28) + !Skin.HasSetting(nomenusettings)</visible>			
+			</control>
+			<control type="button" id="30303">
+				<label>31016</label>
+				<include>VerticalMenu_Button</include>
+				<onclick>XBMC.ActivateWindow(ProgramsSettings)</onclick>
+				<visible>Window.IsActive(2) + !Skin.HasSetting(nomenusettings)</visible>			
+			</control>	
+		</include>		
+		
+
+		<include name="VerticalMenu_PlaylistButtons">
+			<control type="togglebutton" id="20">
+				<label>ORDER: NORMAL</label>
+				<altlabel>ORDER: RANDOM</altlabel>
+				<include>VerticalMenu_ToggleButton</include>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
+			</control>
+			<control type="button" id="26">
+				<label>REPEAT</label>
+				<include>VerticalMenu_Button</include>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
+			</control>
+			<control type="button" id="21">
+				<label>190</label>
+				<include>VerticalMenu_Button</include>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
+			</control>
+			<control type="button" id="22">
+				<label>192</label>
+				<include>VerticalMenu_Button</include>
+				<visible>Window.IsActive(500)|Window.IsActive(28)</visible>
+			</control>	
+		</include>
+		
+		<include name="VerticalMenu_MediaDebugButtons">
+			<control type="button" id="30308">
+				<label>20183</label>
+				<include>VerticalMenu_Button</include>
+				<onclick>XBMC.ReloadSkin</onclick>
+				<visible>Skin.HasSetting(debug)</visible>
+			</control>
+			<control type="radiobutton" id="30309">
+				<include>VerticalMenu_RadioButton</include>
+				<label>Debug Flags</label>
+				<onclick>Skin.ToggleSetting(debugflags)</onclick>
+				<selected>Skin.HasSetting(debugflags)</selected>
+				<visible>Skin.HasSetting(debug)</visible>
+			</control>
+			<control type="radiobutton" id="30310">
+				<include>VerticalMenu_RadioButton</include>
+				<label>31608</label>
+				<onclick>Skin.ToggleSetting(debuginfo)</onclick>
+				<selected>Skin.HasSetting(debuginfo)</selected>
+				<visible>Skin.HasSetting(debug)</visible>
+			</control>
+		</include>
+
+
+		<include name="VerticalMenu_PosterThumbButtons">
+			<control type="radiobutton" id="30311">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31059]</label>
+				<onclick>Skin.ToggleSetting(listvideoposter)</onclick>
+				<selected>Skin.HasSetting(listvideoposter)</selected>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + [Window.IsActive(24) + !Container.Content(movies)]</visible>
+			</control>
+			<control type="radiobutton" id="30312">
+				<include>VerticalMenu_RadioButton</include>
+				<label>$LOCALIZE[31059]</label>
+				<onclick>Skin.ToggleSetting(listgamesposter)</onclick>
+				<selected>Skin.HasSetting(listgamesposter)</selected>
+				<visible>[Control.IsVisible(50) | Control.IsVisible(550)] + Window.IsActive(35)</visible>
+			</control>
+		</include>
+
+
+
+
+	<!--#################################################### Vertical - Menu #####################################################-->
+	<!--##########################################################################################################################-->
+			
+		<include name="VerticalMenu">
+		
+			<!-- Movies/TvShows VideoNav Menu-->
+			<control type="group">
+				
+				<!-- Second Columns -->
+				<include>VerticalMenu_SecondColumnInfoTrigger</include>
+				<include>VerticalMenu_SecondColumnViewChange</include>
+				<include>VerticalMenu_SecondColumnMultiplexStyleChange</include>
+				<include>VerticalMenu_SecondColumnOldMultiplexStyleChange</include>
+				<!-- Background Image -->
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>385</width>
+					<height>1080</height>
+					<texture>common/menupanel_vertical.png</texture>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(599) | Control.IsVisible(52) | Control.IsVisible(55) | Control.IsVisible(551) | Control.IsVisible(552) | Control.IsVisible(553) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
+				</control>
+				
+				<control type="image">
+					<posx>15</posx> 
+					<posy>22</posy>
+					<width>66</width>
+					<height>37</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_movies.png</texture>
+					<visible>Window.IsActive(28) | Window.IsActive(24) | Window.IsActive(25)</visible>
+				</control>	
+
+				<control type="image">
+					<posx>15</posx> 
+					<posy>22</posy>
+					<width>66</width>
+					<height>45</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_music.png</texture>
+					<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+				</control>
+				
+				<control type="image">
+					<posx>15</posx> 
+					<posy>22</posy>
+					<width>66</width>
+					<height>45</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_pics.png</texture>
+					<visible>Window.IsActive(2)</visible>
+				</control>
+				
+				<control type="image">
+					<posx>15</posx> 
+					<posy>22</posy>
+					<width>66</width>
+					<height>45</height>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<include>common-fade-quick</include>
+					<texture>windows/logo_games.png</texture>
+					<visible>Window.IsActive(1)</visible>
+				</control>			
+				
+				<!-- Menu Title: TvShows-->
+				<control type="label">
+					<label>31033</label>
+					<include>VerticalMenu_Label</include>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Window.IsActive(25)</visible>
+				</control>
+				<!-- Menu Title: Movies-->
+				<control type="label">
+					<label>31032</label>
+					<include>VerticalMenu_Label</include>
+					<visible>Container.Content(movies) + Window.IsActive(25)</visible>
+				</control>
+				<!-- Menu Title: Videos-->
+				<control type="label">
+					<label>31034</label>
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(6) | Window.IsActive(24)</visible>
+				</control>
+				<!-- Menu Title: Playlist-->
+				<control type="label">
+					<label>31038</label><!--31038-->
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(28) | Window.IsActive(500)</visible>
+				</control>
+				<!-- Menu Title: Music-->
+				<control type="label">
+					<label>31037</label>
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(501) | Window.IsActive(502)</visible>
+				</control>
+				<control type="label">
+					<label>31038</label><!--31038-->
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(500)</visible>
+				</control>
+				<!-- Menu Title: Pics-->
+				<control type="label">
+					<label>31031</label>
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(2)</visible>
+				</control>
+				<!-- Menu Title: Games-->
+				<control type="label">
+					<label>31030</label>
+					<include>VerticalMenu_Label</include>
+					<visible>Window.IsActive(35)</visible>
+				</control>
+				
+				
+				<!-- Main Menu (First Column) -->
+				<control type="grouplist" id="7000">
+					<posx>0</posx>
+					<posy>82</posy>
+					<width>387</width>
+					<height>1080</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<scroll>false</scroll>
+					<onleft>50</onleft>
+					<onup>7000</onup>
+					<ondown>7000</ondown>
+					<include>Animation_CommonFade</include>
+					<include>Animation_MediaMenuSlideVertical</include>
+					<visible>!Skin.HasSetting(kiosk)</visible>
+					
+					<!--###### Buttons ######-->
+					<control type="button"  id="900">
+						<include>VerticalMenu_Button2</include>
+						<label>$LOCALIZE[31050] $INFO[Container.Viewmode]</label>
+						<onclick>SetFocus(7011)</onclick>
+						<onright>SetFocus(7011)</onright>
+					</control>
+					
+					<control type="label" id="3070">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>$LOCALIZE[31971]</label>
+					</control>
+					
+					<include condition="!Skin.HasSetting(nomultiplexstylebuttons)">VerticalMenu_MultiplexStyleButtons</include>
+					<include condition="!Skin.HasSetting(nomultiplexinfobuttons)">VerticalMenu_InfoPopupButtons</include>
+					<include>VerticalMenu_PosterThumbButtons</include>
+					<include>VerticalMenu_ListButtons</include>
+					<include condition="!Skin.HasSetting(nomediaflagsbutton)">VerticalMenu_FlagsButton</include>
+					<include>VerticalMenu_WallGridButton</include>
+					<include>VerticalMenu_FanartButtons</include>
+					<include>VerticalMenu_BackdropsButton</include>
+					<include>VerticalMenu_OverlayButton</include>
+					
+					<control type="label" id="30501">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>$LOCALIZE[31967]</label>
+					</control>
+									
+					<include>VerticalMenu_SlideShowButton</include>
+					<include>VerticalMenu_WatchedButton</include>
+					<include>VerticalMenu_SortButton</include>
+					<include>VerticalMenu_FilterButton</include>
+					<include>VerticalMenu_SearchButton</include>
+					
+					<include condition="!Skin.HasSetting(nomenufiles)">VerticalMenu_FilesButtons</include>
+
+					<include condition="!Skin.HasSetting(nomenusettings)">VerticalMenu_SetupButtons</include>
+
+					<control type="label" id="30502">
+						<include>VerticalMenu_GroupTitle</include>
+						<label>DEBUG</label>
+						<visible>Skin.HasSetting(debug)</visible>
+					</control>
+ 					<include condition="Skin.HasSetting(debug)">VerticalMenu_MediaDebugButtons</include>
+				</control>
+			</control>
+		</include>
+</includes>

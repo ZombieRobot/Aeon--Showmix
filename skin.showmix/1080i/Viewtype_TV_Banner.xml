@@ -1,0 +1,242 @@
+<includes>
+<!-- ===================================================================================== -->
+<!-- ============================== TV BANNER VIEW ID 511 ================================ -->
+<!-- =====================================TV Shows====================================== -->
+	<include name="Viewtype_TV_Banner">
+		<control type="group">
+			<visible>Control.IsVisible(505)</visible>
+			<include>VisibleFadeEffect</include>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1920</width>
+				<height>1080</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>wall/wall_vignette.png</texture>
+			</control>
+			<control type="image">
+				<posx>-10</posx>
+				<posy>-80</posy>
+				<width>570</width>
+				<height>1480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>list/listpanel_back.png</texture>
+			</control>
+			<control type="fixedlist" id="505">
+				<visible>Container.Content(tvshows)</visible>
+				<posx>660</posx>
+				<posy>53</posy>
+				<width>1050</width>
+				<height>990</height>
+				<onleft>60</onleft>
+				<onright>7000</onright>
+				<onup>505</onup>
+				<ondown>505</ondown>
+				<focusposition>2</focusposition>
+				<pagecontrol>23</pagecontrol>
+				<viewtype label="$LOCALIZE[539] $LOCALIZE[536]">list</viewtype>
+				<pagecontrol>23</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<itemlayout height="150" width="975">
+					<control type="image">
+						<animation effect="zoom" end="115" center="90,185" time="200">Focus</animation>
+						<posx>28</posx>
+						<posy>-24</posy>
+						<width>732</width>
+						<height>178</height>
+						<texture>banner/posterframeWhite_banner.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+				
+					<control type="image">
+						<posx>68</posx>
+						<posy>6</posy>
+						<width>648</width>
+						<height>113</height>
+						<texture diffuse="banner/mask_banner.png" background="false">$INFO[Listitem.Icon]</texture>
+						<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					</control>
+					
+					<control type="image">
+						<animation effect="zoom" end="115" center="90,185" time="200">Focus</animation>
+						<posx>-13</posx>
+						<posy>7</posy>
+						<width>732</width>
+						<height>100</height>
+						<texture>banner/glass.png</texture>
+						<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="252" width="465">
+					
+					<control type="image">
+						<animation effect="zoom" end="115" center="90,185" time="200">Focus</animation>
+						<posx>-48</posx>
+						<posy>-6</posy>
+						<width>1113</width>
+						<height>290</height>
+						<texture>banner/posterframeWhite_banner.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
+						<animation effect="zoom" end="115" center="90,185" time="200">Focus</animation>
+						<posx>12</posx>
+						<posy>42</posy>
+						<width>986</width>
+						<height>186</height>
+						<texture diffuse="banner/mask_banner.png" background="false">$INFO[Listitem.Icon]</texture>
+						<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<animation effect="zoom" end="115" center="90,185" time="200">Focus</animation>
+						<posx>14</posx>
+						<posy>42</posy>
+						<width>986</width>
+						<height>186</height>
+						<texture>banner/glass.png</texture>
+						<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+					</control>
+				</focusedlayout>
+			</control>
+			
+			<control type="scrollbar" id="60">
+				<description>My first scroll bar control</description>
+				<posx>1180</posx>
+				<posy>155</posy>
+				<width>97</width>
+				<height>705</height>
+				<visible allowhiddenfocus="true">Control.IsVisible(505) + Control.HasFocus(60)</visible>
+				<texturesliderbackground>windows/scrollbarback_playlist.png</texturesliderbackground>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+				<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+				<pulseonselect></pulseonselect>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<onup>60</onup>
+				<ondown>60</ondown>
+				<onleft>7000</onleft>
+				<onright>XBMC.PlayMedia($INFO[ListItem.Trailer],0,noresume)</onright>
+				<include>Animation_CommonFade</include>
+			</control>
+		
+
+			<control type="group">
+				<posx>40</posx>
+				<posy>25</posy>
+				<visible>Control.IsVisible(505)</visible>
+				<include>VisibleFadeEffect</include>
+				<control type="grouplist">
+					<description>MPAA Rating Flagging Images</description>
+					<posx>220</posx>
+					<posy>50</posy>
+					<width>80</width>
+					<height>45</height>
+					<align>left</align>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<include>VideoMPAAFlaggingConditions</include>
+				</control>
+						
+				<control type="image">
+					<posx>70</posx>
+					<posy>567</posy>
+					<width>160</width>
+					<height>80</height>
+					<align>left</align>
+					<texture>$INFO[listitem.Studio,flagging/studios/,.png]</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+					<aspectratio align="center">keep</aspectratio>
+				</control>
+				<control type="fadelabel">
+					<posx>5</posx>
+					<posy>30</posy>
+					<width>400</width>
+					<height>30</height>
+					<font>Droid22</font>
+					<textcolor>white</textcolor>
+					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Year]</label>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+				</control>
+				
+			
+				<control type="fadelabel">
+					<posx>0</posx>
+					<posy>127</posy>
+					<width>330</width>
+					<height>30</height>
+					<font>Thin</font>
+					<textcolor>greyl</textcolor>
+					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Genre]</label>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+					<visible>!Container.Content(TVShows)</visible>
+					
+				</control>	
+				
+	====
+				<control type="image">
+					<posx>23</posx>
+					<posy>80</posy>
+					<width>405</width>
+					<height>231</height>
+					<align>left</align>
+					<visible>Container.Content(TVShows)</visible>
+					<texture>$INFO[ListItem.path]logo.png</texture>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>Container.Content(TVShows) + !Skin.HasSetting(logo/clearart)</visible>
+					
+				</control>	
+
+				<control type="image">
+					<posx>6</posx>
+					<posy>101</posy>
+					<width>435</width>
+					<height>218</height>
+					<align>left</align>
+					<visible>Container.Content(TVShows)</visible>
+					<texture>$INFO[ListItem.path]clearart.png</texture>
+					<visible>Container.Content(TVShows) + Skin.HasSetting(logo/clearart)</visible>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+					<aspectratio align="center">keep</aspectratio>
+				</control>		
+				<control type="label">
+					<posx>0</posx>
+					<posy>233</posy>
+					<width>495</width>
+					<height>45</height>
+					<font>Thin</font>
+					<textcolor>greyl</textcolor>
+					<scroll>true</scroll>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.Writer]</label>
+				</control>
+				<control type="textbox">
+					<posx>5</posx>
+					<posy>345</posy>
+					<width>435</width>
+					<height>434</height>
+					<label>$INFO[ListItem.Plot]</label>
+					<visible>true</visible>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+					<font>Droid19</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<pulseonselect></pulseonselect>
+					<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+				</control>					
+			</control>	
+		</control>
+	</include>
+</includes>

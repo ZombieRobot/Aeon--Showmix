@@ -1,0 +1,23 @@
+<window id="1">
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50,550,53,44</views>
+	<controls>
+
+		<include>CommonProgramsBackground</include>
+		<include>Furniture_WallBackground</include>
+		<include>FullscreenDimensions</include>
+		<include>Animation_OpenCloseZoom</include>
+			<include>Furniture_Stage</include>
+			<include>Viewtype_LowList</include>
+		<include>Viewtype_List</include>
+		<include>Viewtype_Addons</include>
+		<include>Furniture_Time</include>	
+		<include>Furniture_NowPlayingWidget</include>
+		<include>Furniture_WallTime</include>
+		<include>Furniture_WallRSS</include>		
+		<include>VerticalMenu</include>		
+	
+		<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+	</controls>
+</window>

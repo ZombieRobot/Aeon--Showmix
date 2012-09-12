@@ -1,0 +1,79 @@
+[B]3.1.0[/B]
+
+
+- Added themes menu to customise in settings
+- Added Aeon assistant in settings
+- Fixed submenu visibility condition
+- Big settings/customisation menu cleanup
+- Added Extrafanart button in view select menu
+- Fixed backdrop/fanart/curtain display problem
+- Clean up of settings options
+- Added CD case to music widget
+- New option to switch between themes (Switch between the current Showmix look and the old classic look more themes to come)
+- Added welcome screen into Showmix
+- Changed default backdrops
+- Fixed broken trailer windows
+- Clean up of video info navigation
+- New extrafanart button in video info screen (New  support for extrafanart script by Paddycarey/Machine-Sanctum)
+- Added Extrafanart support in all views
+- Extrafanart bulk download buttons in settings for movies and tv shows
+- Added new view Halfwall
+- Added new view Banner
+- Added new view big Showcase
+- New random items on home
+- Added new slimline volume bar
+- relocated volume bar to bottom of screen
+- Added new option to toggle between small boxed video window and fullscreen visualization on home screen
+- Lots of other little changes
+
+[B]3.0.0[/B]
+
+- New Aeon Showmix classic views (bit buggy until next release)
+- Added toggle between classic and current video info screen
+- New home menu animations
+- Reworked home menu (new Textures adjustments)
+- New recently added music (toggle between albums/songs)
+- Added 20 items to recently added music
+- Home menu cleanup
+- Texture cleanup
+- Bulk cleanup of old code
+- Fixed trailers
+- Fixed side menu
+- Much more!
+
+- Toggle between classic video info screen and current Showmix video info
+- Added all old Multiplex views from showmix 2.1
+- Extra fanart support added for movies and tv shows
+- Reworked Home menu animations
+- New look home menu leather bar
+- New Animated dream scene background in home menu (currently disabled until 3.1)
+- New bug fixes
+- New video OSD info screen
+- added cover and plot to new video OSD
+- Fixed alignment issues in cdwall osd
+- New Home menu backdrop
+- updated tv tunes
+- Fixed trailer problem in all views
+- Started working on switching fonts to opensource ones
+- Upgraded some of the current graphics
+- Deleted hundreds and hundreds of lines of old code
+- Sorted Textures got rid of duplicates.
+- Updated logo downloader
+- Fixed recently added
+- Fixed totals in movies/music/tvshows on home screen
+- Studio flags problem in multiplex when info is off
+- Media flags playing up in multiplex
+- Fix spinning cd on off conflict
+- Music recently added not showing title
+- When cdwall enabled slideshow osd wont display (fix in next release)
+- views sidebar not navigating as it should
+- CDWALL grid offset x axis
+
+
+[B]To Do/Bug List[/B]
+
+- Switch off backdrops and fanart in views doesn't work
+- Buffer needs fixing
+- Extrafanart scan needs resizing
+- Dynamic coverflow in all views
+- Add rollback option in addons browser

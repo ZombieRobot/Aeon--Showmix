@@ -1,0 +1,52 @@
+<window id="133">
+	<defaultcontrol>403</defaultcontrol>
+	<zorder>1</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>700</posx>
+	<posy>-520</posy>
+	</coordinates>
+	<include>Animation_DialogPopup</include>
+	<controls>
+
+	<control type="group">
+		<visible>!VideoPlayer.IsFullscreen+!Window.IsActive(screensaver)+!Window.IsActive(slideshow)</visible>
+		<include>Dialogs_Group</include>
+		<include>Dialogs_Tablet</include>
+		<animation effect="slide" end="-680,90" time="400" easing="inout" condition="Window.IsActive(Home) + Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(lowerwidgets)">Conditional</animation>
+		<animation effect="slide" end="-680,215" time="400" easing="inout" condition="Window.IsActive(Home) + !Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(lowerwidgets)">Conditional</animation>
+		<animation effect="zoom" start="100" end="60" time="700" easing="inout" condition="Window.IsActive(videolibrary) | Window.IsActive(musiclibrary) | Window.IsVisible(addonbrowser) | Window.IsVisible(4) | Window.IsVisible(10012) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10034) | Window.IsActive(130) | Window.IsVisible(600) | Window.IsVisible(603) | Window.IsVisible(604) | Window.IsVisible(605) | Window.IsVisible(560) | Window.IsVisible(622) | Window.IsVisible(560) | Window.IsVisible(620)">Conditional</animation>
+		<animation effect="slide" end="280,-60" time="800" easing="inout" tween="circle" condition="Window.IsActive(videolibrary) | Window.IsActive(musiclibrary) | Window.IsVisible(addonbrowser) | Window.IsVisible(4) | Window.IsVisible(10012) | Window.IsVisible(10014) | Window.IsVisible(10015) | Window.IsVisible(10016) | Window.IsVisible(10017) | Window.IsVisible(10018) | Window.IsVisible(10019) | Window.IsVisible(10034) | Window.IsActive(12) | Window.IsActive(130) | Window.IsVisible(600) | Window.IsVisible(603) | Window.IsVisible(604) | Window.IsVisible(605) | Window.IsVisible(560) | Window.IsVisible(622) | Window.IsVisible(560) | Window.IsVisible(620)">Conditional</animation>
+		<animation effect="slide" end="0,-600" time="400" easing="inout" tween="circle" condition="Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation)">Conditional</animation>
+		<posy>8</posy>
+		<control type="progress" id="403">
+			<description>Progressbar</description>
+			<include>Dialogs_Progress</include>
+		</control>
+		<control type="progress" id="404">
+			<description>Progressbar</description>
+			<include>Dialogs_Progress</include>
+		</control>
+
+		<include>Dialogs_HardDrive</include>
+	
+		<control type="label" id="401">
+			<description>Caption Label</description>
+			<include>Dialogs_HeadingLabel</include>
+		</control>
+			
+		<control type="label" id="402">
+			<description>Current Directory Label</description>
+			<include>Dialogs_Label3</include>
+			<visible>Skin.HasSetting(No_Media_Titles_In_Scanner)</visible>
+		</control>
+		<control type="label" id="405">
+			<description>Current Title Label</description>
+			<include>Dialogs_Label3</include>
+			<visible>!Skin.HasSetting(No_Media_Titles_In_Scanner)</visible>
+		</control>
+	</control>
+
+	</controls>
+</window>
+

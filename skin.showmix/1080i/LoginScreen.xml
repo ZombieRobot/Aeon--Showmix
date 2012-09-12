@@ -1,0 +1,168 @@
+<window type="dialog" id="29">
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<controls>
+
+	<control type="image">
+		<include>FullscreenDimensions</include>
+		<texture>welcome/login_backdrop.jpg</texture>
+		<include>Animation_WindowFade600</include>
+	</control>
+
+	<control type="image" id="601">
+		<posx>1920</posx>
+		<posy>900</posy>
+		<width>226</width>
+		<height>193</height>
+		<texture>welcome/welcome_xbmclogo.png</texture>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="1200" />
+			<effect type="slide" start="0,0" end="-330,0" time="1200" tween="cubic" easing="out" />
+		</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+	</control>
+	
+	<control type="image" id="601">
+		<posx>-202</posx>
+		<posy>870</posy>
+		<width>150</width>
+		<height>210</height>
+		<texture>welcome/welcome_aeonlogo.png</texture>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="1200" />
+			<effect type="slide" start="0,0" end="345,0" time="1200" tween="cubic" easing="out" />
+		</animation>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>			
+	</control>	
+	
+	<control type="list" id="52">
+		<posx>366</posx>
+		<posy>420</posy>
+		<width>1188</width>
+		<height>544</height>
+		<focusposition>1</focusposition>
+		<orientation>horizontal</orientation>
+		<onleft>90</onleft>
+		<onright>90</onright>
+		<onup>52</onup>
+		<ondown>98</ondown>
+		<animation effect="slide" end="198,0" time="0" condition="stringcompare(container(52).numitems,2)">Conditional</animation>
+			<include>Animation_CommonFade</include>
+		<itemlayout height="396" width="396">
+			<control type="image">
+				<posx>27</posx>
+				<posy>27</posy>
+				<width>351</width>
+				<height>351</height>
+				<texture diffuse="lowlist/music_thumb_mask.png" fallback="unknown-user.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+			</control>
+			<control type="image">
+				<description>Glass overlay</description>
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>385</width>
+				<height>385</height>
+				<texture>lowlist/music_thumb_glass.png</texture>
+			</control>
+			<control type="image">
+				<posx>27</posx>
+				<posy>377</posy>
+				<width>351</width>
+				<height>351</height>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<texture flipy="true" diffuse="common/cdicon_flipmask.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+			</control>			
+		</itemlayout>
+		<focusedlayout height="396" width="396">
+			<control type="image">
+				<posx>27</posx>
+				<posy>27</posy>
+				<width>351</width>
+				<height>351</height>
+				<texture diffuse="lowlist/music_thumb_mask.png" fallback="unknown-user.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<animation center="198,198" effect="zoom" start="100" end="110" time="600" tween="cubic" easing="out">Focus</animation>
+				<animation center="198,198" effect="zoom" start="110" end="100" time="600" tween="cubic" easing="in">UnFocus</animation>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>385</width>
+				<height>385</height>
+				<texture>lowlist/music_thumb_glass.png</texture>
+				<animation center="198,198" effect="zoom" start="100" end="110" time="600" tween="cubic" easing="out">Focus</animation>				
+				<animation center="198,198" effect="zoom" start="110" end="100" time="600" tween="cubic" easing="in">UnFocus</animation>
+			</control>
+			<control type="image">
+				<posx>27</posx>
+				<posy>377</posy>
+				<width>351</width>
+				<height>351</height>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<texture flipy="true" diffuse="common/cdicon_flipmask.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<info>ListItem.Icon</info>
+				<animation center="198,198" effect="zoom" start="100" end="110" time="600" tween="cubic" easing="out">Focus</animation>				
+				<animation center="198,198" effect="zoom" start="110" end="100" time="600" tween="cubic" easing="in">UnFocus</animation>
+			</control>				
+		</focusedlayout>
+	</control>
+	<control type="label">
+		<posx>0</posx>
+		<posy>900</posy>
+		<width>1920</width>
+		<height>24</height>
+		<font>Font_Welcome</font>
+		<align>center</align>
+		<textcolor>FFffffff</textcolor>
+		<scroll>true</scroll>
+		<info>ListItem.Label</info>
+		<include>selectedcolor</include>
+		<include>common-fade-quick</include>
+		<visible>Control.IsVisible(52)</visible>
+	</control>
+	<control type="label">
+		<posx>0</posx>
+		<posy>945</posy>
+		<width>1920</width>
+		<height>24</height>
+		<font>Font_Welcome</font>
+		<align>center</align>
+		<textcolor>90cbcbcb</textcolor>
+		<info>ListItem.Label2</info>
+		<include>selectedcolor</include>
+		<include>common-fade-quick</include>
+		<visible>Control.IsVisible(52)</visible>
+	</control>
+
+	<control type="button" id="98">
+		<description>ShutDown Button</description>
+		<posx>936</posx>
+		<posy>742</posy>
+		<width>39</width>
+		<height>52</height>
+		<align>right</align>
+		<textcolor>60ffffff</textcolor>
+		<onclick>ActivateWindow(ShutdownMenu)</onclick>
+		<texturefocus>Small-Icon-Shutdown-Focus.png</texturefocus>
+		<texturenofocus>Small-Icon-Shutdown-NoFocus.png</texturenofocus>
+		<onleft>52</onleft>
+		<onright>52</onright>
+		<onup>52</onup>
+		<ondown>52</ondown>
+		<include>common-fade-quick</include>
+		<visible>!Window.IsActive(130) + !Window.IsActive(131)</visible>
+	</control>
+	<include>Lines</include>
+
+	</controls>
+</window>

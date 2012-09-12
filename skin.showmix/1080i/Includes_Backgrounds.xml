@@ -1,0 +1,570 @@
+<includes>
+
+	<include name="FullscreenDimensions">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1920</width>
+		<height>1080</height>
+	</include>
+
+	<include name="GlobalBackgroundShade">
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<aspectratio align="left">stretch</aspectratio>
+			<texture>home/shade.png</texture>
+			<visible>Skin.HasSetting(global_shade)</visible>
+		</control>	
+	</include>
+	
+	<include name="VirtualDimensions">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1260</width>
+		<height>706</height>
+	</include>
+	
+	<include name="BackgroundVarsGlobal">
+		<include>FullscreenDimensions</include>
+		<timeperimage>20000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+	</include>
+	
+	<include name="BackgroundVarsMultiplex">
+		<include>FullscreenDimensions</include>
+		<timeperimage>20000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+		<visible>[substring(container.folderpath,videodb://1,Left) | substring(container.folderpath,videodb://2,Left)] + !Skin.HasSetting(nocurtains)</visible>
+	</include>
+	
+	<include name="BackgroundVarsVirtual">
+		<include>VirtualDimensions</include>
+		<timeperimage>20000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+	</include>
+
+	<include name="Background_ContextBlack">
+		<control type="image" id="909">
+			<description>Darken screen for Context Menu etc.</description>
+			<include>FullscreenDimensions</include>
+			<texture>common/black.png</texture>
+			<colordiffuse>c3FFFFFF</colordiffuse>
+			<include>Animation_CommonFade</include>
+			<visible>Control.IsVisible(218) | Window.IsVisible(130) | Window.IsVisible(109) | Window.IsVisible(111) | Window.IsVisible(600) | Window.IsVisible(402) | Window.IsVisible(2000) | Window.IsVisible(601) | Window.IsVisible(602)| Window.IsVisible(132) | Window.IsVisible(106) | Window.IsVisible(103) | Window.IsVisible(129) | Window.IsVisible(126)</visible>
+		</control>
+	</include>
+
+	<include name="CommonVideoBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomVideos)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomMovies)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+			<visible>Container.Content(Movies) + !Skin.HasSetting(nomovies)</visible>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomTV)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+			<visible>[Container.Content(TVShows) | Container.Content(Seasons) |Container.Content(Episodes)] + !Skin.HasSetting(notvshows)</visible>
+		</control>
+	</include>
+	<include name="CommonMusicBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomMusic)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonPictureBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomPictures)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonProgramsBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomGames)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+		<include name="CommonAddonsBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomAddons)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonLiveTVBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/.JPG" background="true">$INFO[Skin.String(CustomAddons)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonLiveTVBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/.JPG" background="true">$INFO[Skin.String(CustomLiveTV)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonCustom1Background">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomMenu1)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonCustom2Background">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomMenu2)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonCustom3Background">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomMenu3)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonCustom4Background">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomMenu4)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonScriptBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomScripts)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonWeatherBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/backgrounds/weather.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Weather_Folder)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+			<visible>![Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))]</visible>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+			<visible>Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))</visible>
+			<animation effect="fade" time="200">WindowClose</animation>
+		</control>
+	</include>
+	<include name="CommonSettingsBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomSettings)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+	<include name="CommonComicsBackground">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/extras/backdrops/" background="true">$INFO[Skin.String(CustomComics)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+		</control>
+	</include>
+
+
+		<include name="BackgroundVarsCurtains">
+		<icon>special://skin/extras/multiplex/curtains.jpg</icon>
+		<thumb>$INFO[Skin.String(CustomCurtains)]</thumb>
+		<imagepath>special://skin/extras/multiplex/curtains.jpg</imagepath>
+		<info>Skin.String(CustomCurtains)</info>
+	</include>
+	<include name="BackgroundVarsFavourites">
+		<icon>special://skin/extras/backdrops/</icon>
+		<thumb>$INFO[Skin.String(Customfavourites)]</thumb>
+		<imagepath>special://skin/extras/backdrops/</imagepath>
+		<info>Skin.String(Customfavourites)</info>
+	</include>
+	<include name="BackgroundVars_extras">
+		<icon>special://skin/extras/backdrops/</icon>
+		<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
+		<imagepath>special://skin/extras/backdrops/</imagepath>
+		<info>Skin.String(Custom_extras)</info>
+	</include>
+	<include name="BackgroundVars_mainmenu_1">
+		<icon>special://skin/extras/backdrops/</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_1)]</thumb>
+		<imagepath>special://skin/extras/backdrops/</imagepath>
+		<info>Skin.String(Custom_mainmenu_1)</info>
+	</include>
+	<include name="BackgroundVars_mainmenu_2">
+		<icon>special://skin/extras/backdrops/</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_2)]</thumb>
+		<imagepath>special://skin/extras/backdrops/</imagepath>
+		<info>Skin.String(Custom_mainmenu_2)</info>
+	</include>
+	
+
+	<include name="BackgroundVarsSignOut">
+		<icon>special://skin/extras/backdrops/</icon>
+		<thumb>$INFO[Skin.String(CustomSignOut)]</thumb>
+		<imagepath>special://skin/extras/backdrops/</imagepath>
+		<info>Skin.String(CustomSignOut)</info>
+	</include>
+	<include name="BackgroundVarsShutdown">
+		<icon>special://skin/extras/backdrops/</icon>
+		<thumb>$INFO[Skin.String(CustomShutdown)]</thumb>
+		<imagepath>special://skin/extras/backdrops/</imagepath>
+		<info>Skin.String(CustomShutdown)</info>
+	</include>
+
+	<include name="BackgroundVarsMovieGenres">
+		<thumb>special://skin/packages/moviegenrefanart/$INFO[Container().ListItem.Label].jpg</thumb>
+		<imagepath background="true">special://skin/packages/moviegenrefanart/$INFO[Container().ListItem.Label].jpg</imagepath>
+	</include>
+	<include name="BackgroundVarsTVGenres">
+		<imagepath>special://skin/media/backdrops/tvgenrefanart/$INFO[Container().ListItem.Label].jpg</imagepath>
+	</include>
+	<include name="BackgroundVarsMusicGenres">
+		<thumb>special://skin/packages/musicgenrefanart/$INFO[Container().ListItem.Label].jpg</thumb>
+		<imagepath background="true">special://skin/packages/musicgenrefanart/$INFO[Container().ListItem.Label].jpg</imagepath>
+	</include>
+
+	<include name="BackgroundVarsWeatherSpring">
+		<icon>special://skin/media/backdrops/spring/spring.jpg</icon>
+		<imagepath>special://skin/media/backdrops/spring/spring.jpg</imagepath>
+	</include>
+	
+	<include name="BackgroundVarsWeatherSummer">
+		<icon>special://skin/media/backdrops/summer/summer.jpg</icon>
+		<imagepath>special://skin/media/backdrops/summer/summer.jpg</imagepath>
+	</include>
+
+	<include name="BackgroundVarsWeatherWinter">
+		<icon>special://skin/media/backdrops/winter/winter.jpg</icon>
+		<imagepath>special://skin/media/backdrops/winter/winter.jpg</imagepath>
+	</include>
+
+	<include name="BackgroundVarsWeatherAutumn">
+		<icon>special://skin/media/backdrops/autumn/autumn.jpg</icon>
+		<imagepath>special://skin/media/backdrops/autumn/autumn.jpg</imagepath>
+	</include>
+	
+	<include name="BackgroundVarsWeather">
+		<include condition="System.Date(03-21,06-21)">BackgroundVarsWeatherSpring</include>
+		<include condition="System.Date(06-21,09-23)">BackgroundVarsWeatherSummer</include>
+		<include condition="System.Date(12-21,03-21)">BackgroundVarsWeatherWinter</include>
+		<include condition="System.Date(09-23,12-21)">BackgroundVarsWeatherAutumn</include>
+		<thumb>$INFO[Skin.String(CustomWeather)]</thumb>
+		
+	</include>
+	<include name="BackgroundVarsWeather_southern">
+		<include condition="System.Date(03-21,06-21)">BackgroundVarsWeatherAutumn</include>
+		<include condition="System.Date(06-21,09-23)">BackgroundVarsWeatherWinter</include>
+		<include condition="System.Date(12-21,03-21)">BackgroundVarsWeatherSummer</include>
+		<include condition="System.Date(09-23,12-21)">BackgroundVarsWeatherSpring</include>
+		<thumb>$INFO[Skin.String(CustomWeather)]</thumb>
+		
+	</include>
+	
+	<include name="WeatherBackdrop"><!-- Weather - 10 -->
+		<include condition="!Skin.HasSetting(backgroundweathercondition) + Skin.HasSetting(weathersouthamerica)">BackgroundWeatherSouthAmerica</include>
+		<include condition="!Skin.HasSetting(backgroundweathercondition) + Skin.HasSetting(weathernorthamerica)">BackgroundWeatherNorthAmerica</include>
+		<include condition="Skin.HasSetting(backgroundweathercondition)">BackgroundWeatherCondition</include>
+	</include>
+	<include name="BackgroundWeatherSpring">
+		<icon fallback="special://skin/extras/weather/spring.jpg">$INFO[Skin.String(CustomWeather_Background)]</icon>
+		<imagepath background="true" fallback="special://skin/extras/weather/spring.jpg">$INFO[Skin.String(CustomWeather_Background)]</imagepath>
+	</include>
+	<include name="BackgroundWeatherSummer">
+		<icon fallback="special://skin/extras/weather/summer.jpg">$INFO[Skin.String(CustomWeather_Background)]</icon>
+		<imagepath background="true" fallback="special://skin/extras/weather/summer.jpg">$INFO[Skin.String(CustomWeather_Background)]</imagepath>
+	</include>
+	<include name="BackgroundWeatherWinter">
+		<icon fallback="special://skin/extras/weather/winter.jpg">$INFO[Skin.String(CustomWeather_Background)]</icon>
+		<imagepath background="true" fallback="special://skin/extras/weather/winter.jpg">$INFO[Skin.String(CustomWeather_Background)]</imagepath>
+	</include>
+	<include name="BackgroundWeatherAutumn">
+		<icon fallback="special://skin/extras/weather/autumn.jpg">$INFO[Skin.String(CustomWeather_Background)]</icon>
+		<imagepath background="true" fallback="special://skin/extras/weather/autumn.jpg">$INFO[Skin.String(CustomWeather_Background)]</imagepath>
+	</include>
+		<include name="BackgroundWeatherCondition">
+		<icon fallback="$INFO[Skin.String(CustomWeatherConditionFolder)]weather.jpg">$INFO[Skin.String(CustomWeatherConditionFolder)]/$INFO[Weather.FanartCode]</icon>
+		<imagepath background="true" fallback="$INFO[Skin.String(CustomWeatherConditionFolder)]weather.jpg">$INFO[Skin.String(CustomWeatherConditionFolder)]/$INFO[Weather.FanartCode]</imagepath>
+	</include>
+	<include name="ImagePackBackgroundWeatherSpring">
+		<icon>$INFO[Skin.String(CustomImagePack_Background)]/spring</icon>
+		<imagepath background="true">$INFO[Skin.String(CustomImagePack_Background)]/spring</imagepath>
+		<thumb>$INFO[Skin.String(CustomWeather_Background)]</thumb>
+	</include>
+	<include name="ImagePackBackgroundWeatherSummer">
+		<icon>$INFO[Skin.String(CustomImagePack_Background)]/summer</icon>
+		<imagepath background="true">$INFO[Skin.String(CustomImagePack_Background)]/summer</imagepath>
+		<thumb>$INFO[Skin.String(CustomWeather_Background)]</thumb>
+	</include>
+	<include name="ImagePackBackgroundWeatherWinter">
+		<icon>$INFO[Skin.String(CustomImagePack_Background)]/winter</icon>
+		<imagepath background="true">$INFO[Skin.String(CustomImagePack_Background)]/winter</imagepath>
+		<thumb>$INFO[Skin.String(CustomWeather_Background)]</thumb>
+	</include>
+	<include name="ImagePackBackgroundWeatherAutumn">
+		<icon>$INFO[Skin.String(CustomImagePack_Background)]/autumn</icon>
+		<imagepath background="true">$INFO[Skin.String(CustomImagePack_Background)]/autumn</imagepath>
+		<thumb>$INFO[Skin.String(CustomWeather_Background)]</thumb>
+	</include>
+	<include name="BackgroundWeatherNorthAmerica">
+		<include condition="System.Date(03-21,06-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherSpring</include>
+		<include condition="System.Date(06-21,09-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherSummer</include>
+		<include condition="System.Date(09-21,12-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherAutumn</include>
+		<include condition="System.Date(12-21,03-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherWinter</include>
+		<include condition="System.Date(03-21,06-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherSpring</include>
+		<include condition="System.Date(06-21,09-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherSummer</include>
+		<include condition="System.Date(09-21,12-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherAutumn</include>
+		<include condition="System.Date(12-21,03-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherWinter</include>
+	</include>
+	<include name="BackgroundWeatherSouthAmerica">
+		<include condition="System.Date(09-21,12-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherSpring</include>
+		<include condition="System.Date(12-21,03-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherSummer</include>
+		<include condition="System.Date(03-21,06-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherAutumn</include>
+		<include condition="System.Date(06-21,09-21) + Skin.HasSetting(defaultbackdrop)">BackgroundWeatherWinter</include>
+		<include condition="System.Date(09-21,12-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherSpring</include>
+		<include condition="System.Date(12-21,03-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherSummer</include>
+		<include condition="System.Date(03-21,06-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherAutumn</include>
+		<include condition="System.Date(06-21,09-21) + Skin.HasSetting(imagepackbackdrop)">ImagePackBackgroundWeatherWinter</include>
+	</include>
+
+<!-- Weather Backdrop by Current Weather Conditions -->
+	<include name="BackgroundVarsWeather2">
+		<thumb>special://skin/packages/weather/$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
+		<imagepath background="true">special://skin/packages/weather/$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+	</include>
+<!-- End -->
+
+
+	<include name="MediaBackdropsMovies">
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsMovies</include>
+			<visible>substring(container.folderpath,videodb://1,Left) + [[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)]</visible>
+		</control>
+	</include>
+	<include name="MediaBackdropsTV">
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsTV</include>
+			<visible>substring(container.folderpath,videodb://2,Left) + [[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)]</visible>
+		</control>
+	</include>
+	<include name="MediaBackdropsMusic">
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsMusic</include>
+			<visible>[Skin.HasSetting(nogenrefanart) + Container.Content(genres)] | !Container.Content(genres)</visible>
+		</control>
+	</include>
+
+
+	<include name="MediaBackdropsGenres">
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<imagepath>special://skin/extras/backdrops/</imagepath>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<visible>!Skin.HasSetting(nogenrefanart) + [substring(container.folderpath,videodb://1,Left)|substring(container.folderpath,videodb://2,Left)]+ Container.Content(genres) + substring(Container().ListItem.Label,,Left)</visible>
+		</control>
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<include>BackgroundVarsMovieGenres</include>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>1000</fadetime>
+			<visible>!Skin.HasSetting(nogenrefanart) + [substring(container.folderpath,videodb://1,Left)|substring(container.folderpath,videodb://2,Left)] + Container.Content(genres)</visible>
+		</control>
+	</include>
+
+	<include name="MediaBackdropsMusicGenres">
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<imagepath>special://skin/extras/backdrops/</imagepath>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<visible>!Skin.HasSetting(nogenrefanart) + substring(container.folderpath,musicdb://1,Left) + Container.Content(genres)+substring(Container().ListItem.Label,,Left)</visible>
+		</control>
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<include>BackgroundVarsMusicGenres</include>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>1000</fadetime>
+			<visible>!Skin.HasSetting(nogenrefanart) + substring(container.folderpath,musicdb://1,Left) + Container.Content(genres)</visible>
+		</control>
+	</include>
+	
+
+	<include name="MediaBackdropsFanart">
+		<control type="largeimage">
+			<include>FullscreenDimensions</include>
+			<info>listitem.property(fanart_image)</info>
+			<visible>!Skin.HasSetting(ExtraFanMovies) + !Skin.HasSetting(ExtraFanTVShows) + [[substring(container.folderpath,videodb://1,Left)|Container.Content(movies)|Window.Previous(25)] + !Skin.HasSetting(nomoviefanart) + Skin.HasSetting(nocurtains)] | [[substring(container.folderpath,videodb://2,Left)|Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + !Skin.HasSetting(notvfanart) + Skin.HasSetting(nocurtains)] | [[Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)] + !Skin.HasSetting(nomusicfanart)]</visible>
+			<fadetime>400</fadetime>
+			<include>Animation_FanartFade</include>
+		</control>
+		<control tye="largeimage">
+			<include>FullscreenDimensions</include>
+			<info>Fanart.Image</info>
+			<visible>!Skin.HasSetting(ExtraFanMovies) | !Skin.HasSetting(ExtraFanTVShows) + [[substring(container.folderpath,videodb://1,Left)|Container.Content(movies)|Window.Previous(25)] + !Skin.HasSetting(nomoviefanart) + Skin.HasSetting(nocurtains)] | [[substring(container.folderpath,videodb://2,Left)|Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + !Skin.HasSetting(notvfanart) + Skin.HasSetting(nocurtains)] | [[Window.IsActive(500)|Window.IsActive(501)|Window.IsActive(502)] + !Skin.HasSetting(nomusicfanart)]</visible>
+			<fadetime>400</fadetime>
+			<include>Animation_FanartFade</include>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath>$INFO[ListItem.Path]/extrafanart</imagepath>
+			<timeperimage>7000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>500</fadetime>
+			<visible>Skin.HasSetting(ExtraFanMovies) + !Skin.HasSetting(nomoviefanart) + Skin.HasSetting(nocurtains)</visible>
+			<include>Animation_CommonFade</include>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath>$INFO[ListItem.Path]/extrafanart</imagepath>
+			<timeperimage>7000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>500</fadetime>
+			<visible>Skin.HasSetting(ExtraFanTVShows) + Container.Content(TVShows)</visible>
+			<include>Animation_CommonFade</include>
+		</control>
+		<control type="largeimage" id="104">
+			<include>FullscreenDimensions</include>
+			<fadetime>400</fadetime>
+			<texture>$INFO[ListItem.Path,,fanart.jpg]</texture>
+			<visible>[!Skin.HasSetting(notvfanart) + Skin.HasSetting(nocurtains) + Container.Content(episodes)] | [!Skin.HasSetting(nomusicfanart) + Container.Content(songs)]</visible>
+			<include>Animation_FanartFade</include>
+		</control>
+	</include>
+
+
+	<include name="MediaBackdropsMultiplex">
+		<control type="multiimage">
+			<include>BackgroundVarsMultiplex</include>
+			<include>BackgroundVarsCurtains</include>
+		</control>
+	</include>
+
+	<include name="MediaBackdropsSettings">
+		<control type="multiimage">
+		<include>FullscreenDimensions</include>
+		<timeperimage>10000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+		<include>BackgroundVarsSettings</include>
+		</control>
+	</include>
+	
+</includes>
+
+
+
+	

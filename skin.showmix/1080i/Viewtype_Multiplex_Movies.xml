@@ -1,0 +1,1960 @@
+<includes>
+	
+	<include name="MultiplexIconDimensionsWrap">
+		<posx>11</posx>
+		<posy>11</posy>
+		<width>213</width>
+		<height>320</height>
+		<align>center</align>
+		<fadetime>200</fadetime>
+	</include>
+	<include name="MultiplexIconDimensionsWrapReflect">
+		<posx>11</posx>
+		<posy>331</posy>
+		<width>213</width>
+		<height>320</height>
+		<align>center</align>
+		<colordiffuse>d0FFFFFF</colordiffuse>
+		<fadetime>200</fadetime>		
+	</include>	
+	
+<!-- Movie Multiplex Variables: Main thumbs -->
+	<include name="MultiplexMoviesThumbDimensions">
+		<align>center</align>
+		<posx>-132</posx>
+		<posy>0</posy>
+		<width>264</width>
+		<height>396</height>
+	</include>
+	<include name="MultiplexMoviesThumbReflectionDimensions">
+		<posx>-132</posx>
+		<posy>396</posy>
+		<width>264</width>
+		<height>396</height>
+	</include>
+<!-- Movie Multiplex Variables: Thumb glass overlays -->
+	<include name="MultiplexMoviesGlassRight">
+		<align>center</align>
+		<posx>-145</posx>
+		<posy>-14</posy>
+		<width>290</width>
+		<height>423</height>
+		<texture>lowlist/movie_thumb_glass.png</texture>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+	<include name="MultiplexMoviesGlassLeft">
+		<posx>-145</posx>
+		<posy>-14</posy>
+		<width>290</width>
+		<height>423</height>
+		<texture flipx="true">lowlist/movie_thumb_glass.png</texture>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+	</include>
+
+
+	<include name="MultiplexMoviesThumb">
+		<include>MultiplexMoviesThumbDimensions</include>
+		<texture background="true" diffuse="lowlist/movie_thumb_mask.png">special://skin/media/DefaultVideoBigPoster.png</texture>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<visible>!Container.Content(genres)</visible>
+	</include>
+	<include name="MultiplexMoviesThumbReflection">
+		<include>MultiplexMoviesThumbReflectionDimensions</include>
+		<colordiffuse>B0FFFFFF</colordiffuse>
+		<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">DefaultVideoBigPoster.png</texture>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<animation effect="fade" start="70" end="70" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>			
+		<visible>!Container.Content(genres)</visible>
+	</include>
+
+	<include name="MultiplexGenreDefaultThumb">
+		<include>MultiplexMoviesThumbDimensions</include>
+		<texture diffuse="lowlist/movie_thumb_mask.png">DefaultGenres.jpg</texture>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<visible>Container.Content(genres)</visible>
+	</include>
+	<include name="MultiplexGenreThumb">
+		<include>MultiplexMoviesThumbDimensions</include>
+		<aspectratio scalediffuse="false">tretch</aspectratio>
+		<visible>Container.Content(genres)</visible>
+	</include>
+	<include name="MultiplexGenreThumbReflection">
+		<include>MultiplexMoviesThumbReflectionDimensions</include>
+		<colordiffuse>d0FFFFFF</colordiffuse>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<visible>Container.Content(genres)</visible>
+	</include>
+	
+
+	<include name="MultiplexMoviesWatchedRight">
+		<align>right</align>
+		<posx>75</posx>
+		<posy>5</posy>
+		<width>52</width>
+		<height>52</height>
+		<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+	</include>
+	<include name="MultiplexMoviesWatchedLeft">
+		<align>left</align>
+		<posx>-120</posx>
+		<posy>5</posy>
+		<width>52</width>
+		<height>52</height>
+		<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+	</include>
+
+	<include name="MultiplexMoviesOverlay">
+		<include>MultiplexMoviesThumbDimensions</include>
+		<colordiffuse>4e000000</colordiffuse>
+		<texture>-</texture>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<animation effect="fade" end="100" time="200" condition="ControlGroup(7000).HasFocus">Conditional</animation>
+		<animation effect="fade" start="0" end="0" time="0">WindowOpen</animation>
+	</include>
+
+<!--	<control type="image" id="82">
+		<texture>-</texture>
+		<visible>OnNext | OnPrevious</visible>
+		<animation effect="fade" time="4000">Hidden</animation>
+	</control> -->
+
+	<include name="MultiplexMovies">
+		<control type="group" id="5051">
+			<posy>585</posy>
+			<camera x="960" y="810" />
+			<visible>Control.IsVisible(551) + Container.OnNext + !Skin.HasSetting(flattenmultiplex)</visible>
+			<animation effect="slide" end="-120,0" time="250" reversible="false">Hidden</animation>
+			<control type="group">
+				<posx>320</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,12)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,12)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="-85" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-7).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-7).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-7).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-7).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-7).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>440</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,12)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,10)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,10)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="35" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-6).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>560</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,10)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,8)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,8)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="155" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-5).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>680</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,8)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,6)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,6)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="275" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-4).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>800</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,6)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,4)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,4)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="395" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-3).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>920</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,4)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,2)+Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,2)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="515" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-2).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			
+			<!-- largeimage off screen to stop lag of fading new item -->
+			<control type="group">
+				<posx>2200</posx>
+				<control type="largeimage">
+					<include>MultiplexMoviesThumb</include>
+					<info>ListItem(7).Thumb</info>
+				</control>
+			</control>
+
+			<control type="group">
+				<posx>1720</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,11)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,11)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="2125" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(6).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1600</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,11)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,9)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,9)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="2005" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(5).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1480</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,9)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,7)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,7)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1885" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(4).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1360</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,7)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,5)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,5)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1765" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(3).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1240</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,5)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,3)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,3)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1645" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(2).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1120</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,3)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,1)+!Container.OnNext]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="1525" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(1).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			
+			<control type="group">
+				<control type="group">
+					<posx>1000</posx>
+					<posy>35</posy>
+					<visible>Container.OnNext</visible>
+					<animation effect="rotatey" center="1405" start="60" end="60" time="0" condition="true">Conditional</animation>
+					<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+						<effect type="rotatey" center="1245" start="0" end="-60" time="250"/>
+						<effect type="zoom" start="100" end="113" time="250"/>
+						<effect type="slide" start="0,0" end="0,-57" time="250"/>
+					</animation>
+					<control type="group">
+						<control type="largeimage">
+							<include>MultiplexMoviesThumb</include>
+							<info>ListItem(0).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreDefaultThumb</include>
+						</control>
+						<control type="image">
+							<include>MultiplexGenreThumb</include>
+							<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+						</control>
+						<control type="image">
+							<include>MultiplexMoviesWatchedRight</include>
+							<info>ListItem(0).Overlay</info>
+						</control>				
+						<control type="image">
+							<description>Glass overlay</description>
+							<include>MultiplexMoviesGlassRight</include>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumbReflection</include>
+							<info>ListItem(0).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreThumbReflection</include>
+							<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+						</control>
+					</control>
+				</control>
+				<control type="group">
+					<posx>960</posx>
+					<visible>Container.OnNext</visible>
+					<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+						<effect type="rotatey" center="775" start="0" end="-60" time="250"/>
+						<effect type="zoom" start="100" end="86.5" time="250"/>
+						<effect type="slide" start="0,0" end="0,70" time="250"/>
+					</animation>
+					<control type="group">
+						<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,2)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,0)+Container.OnNext]</visible>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,0)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumb</include>
+							<info>ListItem(-1).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreDefaultThumb</include>
+						</control>
+						<control type="image">
+							<include>MultiplexGenreThumb</include>
+							<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+						</control>
+						<control type="image">
+							<include>MultiplexMoviesWatchedRight</include>
+							<info>ListItem(-1).Overlay</info>
+						</control>				
+						<control type="image">
+							<description>Glass overlay</description>
+							<include>MultiplexMoviesGlassLeft</include>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumbReflection</include>
+							<info>ListItem(-1).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreThumbReflection</include>
+							<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control> 
+		
+		<control type="group" id="5052">
+			<posy>585</posy>
+			<camera x="960" y="810" />
+			<visible>Control.IsVisible(551) + Container.OnPrevious + !Skin.HasSetting(flattenmultiplex)</visible>
+			<animation effect="slide" end="120,0" time="250" reversible="false">Hidden</animation>
+			<control type="group">
+				<posx>1600</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,11)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,11)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="2005" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(7).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(7).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(7).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(7).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(7).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1480</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,11)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,9)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,9)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1885" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(6).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1360</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,9)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,7)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,7)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1765" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(5).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1240</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,7)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,5)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,5)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1645" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(4).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1120</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,5)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,3)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,3)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1525" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(3).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>1000</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,3)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,1)+Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+				<animation effect="rotatey" center="1405" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(2).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			
+			<!-- largeimage off screen to stop lag of fading new item -->
+			<control type="group">
+				<posx>-600</posx>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-7).Thumb</info>
+					</control>
+			</control>
+			<control type="group">
+				<posx>200</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,12)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,12)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="-205" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-6).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>320</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,12)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,10)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,10)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="-85" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-5).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>440</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,10)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,8)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,8)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="35" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-4).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>560</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,8)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,6)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,6)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="155" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-3).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>680</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,6)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,4)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,4)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="275" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-2).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>800</posx>
+				<posy>35</posy>
+				<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,4)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,2)+!Container.OnPrevious]</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,2)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+				<animation effect="rotatey" center="395" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-1).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+
+			<control type="group">
+				<control type="group">
+					<posx>920</posx>
+					<posy>35</posy>
+					<visible>Container.OnPrevious</visible>
+					<animation effect="rotatey" center="515" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+					<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+						<effect type="rotatey" center="676" start="0" end="60" time="250"/>
+						<effect type="zoom" start="100" end="112.5" time="250"/>
+						<effect type="slide" start="0,0" end="0,-57" time="250"/>
+					</animation>
+					<control type="group">
+						<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,2)] | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,1)+!Container.OnPrevious]</visible>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+						<animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumb</include>
+							<info>ListItem(0).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreDefaultThumb</include>
+						</control>
+						<control type="image">
+							<include>MultiplexGenreThumb</include>
+							<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+						</control>
+						<control type="image">
+							<include>MultiplexMoviesWatchedRight</include>
+							<info>ListItem(0).Overlay</info>
+						</control>				
+						<control type="image">
+							<description>Glass overlay</description>
+							<include>MultiplexMoviesGlassRight</include>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumbReflection</include>
+							<info>ListItem(0).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreThumbReflection</include>
+							<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+						</control>
+					</control>
+				</control>
+				<control type="group">
+					<posx>960</posx>
+					<visible>Container.OnPrevious</visible>
+					<animation type="Hidden" reversible="false" tween="quadratic" easing="out">
+						<effect type="rotatey" center="1140" start="0" end="60" time="250"/>
+						<effect type="zoom" start="100" end="86.5" time="250"/>
+						<effect type="slide" start="0,0" end="0,70" time="250"/>
+					</animation>
+					<control type="group">
+						<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,1)]</visible>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(dynamicflowmovie) + !IntegerGreaterThan(Container.NumItems,1)">Conditional</animation>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumb</include>
+							<info>ListItem(1).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreDefaultThumb</include>
+						</control>
+						<control type="image">
+							<include>MultiplexGenreThumb</include>
+							<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+						</control>
+						<control type="image">
+							<include>MultiplexMoviesWatchedRight</include>
+							<info>ListItem(1).Overlay</info>
+						</control>				
+						<control type="image">
+							<description>Glass overlay</description>
+							<include>MultiplexMoviesGlassRight</include>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexMoviesThumbReflection</include>
+							<info>ListItem(1).Thumb</info>
+						</control>
+						<control type="largeimage">
+							<include>MultiplexGenreThumbReflection</include>
+							<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+
+<!--		<control type="button" id="965">
+			<texture>-</texture>
+			<visible>!Skin.HasSetting(flattenmultiplex)</visible>
+			<animation effect="fade" start="100" end="0" time="800">Hidden</animation>
+		</control> -->
+		
+		<control type="group" id="5050">
+			<posy>585</posy>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<visible>Control.IsVisible(551) + ![Control.IsVisible(5051) | Control.IsVisible(5052)] + !Skin.HasSetting(flattenmultiplex)</visible>
+			<camera x="960" y="810" />
+			<control type="group">
+				<posx>-600</posx>
+				<control type="largeimage">
+					<include>MultiplexMoviesThumb</include>
+					<info>ListItem(-7).Thumb</info>
+				</control>
+			</control>
+			<control type="group">
+				<posx>320</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="-85" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,12)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-6).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>440</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="35" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,10)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-5).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>560</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="155" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,8)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-4).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>680</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="275" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,6)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-3).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<posx>800</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="395" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,4)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-2).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+					</control>
+				 </control>
+			</control>
+			<control type="group">
+				<posx>920</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="515" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,2)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedLeft</include>
+						<info>ListItem(-1).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassLeft</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(-1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+					</control>
+				 </control>
+			</control>
+
+			<!-- largeimage off screen to stop lag of fading new item -->
+			<control type="group">
+				<posx>2200</posx>
+				<control type="largeimage">
+					<include>MultiplexMoviesThumb</include>
+					<info>ListItem(7).Thumb</info>
+				</control>
+			</control>
+
+			<control type="group">
+				<posx>1600</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="2005" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,11)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(6).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(6).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(6).filename,bluray) | substring(ListItem(6).filename,blu-ray) | substring(ListItem(6).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(6).filename,hddvd) | substring(ListItem(6).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(6).filename,hdtv) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(6).filename,dvd) + !substring(ListItem(6).filename,hddvd) + !substring(ListItem(6).filename,hd-dvd) + !substring(ListItem(6).filename,bluray)] | [substring(ListItem(6).filename,.iso,Right) + !substring(ListItem(6).filename,bluray)] | substring(ListItem(6).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(6).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				 </control>
+			</control>
+			<control type="group">
+				<posx>1480</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1885" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,9)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(5).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(5).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(5).filename,bluray) | substring(ListItem(5).filename,blu-ray) | substring(ListItem(5).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(5).filename,hddvd) | substring(ListItem(5).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(5).filename,hdtv) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(5).filename,dvd) + !substring(ListItem(5).filename,hddvd) + !substring(ListItem(5).filename,hd-dvd) + !substring(ListItem(5).filename,bluray)] | [substring(ListItem(5).filename,.iso,Right) + !substring(ListItem(5).filename,bluray)] | substring(ListItem(5).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(5).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				 </control>
+			</control>
+			<control type="group">
+				<posx>1360</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1765" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,7)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(4).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(4).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(4).filename,bluray) | substring(ListItem(4).filename,blu-ray) | substring(ListItem(4).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(4).filename,hddvd) | substring(ListItem(4).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(4).filename,hdtv) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(4).filename,dvd) + !substring(ListItem(4).filename,hddvd) + !substring(ListItem(4).filename,hd-dvd) + !substring(ListItem(4).filename,bluray)] | [substring(ListItem(4).filename,.iso,Right) + !substring(ListItem(4).filename,bluray)] | substring(ListItem(4).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(4).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				 </control>
+			</control>
+			<control type="group">
+				<posx>1240</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1645" start="60" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,5)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(3).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(3).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(3).filename,bluray) | substring(ListItem(3).filename,blu-ray) | substring(ListItem(3).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(3).filename,hddvd) | substring(ListItem(3).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(3).filename,hdtv) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(3).filename,dvd) + !substring(ListItem(3).filename,hddvd) + !substring(ListItem(3).filename,hd-dvd) + !substring(ListItem(3).filename,bluray)] | [substring(ListItem(3).filename,.iso,Right) + !substring(ListItem(3).filename,bluray)] | substring(ListItem(3).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(3).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				 </control>
+			</control>
+			<control type="group">
+				<posx>1120</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1525" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,3)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(2).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(2).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(2).filename,bluray) | substring(ListItem(2).filename,blu-ray) | substring(ListItem(2).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(2).filename,hddvd) | substring(ListItem(2).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(2).filename,hdtv) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(2).filename,dvd) + !substring(ListItem(2).filename,hddvd) + !substring(ListItem(2).filename,hd-dvd) + !substring(ListItem(2).filename,bluray)] | [substring(ListItem(2).filename,.iso,Right) + !substring(ListItem(2).filename,bluray)] | substring(ListItem(2).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(2).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				 </control>
+			</control>
+
+			<control type="group">
+				<posx>1000</posx>
+				<posy>35</posy>
+				<animation effect="rotatey" center="1405" end="60" time="0" condition="true">Conditional</animation>
+				<control type="group">
+					<visible>!Skin.HasSetting(dynamicflowmovie) | [Skin.HasSetting(dynamicflowmovie) + IntegerGreaterThan(Container.NumItems,1)]</visible>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(1).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(1).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(1).filename,bluray) | substring(ListItem(1).filename,blu-ray) | substring(ListItem(1).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(1).filename,hddvd) | substring(ListItem(1).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(1).filename,hdtv) + Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(1).filename,dvd) + !substring(ListItem(1).filename,hddvd) + !substring(ListItem(1).filename,hd-dvd) + !substring(ListItem(1).filename,bluray)] | [substring(ListItem(1).filename,.iso,Right) + !substring(ListItem(1).filename,bluray)] | substring(ListItem(1).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(1).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				 </control>
+			</control>
+			<control type="group">
+				<posx>960</posx>
+				<control type="group">
+					<control type="largeimage">
+						<include>MultiplexMoviesThumb</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreDefaultThumb</include>
+					</control>
+					<control type="image">
+						<include>MultiplexGenreThumb</include>
+						<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+					<control type="image">
+						<include>MultiplexMoviesWatchedRight</include>
+						<info>ListItem(0).Overlay</info>
+					</control>				
+					<control type="image">
+						<description>Glass overlay</description>
+						<include>MultiplexMoviesGlassRight</include>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexMoviesThumbReflection</include>
+						<info>ListItem(0).Thumb</info>
+					</control>
+					<control type="largeimage">
+						<include>MultiplexGenreThumbReflection</include>
+						<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+					</control>
+					<control type="image"><!--bluray-->
+						<include>CoverFlowCaseBluray</include>
+						<visible>[substring(ListItem(0).filename,bluray) | substring(ListItem(0).filename,blu-ray) | substring(ListItem(0).filename,bdrip)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hddvd-->
+						<include>CoverFlowCaseHDDVD</include>
+						<visible>[substring(ListItem(0).filename,hddvd) | substring(ListItem(0).filename,hd-dvd)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--hdtv-->
+						<include>CoverFlowCaseHDTV</include>
+						<visible>substring(ListItem(0).filename,hdtv) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--dvd-->
+						<include>CoverFlowCaseDVD</include>
+						<visible>[[substring(ListItem(0).filename,dvd) + !substring(ListItem(0).filename,hddvd) + !substring(ListItem(0).filename,hd-dvd) + !substring(ListItem(0).filename,bluray)] | [substring(ListItem(0).filename,.iso,Right) + !substring(ListItem(0).filename,bluray)] | substring(ListItem(0).filename,.ifo,Right)] + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+					<control type="image"><!--3dbd-->
+						<include>CoverFlowCase3DBD</include>
+						<visible>substring(ListItem(0).filename,3dbd) + !Skin.HasSetting(videomediacase)</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+
+	
+	<include name="Viewtype_Multiplex_Movies">
+		<control type="wraplist" id="551">
+			<viewtype label="Multiplex">list</viewtype>
+			<posx>74</posx>
+			<posy>650</posy>
+			<width>1792</width>
+			<height>570</height>	
+			<onleft>551</onleft>
+			<onright>551</onright>	
+			<onup>111</onup>
+			<ondown>601</ondown>
+			<pagecontrol>61</pagecontrol>
+			<orientation>horizontal</orientation>
+			<focusposition>3</focusposition>	
+			<preloaditems>2</preloaditems>
+			<scrolltime>250</scrolltime>
+			<include>Animation_CommonFade</include>
+			<include>Animation_HideMultiplex</include>
+			<visible allowhiddenfocus="true">[[Container.Content(seasons)+Skin.HasSetting(tvseasonposterview)]|[Container.Content(tvshows)+Skin.HasSetting(tvshowposterview)]] | ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] | substring(Container.PluginName,Apple Movie Trailers Lite)</visible>
+			<itemlayout width="256" height="450">
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrap</include>
+					<texture background="true" diffuse="lowlist/movie_thumb_mask.png">special://skin/media/DefaultVideoBigPoster.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>!Container.Content(genres) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)</visible>
+				</control>
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrap</include>
+					<texture background="true" diffuse="lowlist/movie_thumb_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>234</width>
+					<height>343</height>
+					<align>center</align>
+					<texture>lowlist/movie_thumb_glass.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)</visible>
+				</control>				
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrapReflect</include>
+					<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">special://skin/media/DefaultVideoBigPoster.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>!Container.Content(genres) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)</visible>
+				</control>				
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrapReflect</include>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres)</visible>
+				</control>
+				<control type="image">
+					<posx>167</posx>
+					<posy>15</posy>
+					<width>52</width>
+					<height>52</height>
+					<info>ListItem.Overlay</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>	
+				
+			</itemlayout>
+			<focusedlayout width="256" height="450">
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrap</include>
+					<texture background="true" diffuse="lowlist/movie_thumb_mask.png">special://skin/media/DefaultVideoBigPoster.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>!Container.Content(genres) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrap</include>
+					<texture background="true" diffuse="lowlist/movie_thumb_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>234</width>
+					<height>343</height>
+					<align>center</align>
+					<texture>lowlist/movie_thumb_glass.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>				
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrapReflect</include>
+					<texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">special://skin/media/DefaultVideoBigPoster.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<visible>!Container.Content(genres) + Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>				
+				<control type="largeimage">
+					<include>MultiplexIconDimensionsWrapReflect</include>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture flipy="true" diffuse="multiplex/multiplex_maskreflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + Container.Content(genres)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>
+				<control type="image">
+					<posx>167</posx>
+					<posy>15</posy>
+					<width>52</width>
+					<height>52</height>
+					<info>ListItem.Overlay</info>
+					<visible>Skin.HasSetting(flattenmultiplex) + !Control.IsVisible(5050) + !Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+					<include>Animation_MultiplexFocusZoom</include>
+				</control>				
+			</focusedlayout>
+		</control>
+	</include>
+</includes>

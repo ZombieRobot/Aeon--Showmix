@@ -1,0 +1,3014 @@
+
+<includes>
+
+	<include name="MultiplexIconDimensionsWrap2">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>177</width>
+		<height>264</height>
+		<fadetime>200</fadetime>
+	</include>
+
+	<include name="MultiplexIconDimensionsWrapReflect2">
+		<posx>0</posx>
+		<posy>266</posy>
+		<width>177</width>
+		<height>264</height>
+		<colordiffuse>d0FFFFFF</colordiffuse>
+		<fadetime>200</fadetime>		
+	</include>	
+		<include name="MultiplexInfoLabel_Left">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>150</width>
+		<height>13</height>
+		<align>left</align>
+		<font>Droid16</font>	
+		<textcolor>ABFFFFFF</textcolor>
+	</include>
+	<include name="Animation_MultiplexFocusZoom2">
+	    <animation effect="zoom" center="56,150" start="100" end="110" time="400" tween="cubic" easing="inout">Focus</animation> 
+	    <animation effect="zoom" center="56,80" start="110" end="100" time="400" tween="cubic" easing="inout">Unfocus</animation> 	
+    </include>	
+	<include name="MultiplexInfoValueVars">
+		<posx>0</posx>
+		<posy>28</posy>
+		<height>13</height>
+		<font>Droid16</font>	
+		<textcolor>FFFFFFFF</textcolor>
+		<scrollspeed>30</scrollspeed>
+		<scrollout>true</scrollout>
+		<pauseatend>3000</pauseatend>
+		<scroll>true</scroll>
+	</include>
+	<include name="MultiplexInfoValue">
+		<include>MultiplexInfoValueVars</include>
+		<width>370</width>
+	</include>
+	<include name="MultiplexInfoValue_200">
+		<include>MultiplexInfoValueVars</include>
+		<width>200</width>
+	</include>
+	<include name="MultiplexInfoValue_250">
+		<include>MultiplexInfoValueVars</include>
+		<width>240</width>
+	</include>
+	<include name="MultiplexInfoValue_270">
+		<include>MultiplexInfoValueVars</include>
+		<width>270</width>
+	</include>
+	<include name="MultiplexInfoValue_300">
+		<include>MultiplexInfoValueVars</include>
+		<width>300</width>
+	</include>
+	<include name="MultiplexInfoValue_350">
+		<include>MultiplexInfoValueVars</include>
+		<width>350</width>
+	</include>
+	
+	<!--MULTIPLEX COMMON BACKGROUND GROUP-->
+		
+
+	
+
+	<include name="MultiplexOld">
+		<control type="group">
+			<visible>Control.IsVisible(599)</visible>
+			<include>Animation_CommonFade</include>
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>     
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1245</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control> 		
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		       
+
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>
+				</control>
+			<control type="group">
+				<include>Animation_CommonFade</include>
+				<visible>Control.IsVisible(599)</visible>
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<visible>Skin.HasSetting(noinfo)</visible>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>     
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1245</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control> 		
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		       
+
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>
+				</control>			
+				
+				
+				
+				
+				
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<visible>!Skin.HasSetting(noinfo) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31667])</visible>
+				
+
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>     
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1245</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>   		
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>			
+
+			
+		<!--MULTIPLEX COMMON BACKGROUND GROUP-->
+			
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>
+						<width>1920</width>
+						<height>572</height>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<visible>!Skin.HasSetting(grey) + !Skin.HasSetting(green) + !Skin.HasSetting(black)</visible>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>
+						<control type="image">
+							<visible>!Skin.HasSetting(grey) + !Skin.HasSetting(green) + !Skin.HasSetting(black) + Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>					
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<visible>Skin.HasSetting(green)</visible>
+							<texture>views/multiplex/backgrounds/multiplex_window_green.png</texture>
+						</control>
+						<control type="image">
+							<visible>Skin.HasSetting(green) + Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_green.png</texture>
+						</control>	
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<visible>Skin.HasSetting(grey)</visible>
+							<texture>views/multiplex/backgrounds/multiplex_window_grey.png</texture>
+						</control>
+						<control type="image">
+							<visible>Skin.HasSetting(grey) + Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_grey.png</texture>
+						</control>	
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<visible>Skin.HasSetting(black) + Skin.HasSetting(black)</visible>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>
+						<control type="image">
+							<visible>Skin.HasSetting(black) + Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>			
+						<control type="image">
+							<posx>126</posx>
+							<posy>635</posy>
+							<width>1673</width>
+							<height>200</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>59</posy>
+							<width>1670</width>
+							<height>540</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+								<control type="image">
+							<posx>128</posx>
+							<posy>56</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>599</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>	
+						
+		<!-- POSTER VIEW LINES -->		
+		-==-=-==-=-=-=-=--==-=--		
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>
+						<width>1920</width>
+						<height>572</height>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<control type="image">
+							<posx>597</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>540</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>1425</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>540</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+					</control>	
+				
+		<!-- END POSTER VIEW LINES -->
+
+
+
+		<!-- START POSTER VIEW INFO RATINGS LEFT SIDE -->	
+					<control type="group">
+						<posx>158</posx>
+						<posy>144</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+						<control type="group">
+							<posy>33</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31402]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Director]</label>
+							</control>			
+						</control>
+						
+						<control type="group">
+							<posy>108</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31401]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Writer]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>183</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31436]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Year]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>258</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31445]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Duration]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>333</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31438]:</label>
+							</control>					
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Genre]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>408</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31417]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.MPAA]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>483</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31408]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
+							</control>			
+						</control>
+					</control>
+		<!-- END POSTER VIEW INFO RATINGS LEFT SIDE -->	
+					<!-- IMAGES FOR POSTER VIEW -->
+					<control type="group">
+						<posx>1428</posx>
+						<posy>156</posy>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<control type="largeimage">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>368</width>
+							<height>540</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Icon]</texture>
+						</control>
+					</control>
+					
+					
+		<!-- VIDEO WINDOW FOR POSTER VIEW -->
+					
+					<control type="group">
+						<posx>600</posx>
+						<posy>159</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>825</width>
+							<height>539</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>0</posx>
+							<posy>38</posy>
+							<width>825</width>
+							<height>464</height>
+							<!-- <aspectratio>scale</aspectratio> -->
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>908</posx>
+							<posy>513</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>830</posx>
+							<posy>527</posy>
+							<width>368</width>
+							<align>center</align>
+							<height>45</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>908</posx>
+							<posy>513</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+				
+						<control type="label">
+							<posx>830</posx>
+							<posy>527</posy>
+							<width>368</width>
+							<align>center</align>
+							<height>45</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="textbox">
+							<posx>18</posx>
+							<posy>12</posy>
+							<width>795</width>
+							<height>503</height>
+							<font>Droid19</font>
+							<info>listitem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>						
+							<visible>!Skin.HasSetting(FullscreenPoster) + !Player.HasVideo</visible>
+						</control>				
+					</control>				
+
+		 <!-- Movie count Label -->				
+					<control type="label">
+						<posx>1757</posx>
+						<posy>116</posy>
+						<width>593</width>
+						<height>38</height>
+						<font>Droid16</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container(599).NumItems] ITEMS</label>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(Total) + !Skin.HasSetting(FullscreenPoster)</visible>
+					</control>	 			
+
+					
+
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>			
+							
+						<control type="image">
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>
+						<control type="image">
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+							<visible>Skin.HasSetting(Dark)</visible>
+						</control>				
+						<control type="image">
+							<posx>0</posx>
+							<posy>912</posy>
+							<width>1920</width>
+							<height>614</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>	
+							
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1920</width>
+							<height>86</height>
+							<texture flipy="false">views/multiplex/backgrounds/multiplex_fullscreen_top_tint.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+						
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>215</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>	
+					</control>	
+		<!-- START MOVIE FULLSCREEN HORIZONTAL LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>84</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>914</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+
+		<!-- END MOVIE FULLSCREEN HORIZONTAL LINES -->
+		<!-- FULLSCREEN POSTER VIEW LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>				
+						<control type="image">
+							<posx>408</posx>
+							<posy>87</posy>
+							<width>3</width>
+							<height>614</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>1394</posx>
+							<posy>87</posy>
+							<width>3</width>
+							<height>614</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>411</posx>
+							<posy>168</posy>
+							<width>984</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+		<!-- FULLSCREEN Movies Title Label -->				
+					<control type="label">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>15</posx>
+						<posy>23</posy>
+						<width>1193</width>
+						<height>38</height>
+						<font>DroidBold37</font>
+						<textcolor>d0FFFFFF</textcolor>
+						<selectedcolor>white</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>
+		<!-- FULLSCREEN DIRECTOR INFO -->		
+					<control type="group">
+						<posx>450</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31402]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Director]</label>
+						</control>
+					</control>
+						
+					<control type="group">
+						<posx>998</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31401]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Writer]</label>
+						</control>
+					</control>				
+		<!-- FULLSCREEN IMAGES FOR PLOT VIEW -->
+					<control type="group">
+						<posx>0</posx>
+						<posy>87</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="largeimage">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>408</width>
+							<height>612</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<posx>1406</posx>
+							<posy>9</posy>
+							<width>507</width>
+							<height>285</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>1407</posx>
+							<posy>11</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="largeimage">
+							<posx>1407</posx>
+							<posy>11</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="image">
+							<posx>1406</posx>
+							<posy>318</posy>
+							<width>507</width>
+							<height>285</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>1407</posx>
+							<posy>320</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>				
+						<control type="largeimage">
+							<posx>1407</posx>
+							<posy>320</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>				
+					</control>
+						<!-- VIDEO WINDOW -->
+					<control type="group">
+						<posx>431</posx>
+						<posy>173</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>		
+		<!-- FULLSCREEN PLOT TEXT FOR PLOT VIEW -->		
+						<control type="textbox">
+							<posx>6</posx>
+							<posy>9</posy>
+							<width>938</width>
+							<height>503</height>
+							<font>Droid22</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000"></autoscroll>					
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+							<visible>!IsEmpty(ListItem.Plot) + Skin.HasSetting(FullscreenPoster) + !Player.HasVideo</visible>	
+						</control>					
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>942</width>
+							<height>530</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>942</width>
+							<height>530</height>
+							<!-- <aspectratio>scale</aspectratio> -->
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>-329</posx>
+							<posy>507</posy>
+							<width>213</width>
+							<height>45</height>
+							<align>center</align>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>-428</posx>
+							<posy>521</posy>
+							<width>408</width>
+							<height>420</height>
+							<align>center</align>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>-329</posx>
+							<posy>507</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>-428</posx>
+							<posy>521</posy>
+							<align>center</align>
+							<width>408</width>
+							<height>420</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>
+				</control>
+				
+				
+				
+				
+				
+				
+				
+				
+
+				
+					
+		<!--START PLOT VIEW MULTIPLEX -->
+		<!--START PLOT VIEW MULTIPLEX -->
+		<!--START PLOT VIEW MULTIPLEX -->
+		<!--START PLOT VIEW MULTIPLEX -->
+
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<visible>!Skin.HasSetting(noinfo) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31046])</visible>
+						
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>     
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1245</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control> 		
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		       
+
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>	
+					
+
+				
+			<!--MULTIPLEX COMMON BACKGROUND GROUP-->
+				
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>
+						<width>1920</width>
+						<height>572</height>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>
+				
+						<control type="image">
+							<visible>Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>		
+						<control type="image">
+							<posx>126</posx>
+							<posy>635</posy>
+							<width>1673</width>
+							<height>200</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>59</posy>
+							<width>1670</width>
+							<height>540</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>56</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>599</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>	
+				
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>			
+						<control type="image">
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>
+						
+
+						<control type="image">
+							<visible>Skin.HasSetting(Dark)</visible>
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>				
+						<control type="image">
+							<posx>0</posx>
+							<posy>87</posy>
+							<width>1920</width>
+							<height>614</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>	
+							
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1920</width>
+							<height>86</height>
+							<texture flipy="false">views/multiplex/backgrounds/multiplex_fullscreen_top_tint.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+						
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>215</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>					
+					</control>		
+			<!-- PLOT VIEW LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>				
+						<posy>98</posy>
+						<control type="image">
+							<posx>597</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>540</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>1334</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>540</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+					</control>
+			<!-- VIDEO WINDOW FOR PLOT VIEW -->
+					<control type="group">
+						<posx>600</posx>
+						<posy>156</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+			<!-- PLOT TEXT FOR PLOT VIEW -->
+						<control type="textbox">
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>683</width>
+							<height>533</height>
+							<font>Droid19</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000"></autoscroll>					
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+							<visible>!IsEmpty(ListItem.Plot) + !Skin.HasSetting(FullscreenPoster) + !Player.HasVideo</visible>	
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>734</width>
+							<height>539</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>0</posx>
+							<posy>63</posy>
+							<width>734</width>
+							<height>414</height>
+							<!-- <aspectratio>scale</aspectratio> -->
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>867</posx>
+							<posy>519</posy>
+							<width>213</width>
+							<height>45</height>
+							<align>center</align>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>777</posx>
+							<posy>533</posy>
+							<width>392</width>
+							<height>45</height>
+							<align>center</align>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>867</posx>
+							<posy>519</posy>
+							<width>213</width>
+							<height>45</height>
+							<align>center</align>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>777</posx>
+							<posy>533</posy>
+							<width>392</width>
+							<height>45</height>
+							<align>center</align>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>				
+			<!-- END POSTER VIEW LINES -->
+			<!-- START MOVIE FULLSCREEN HORIZONTAL LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>84</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>914</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+			<!-- END MOVIE FULLSCREEN HORIZONTAL LINES -->
+			<!-- FULLSCREEN POSTER VIEW LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>				
+						<control type="image">
+							<posx>525</posx>
+							<posy>87</posy>
+							<width>2</width>
+							<height>614</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>1394</posx>
+							<posy>87</posy>
+							<width>3</width>
+							<height>614</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>528</posx>
+							<posy>168</posy>
+							<width>867</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+			<!-- END POSTER VIEW LINES -->
+			<!-- START POSTER VIEW INFO RATINGS LEFT SIDE -->	
+					<control type="group">
+						<posx>158</posx>
+						<posy>144</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+						<control type="group">
+							<posy>33</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31402]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Director]</label>
+							</control>			
+						</control>
+							
+						<control type="group">
+							<posy>108</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31401]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Writer]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>183</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31436]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Year]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>258</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31445]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Duration]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>333</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31438]:</label>
+							</control>					
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.Genre]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>408</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31417]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.MPAA]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>483</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31408]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_270</include>				
+								<label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
+							</control>			
+						</control>
+					</control>
+			<!-- END POSTER VIEW INFO RATINGS LEFT SIDE -->	
+			<!-- FULLSCREEN Movies Title Label -->				
+					<control type="label">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>15</posx>
+						<posy>23</posy>
+						<width>1193</width>
+						<height>38</height>
+						<font>DroidBold37</font>
+						<textcolor>d0FFFFFF</textcolor>
+						<selectedcolor>white</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>
+						
+			<!-- IMAGES PLOT VIEW -->
+					<control type="group">
+						<posx>1370</posx>
+						<posy>176</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>				
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>395</width>
+							<height>245</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>392</width>
+							<height>242</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>392</width>
+							<height>242</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>257</posy>
+							<width>395</width>
+							<height>245</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>258</posy>
+							<width>392</width>
+							<height>242</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>				
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>258</posy>
+							<width>392</width>
+							<height>242</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>				
+					</control>
+
+
+			<!-- FULLSCREEN IMAGES FOR PLOT VIEW -->
+					<control type="group">
+						<posx>12</posx>
+						<posy>87</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="image">
+							<posx>-3</posx>
+							<posy>9</posy>
+							<width>507</width>
+							<height>285</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>-2</posx>
+							<posy>11</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="largeimage">
+							<posx>-2</posx>
+							<posy>11</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb1.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="image">
+							<posx>-3</posx>
+							<posy>318</posy>
+							<width>507</width>
+							<height>285</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>-2</posx>
+							<posy>320</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>				
+						<control type="largeimage">
+							<posx>-2</posx>
+							<posy>320</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb2.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>			
+						<control type="image">
+							<posx>1392</posx>
+							<posy>9</posy>
+							<width>507</width>
+							<height>285</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>1394</posx>
+							<posy>11</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="largeimage">
+							<posx>1394</posx>
+							<posy>11</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb3.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>
+						<control type="image">
+							<posx>1392</posx>
+							<posy>318</posy>
+							<width>507</width>
+							<height>285</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>1394</posx>
+							<posy>320</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>				
+						<control type="largeimage">
+							<posx>1394</posx>
+							<posy>320</posy>
+							<width>504</width>
+							<height>282</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs/thumb4.jpg]</texture>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>				
+					</control>
+
+						
+			<!-- FULLSCREEN VIDEO WINDOW PLOT -->
+					<control type="group">
+						<posx>431</posx>
+						<posy>173</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>		
+			<!-- FULLSCREEN PLOT TEXT FOR PLOT VIEW -->		
+						<control type="textbox">
+							<posx>111</posx>
+							<posy>9</posy>
+							<width>845</width>
+							<height>503</height>
+							<font>Droid22</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000"></autoscroll>					
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+							<visible>!IsEmpty(ListItem.Plot) + Skin.HasSetting(FullscreenPoster) + !Player.HasVideo</visible>	
+						</control>					
+						<control type="image">
+							<posx>99</posx>
+							<posy>0</posy>
+							<width>863</width>
+							<height>530</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>99</posx>
+							<posy>0</posy>
+							<width>863</width>
+							<height>530</height>
+							<!-- <aspectratio>scale</aspectratio> -->
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>1122</posx>
+							<posy>503</posy>
+							<width>213</width>
+							<height>45</height>
+							<align>center</align>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>1025</posx>
+							<posy>516</posy>
+							<width>408</width>
+							<height>420</height>
+							<align>center</align>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>1122</posx>
+							<posy>503</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>1025</posx>
+							<posy>516</posy>
+							<align>center</align>
+							<width>408</width>
+							<height>420</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>
+
+
+			 <!-- Movie count Label -->				
+					<control type="label">
+						<posx>1757</posx>
+						<posy>116</posy>
+						<width>593</width>
+						<height>38</height>
+						<font>Droid16</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container(599).NumItems] ITEMS</label>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(Total) + !Skin.HasSetting(FullscreenPoster)</visible>
+					</control>	 			
+			<!-- FULLSCREEN DIRECTOR INFO -->		
+					<control type="group">
+						<posx>564</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31402]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Director]</label>
+						</control>
+					</control>
+							
+					<control type="group">
+						<posx>998</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31401]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Writer]</label>
+						</control>
+					</control>	
+				</control>	
+				
+				
+		<!--END PLOT VIEW MULTIPLEX OLD-->		
+		<!--END PLOT VIEW MULTIPLEX OLD-->	
+		<!--END PLOT VIEW MULTIPLEX OLD-->			
+		<!--END PLOT VIEW MULTIPLEX OLD-->			
+		<!--END PLOT VIEW MULTIPLEX OLD-->			
+				
+
+		<!--START BIG FANART VIEW MULTIPLEX OLD-->
+		<!--START BIG FANART VIEW MULTIPLEX OLD-->		
+		<!--START BIG FANART VIEW MULTIPLEX OLD-->
+		<!--START BIG FANART VIEW MULTIPLEX OLD-->
+
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<visible>!Skin.HasSetting(noinfo) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31984])</visible>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>     
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control> 		
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		       
+
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		
+
+			<!--MULTIPLEX COMMON BACKGROUND GROUP-->
+				
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>
+						<width>1920</width>
+						<height>572</height>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/Backgrounds/multiplex_window_black.png</texture>
+						</control>
+						
+						<control type="image">
+							<visible>Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>	
+							
+						<control type="image">
+							<posx>126</posx>
+							<posy>635</posy>
+							<width>1673</width>
+							<height>200</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>59</posy>
+							<width>1670</width>
+							<height>540</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>56</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>599</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>	
+					
+
+
+
+			<!-- THUMB & ART VIEW LINES -->
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>		
+						<include>Animation_Multiplex_Menu_Popup</include>	
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>				
+						<control type="image">
+							<posx>485</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>246</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>863</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>540</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>125</posx>
+							<posy>303</posy>
+							<width>740</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+			<!-- END THUMB & ART VIEW LINES -->	
+
+			 <!-- Movie count Label -->				
+					<control type="label">
+						<posx>1757</posx>
+						<posy>116</posy>
+						<width>593</width>
+						<height>38</height>
+						<font>Droid16</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container(599).NumItems] ITEMS</label>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(Total) + !Skin.HasSetting(FullscreenPoster)</visible>
+					</control>	 			
+
+					<!-- IMAGES FOR ART VIEW -->
+					<control type="group">
+						<posx>885</posx>
+						<posy>176</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>					
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>					
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>893</width>
+							<height>503</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0">Conditional</animation>					
+						</control>				
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>890</width>
+							<height>500</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[listitem.property(fanart_image)]</texture>
+						</control>
+					</control>	
+			<!-- VIDEO WINDOW MULTI-IMAGE VIEW -->
+					<control type="group">
+						<posx>885</posx>
+						<posy>176</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>		
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>893</width>
+							<height>503</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>893</width>
+							<height>503</height>
+							<aspectratio>scale</aspectratio>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>339</posx>
+							<posy>479</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>491</posy>
+							<align>center</align>
+							<width>890</width>
+							<height>30</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>357</posx>
+							<posy>479</posy>
+							<align>center</align>
+							<width>180</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>491</posy>
+							<align>center</align>
+							<width>890</width>
+							<height>30</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>	
+						<!-- TEXT FOR MULTI IMAGE VIEW -->
+					<control type="group">
+						<posx>158</posx>
+						<posy>143</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+						<control type="group">
+							<posy>33</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31402]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Director]</label>
+							</control>			
+						</control>
+							
+						<control type="group">
+							<posy>108</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31402]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Writer]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>183</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31436]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Year]</label>
+							</control>			
+						</control>
+
+
+						<control type="group">
+							<posx>360</posx>
+							<posy>33</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31445]:</label>
+							</control>
+							<control type="label">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Duration]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posx>360</posx>
+							<posy>108</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31417]:</label>
+							</control>
+							<control type="label">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.MPAA]</label>
+							</control>					
+						</control>
+
+						<control type="group">
+							<posx>360</posx>
+							<posy>183</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31408]:</label>
+							</control>
+							<control type="label">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
+							</control>			
+						</control>				
+					</control>	
+						<!-- PLOT TEXT FOR MULTI-IMAGE VIEW -->
+					<control type="textbox">
+						<posx>158</posx>
+						<posy>408</posy>
+						<width>683</width>
+						<height>270</height>
+						<font>Droid19</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+					</control>			
+			
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>			
+						<control type="image">
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>
+						
+						<control type="image">
+							<visible>Skin.HasSetting(Dark)</visible>
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>			
+						<control type="image">
+							<posx>0</posx>
+							<posy>87</posy>
+							<width>1920</width>
+							<height>614</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>	
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1920</width>
+							<height>86</height>
+							<texture flipy="false">views/multiplex/backgrounds/multiplex_fullscreen_top_tint.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+				
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>215</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>	
+					</control>	
+			<!-- THUMB & ART VIEW LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>				
+						<control type="image">
+							<posx>839</posx>
+							<posy>87</posy>
+							<width>3</width>
+							<height>614</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>168</posy>
+							<width>840</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+						
+			<!-- FULLSCREEN DIRECTOR INFO -->		
+					<control type="group">
+						<posx>45</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31402]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Director]</label>
+						</control>
+					</control>
+							
+					<control type="group">
+						<posx>428</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31401]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Writer]</label>
+						</control>
+					</control>			
+
+			<!-- IMAGES FOR MULTITHUMB VIEW -->
+					<control type="group">
+						<posx>845</posx>
+						<posy>90</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>					
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1071</width>
+							<height>603</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0">Conditional</animation>					
+						</control>					
+						<control type="largeimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>1073</width>
+							<height>605</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<texture>$INFO[listitem.property(fanart_image)]</texture>
+						</control>		
+					</control>			
+			<!-- FULLSCREEN Movies Title Label -->				
+					<control type="label">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>15</posx>
+						<posy>23</posy>
+						<width>1193</width>
+						<height>38</height>
+						<font>DroidBold37</font>
+						<textcolor>d0FFFFFF</textcolor>
+						<selectedcolor>white</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>	
+			<!-- START MOVIE FULLSCREEN HORIZONTAL LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>84</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>914</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+			<!--FULLSCREEN VIDEO WINDOW FOR BIGFANART VIEW -->
+					<control type="group">
+						<posx>6</posx>
+						<posy>173</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>		
+			<!-- FULLSCREEN PLOT TEXT FOR BIGFANART VIEW -->		
+						
+						<control type="textbox">
+							<posx>9</posx>
+							<posy>8</posy>
+							<width>812</width>
+							<height>504</height>
+							<font>Droid22</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000"></autoscroll>					
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+							<visible>!IsEmpty(ListItem.Plot) + Skin.HasSetting(FullscreenPoster)</visible>	
+						</control>					
+						<control type="image">
+							<posx>840</posx>
+							<posy>-81</posy>
+							<width>1073</width>
+							<height>605</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>840</posx>
+							<posy>-81</posy>
+							<width>1073</width>
+							<height>605</height>
+							<!-- <aspectratio>scale</aspectratio> -->
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>1271</posx>
+							<posy>501</posy>
+							<width>213</width>
+							<height>45</height>
+							<align>center</align>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>1173</posx>
+							<posy>515</posy>
+							<width>408</width>
+							<height>420</height>
+							<align>center</align>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>1271</posx>
+							<posy>501</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>1170</posx>
+							<posy>515</posy>
+							<align>center</align>
+							<width>408</width>
+							<height>420</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>			
+				</control>	
+					<!-- END MOVIE FULLSCREEN HORIZONTAL LINES -->				
+
+			
+			
+			
+			
+		<!--END BIG FANART VIEW MULTIPLEX OLD-->
+		<!--END BIG FANART VIEW MULTIPLEX OLD-->
+		<!--END BIG FANART VIEW MULTIPLEX OLD-->
+		<!--END BIG FANART VIEW MULTIPLEX OLD-->
+
+
+
+
+		<!--START OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+		<!--START OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+		<!--START OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+		<!--START OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+		<!--START OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<visible>!Skin.HasSetting(noinfo) + stringcompare(Skin.String(MovieInfoStyle),$LOCALIZE[31666])</visible>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1080</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control>     
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1920</width>
+						<height>1245</height>
+						<texture>views/multiplex/backgrounds/showcase_stage.png</texture>	
+					</control> 		
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>!Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>162</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>		       
+
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + !Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back.png</texture>	
+					</control>
+					<control type="image">
+						<visible>Skin.HasSetting(FullscreenPoster) + Skin.HasSetting(Dark_Floor)</visible>
+						<posx>0</posx>
+						<posy>203</posy>
+						<width>1920</width>
+						<height>1077</height>
+						<texture>views/multiplex/backgrounds/showcase_floor_back_dark.png</texture>	
+					</control>	
+				
+
+			
+		<!--MULTIPLEX COMMON BACKGROUND GROUP-->
+			
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>
+						<width>1920</width>
+						<height>572</height>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>	
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<control type="image">
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>
+						
+						<control type="image">
+							<visible>Skin.HasSetting(Dark)</visible>
+							<posx>113</posx>
+							<width>1695</width>
+							<height>846</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_black.png</texture>
+						</control>			
+						<control type="image">
+							<posx>126</posx>
+							<posy>635</posy>
+							<width>1673</width>
+							<height>200</height>
+							<texture>views/multiplex/backgrounds/multiplex_window_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>59</posy>
+							<width>1670</width>
+							<height>540</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>56</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>599</posy>
+							<width>1668</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>	
+				
+
+
+
+		<!-- THUMB & ART VIEW LINES -->
+					<control type="group">
+						<posx>0</posx>
+						<posy>98</posy>		
+						<include>Animation_Multiplex_Menu_Popup</include>	
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>					
+						<control type="image">
+							<posx>485</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>246</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>863</posx>
+							<posy>59</posy>
+							<width>3</width>
+							<height>540</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>125</posx>
+							<posy>303</posy>
+							<width>740</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+		<!-- END THUMB & ART VIEW LINES -->	
+
+		 <!-- Movie count Label -->				
+					<control type="label">
+						<posx>1757</posx>
+						<posy>116</posy>
+						<width>593</width>
+						<height>38</height>
+						<font>Droid16</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Container(599).NumItems] ITEMS</label>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(Total) + !Skin.HasSetting(FullscreenPoster)</visible>
+					</control>	 			
+
+		<!-- IMAGES FOR MULTITHUMB VIEW -->
+					<control type="group">
+						<posx>885</posx>
+						<posy>176</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>					
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>893</width>
+							<height>503</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0">Conditional</animation>					
+						</control>				
+						<control type="multiimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>890</width>
+							<height>500</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<timeperimage>4000</timeperimage>					
+							<imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>			
+						<control type="multiimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>890</width>
+							<height>500</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<timeperimage>4000</timeperimage>					
+							<imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>			
+					</control>	
+		<!-- VIDEO WINDOW MULTI-IMAGE VIEW -->
+					<control type="group">
+						<posx>885</posx>
+						<posy>176</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>		
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>893</width>
+							<height>503</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>893</width>
+							<height>503</height>
+							<aspectratio>scale</aspectratio>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>339</posx>
+							<posy>479</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>491</posy>
+							<align>center</align>
+							<width>890</width>
+							<height>30</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>357</posx>
+							<posy>479</posy>
+							<align>center</align>
+							<width>180</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>491</posy>
+							<align>center</align>
+							<width>890</width>
+							<height>30</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>	
+					<!-- TEXT FOR MULTI IMAGE VIEW -->
+					<control type="group">
+						<posx>158</posx>
+						<posy>143</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>		
+						<control type="group">
+							<posy>33</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31402]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Director]</label>
+							</control>			
+						</control>
+						
+						<control type="group">
+							<posy>108</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31401]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Writer]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posy>183</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31436]:</label>
+							</control>
+							<control type="fadelabel">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Year]</label>
+							</control>			
+						</control>
+
+
+						<control type="group">
+							<posx>360</posx>
+							<posy>33</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31445]:</label>
+							</control>
+							<control type="label">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.Duration]</label>
+							</control>			
+						</control>
+
+						<control type="group">
+							<posx>360</posx>
+							<posy>108</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31417]:</label>
+							</control>
+							<control type="label">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.MPAA]</label>
+							</control>					
+						</control>
+
+						<control type="group">
+							<posx>360</posx>
+							<posy>183</posy>
+							<control type="label">
+								<include>MultiplexInfoLabel_Left</include>
+								<label>$LOCALIZE[31408]:</label>
+							</control>
+							<control type="label">
+								<include>MultiplexInfoValue_200</include>				
+								<label fallback="31425">$INFO[ListItem.RatingAndVotes]</label>
+							</control>			
+						</control>				
+					</control>	
+		<!-- PLOT TEXT FOR MULTI-IMAGE VIEW -->
+					<control type="textbox">
+						<posx>158</posx>
+						<posy>408</posy>
+						<width>683</width>
+						<height>270</height>
+						<font>Droid19</font>
+						<info>ListItem.Plot</info>
+						<textcolor>d0FFFFFF</textcolor>
+						<autoscroll delay="15000" time="2000" repeat="10000"></autoscroll>					
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>!Skin.HasSetting(FullscreenPoster)</visible>			
+					</control>			
+
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>			
+						<control type="image">
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>
+						
+						<control type="image">
+							<visible>Skin.HasSetting(Dark)</visible>
+							<width>1920</width>
+							<height>915</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_black.png</texture>
+						</control>		
+						<control type="image">
+							<posx>0</posx>
+							<posy>87</posy>
+							<width>1920</width>
+							<height>614</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>	
+							
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1920</width>
+							<height>86</height>
+							<texture flipy="false">views/multiplex/backgrounds/multiplex_fullscreen_top_tint.png</texture>
+							<colordiffuse>5FFFFFFF</colordiffuse>
+						</control>
+						
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>215</height>
+							<texture>views/multiplex/backgrounds/multiplex_fullscreen_bottom_tint.png</texture>
+							<colordiffuse>9FFFFFFF</colordiffuse>
+						</control>	
+					</control>	
+		<!-- THUMB & ART VIEW LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>				
+						<control type="image">
+							<posx>839</posx>
+							<posy>87</posy>
+							<width>3</width>
+							<height>614</height>
+							<texture>views/multiplex/vert_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>168</posy>
+							<width>840</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+		<!-- START MOVIE FULLSCREEN HORIZONTAL LINES -->
+					<control type="group">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>84</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="false">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>701</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>914</posy>
+							<width>1920</width>
+							<height>3</height>
+							<texture flipy="true">views/multiplex/hort_line.png</texture>
+						</control>
+					</control>
+		<!-- END MOVIE FULLSCREEN HORIZONTAL LINES -->				
+				
+		<!-- FULLSCREEN DIRECTOR INFO -->		
+					<control type="group">
+						<posx>45</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31402]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Director]</label>
+						</control>
+					</control>
+						
+					<control type="group">
+						<posx>570</posx>
+						<posy>102</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						   <visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<control type="label">
+							<include>MultiplexInfoLabel_Left</include>
+							<label>$LOCALIZE[31401]:</label>
+						</control>
+						<control type="fadelabel">
+							<include>MultiplexInfoValue_250</include>				
+							<label fallback="31425">$INFO[ListItem.Writer]</label>
+						</control>
+					</control>			
+
+		<!-- IMAGES FOR MULTITHUMB VIEW -->
+					<control type="group">
+						<posx>845</posx>
+						<posy>90</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>					
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1071</width>
+							<height>603</height>
+							<texture>common/black.png</texture>
+							<colordiffuse>94FFFFFF</colordiffuse>
+							<animation effect="fade" start="50" end="50" time="0">Conditional</animation>					
+						</control>				
+						<control type="multiimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>1073</width>
+							<height>605</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<timeperimage>4000</timeperimage>					
+							<imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+							<visible>!substring(ListItem.Path,stack)</visible>	
+						</control>			
+						<control tye="multiimage">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>1073</width>
+							<height>605</height>
+							<aspectratio>scale</aspectratio>
+							<fadetime>400</fadetime>
+							<timeperimage>4000</timeperimage>					
+							<imagepath background="true">$INFO[Skin.String(moviefolder)]$INFO[ListItem.Title,,/extrathumbs]</imagepath>
+							<visible>substring(ListItem.Path,stack)</visible>	
+						</control>			
+					</control>			
+		<!-- FULLSCREEN Movies Title Label -->				
+					<control type="label">
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>
+						<posx>15</posx>
+						<posy>23</posy>
+						<width>1193</width>
+						<height>38</height>
+						<font>DroidBold37</font>
+						<textcolor>d0FFFFFF</textcolor>
+						<selectedcolor>white</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>		
+		<!--FULLSCREEN VIDEO WINDOW FOR BIGTHUMB VIEW -->
+					<control type="group">
+						<posx>6</posx>
+						<posy>173</posy>
+						<include>Animation_Multiplex_Menu_Popup</include>
+						<visible>Skin.HasSetting(FullscreenPoster)</visible>		
+		<!-- FULLSCREEN PLOT TEXT FOR BIGTHUMB VIEW -->		
+					
+						<control type="textbox">
+							<posx>9</posx>
+							<posy>8</posy>
+							<width>812</width>
+							<height>504</height>
+							<font>Droid22</font>
+							<info>ListItem.Plot</info>
+							<textcolor>d0FFFFFF</textcolor>
+							<autoscroll delay="15000" time="2000" repeat="10000"></autoscroll>					
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+							<visible>!IsEmpty(ListItem.Plot) + Skin.HasSetting(FullscreenPoster)</visible>	
+						</control>					
+						<control type="image">
+							<posx>840</posx>
+							<posy>-81</posy>
+							<width>1073</width>
+							<height>605</height>
+							<texture>common/black.png</texture>
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>				
+						<control type="videowindow">
+							<posx>840</posx>
+							<posy>-81</posy>
+							<width>1073</width>
+							<height>605</height>
+							<!-- <aspectratio>scale</aspectratio> -->
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" start="0" end="100" time="500">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<posx>1271</posx>
+							<posy>501</posy>
+							<width>213</width>
+							<height>45</height>
+							<align>center</align>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>1173</posx>
+							<posy>515</posy>
+							<width>408</width>
+							<height>420</height>
+							<align>center</align>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to View trailer[/UPPERCASE]</label>
+							<visible>!IsEmpty(ListItem.Trailer) + !Player.HasMedia</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="image">
+							<posx>1271</posx>
+							<posy>501</posy>
+							<align>center</align>
+							<width>213</width>
+							<height>45</height>
+							<texture>common/oldschool_progress_back.png</texture>
+							<visible>Player.Playing</visible>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+						<control type="label">
+							<posx>1170</posx>
+							<posy>515</posy>
+							<align>center</align>
+							<width>408</width>
+							<height>420</height>
+							<font>Droid9</font>
+							<label>[UPPERCASE]Press Down to stop[/UPPERCASE]</label>
+							<visible>Player.Playing</visible>
+							<colordiffuse>d0FFFFFF</colordiffuse>
+							<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+						</control>
+					</control>				
+				</control>
+			</control>	
+	<!--END OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+	<!--END OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+	<!--END OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->
+	<!--END OF BIG EXTRATHUMB VIEW MULTIPLEX OLD-->	
+			<control type="fixedlist" id="599">
+				
+				<posx>240</posx>
+				<posy>717</posy>
+				<width>1470</width>
+				<height>450</height>		
+				<onleft>599</onleft>
+				<onright>599</onright>
+				<onup>955</onup>
+				<ondown>60</ondown>
+				<viewtype label="31446">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<orientation>horizontal</orientation>
+				<focusposition>3</focusposition>	
+				<scrolltime>250</scrolltime>
+				<movement>1</movement>
+				<preloaditems>4</preloaditems>
+				<include>Animation_CommonFade</include>
+				<itemlayout width="210" height="450">
+					
+	<!--Multiplex no focus covers -->				
+					<control type="image">
+						<include>MultiplexIconDimensionsWrap2</include>
+						<texture background="true" diffuse="views/multiplex/multiplex_mask.png">defaultvideo.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<info>ListItem.Icon</info>
+					</control>
+	<!--Multiplex no focus cover border needs finishing -->				
+					<control type="image">
+						<include>MultiplexIconDimensionsWrap2</include>
+						<texture>views/multiplex/multiplex_glass.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					
+	<!--Multiplex no focus cover reflect -->
+					<control type="image">
+						<include>MultiplexIconDimensionsWrapReflect2</include>
+						<texture background="true" flipy="true" diffuse="views/multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<info>ListItem.Icon</info>
+					</control>
+				</itemlayout>
+				<focusedlayout width="210" height="450">
+	<!--Multiplex focus cover -->
+					<control type="image">
+						<include>MultiplexIconDimensionsWrap2</include>
+						<texture background="true" diffuse="views/multiplex/multiplex_mask.png">defaultvideo.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<info>ListItem.Icon</info>
+						<include>Animation_MultiplexFocusZoom2</include>
+					</control>
+				
+				
+	<!--Multiplex focus cover glass and border-->			
+				
+					<control type="image">
+						<include>MultiplexIconDimensionsWrap2</include>
+						<bordertexture border="-24">multiplex/multiplex_border.png</bordertexture>
+						<texture>views/multiplex/multiplex_glass.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<include>Animation_MultiplexFocusZoom2</include>
+					</control>				
+					
+	<!--Multiplex focus cover reflect-->
+						
+					<control type="image">
+						<include>MultiplexIconDimensionsWrapReflect2</include>
+						<texture background="true" flipy="true" diffuse="views/multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<info>ListItem.Icon</info>
+						<include>Animation_MultiplexFocusZoom2</include>
+					</control>	
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>Animation_Multiplex_Menu_Popup</include>
+			
+				<control type="scrollbar" id="60">
+					<description>My first scroll bar control</description>
+					<posx>460</posx>
+					<posy>995</posy>
+					<width>1000</width>
+					<height>60</height>
+					<visible allowhiddenfocus="true">Control.IsVisible(599) + Control.HasFocus(60)</visible>
+					<texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
+					<texturesliderbar>-</texturesliderbar>
+					<texturesliderbarfocus>-</texturesliderbarfocus>
+					<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+					<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+					<pulseonselect></pulseonselect>
+					<orientation>horizontal</orientation>
+					<showonepage>false</showonepage>
+					<onup>599</onup>
+					<ondown>601</ondown>
+					<onleft>60</onleft>
+					<onright>60</onright>
+					<include>Animation_HideMultiplex</include>
+					<include>Animation_CommonFade</include>
+				</control>
+			</control>	
+			<control type="group" id="600">
+				<control type="button" id="601">
+					<onleft>599</onleft>
+					<onright>599</onright>
+					<onup>599</onup>
+					<ondown>604</ondown>
+					<onfocus>PlayMedia($INFO[ListItem.Trailer],1)</onfocus>
+				</control>
+
+				
+				<control type="button" id="604">
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onleft>599</onleft>
+					<onright>599</onright>
+					<onup>600</onup>
+					<ondown>600</ondown>
+					<onfocus>SetFocus(599)</onfocus>
+					<onfocus>PlayerControl(stop)</onfocus>
+				</control>				
+			</control>	
+		</control>	
+	</include>
+<!-- Plot View-->	
+<!-- Plot View-->	
+<!-- Plot View-->
+
+</includes>

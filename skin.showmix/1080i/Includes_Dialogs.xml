@@ -1,0 +1,147 @@
+<includes>
+
+	<include name="Dialogs_Group">
+		<posx>556</posx>
+		<posy>600</posy>
+		<width>805</width>
+		<height>166</height>	
+	</include>
+	
+	<include name="Dialogs_Group2">
+		<posx>556</posx>
+		<posy>900</posy>
+		<width>805</width>
+		<height>166</height>	
+	</include>
+
+	<include name="Dialogs_Tablet">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>780</width>
+			<height>152</height>
+			<texture>dialogs/scan_backg.png</texture>		
+		</control>	
+	</include>
+	
+	<include name="Dialogs_Tablet_Audio_Offset">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>435</width>
+			<height>153</height>
+			<texture>dialogs/scan_backg_audio_offset.png</texture>		
+		</control>	
+	</include>
+
+	<include name="Dialogs_Exclam">
+		<control type="image">
+			<posx>25</posx>
+			<posy>16</posy>
+			<width>110</width>
+			<height>110</height>
+			<texture>dialogs/exclam_icon.png</texture>
+		</control>	
+	</include>
+	
+	<include name="Dialogs_HardDrive">
+		<control type="image">
+			<posx>27</posx>
+			<posy>16</posy>
+			<width>100</width>
+			<height>124</height>
+			<texture>dialogs/scan_icon.png</texture>
+		</control>
+		<control type="image">
+			<posx>49</posx>
+			<posy>35</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>dialogs/scan_icon_spin.png</texture>
+           <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+		</control>
+		<control type="image">
+			<posx>27</posx>
+			<posy>16</posy>
+			<width>100</width>
+			<height>124</height>
+			<texture>dialogs/scan_icon_top.png</texture>
+		</control>
+	</include>
+	
+	<include name="Dialogs_VolumeIcon">
+		<control type="image">
+			<posx>13</posx>
+			<posy>13</posy>
+			<width>122</width>
+			<height>123</height>
+			<texture>dialogs/volume_icon.png</texture>
+		</control>	
+	</include>
+
+	<include name="Dialogs_Progress">
+		<description>Progressbar</description>
+		<posx>136</posx>
+		<posy>13</posy>
+		<width>630</width>
+		<height>128</height>
+		<reveal>true</reveal>
+		<texturebg>dialogs/scan_blank.png</texturebg>
+		<lefttexture>common/blank.png</lefttexture>
+		<midtexture>dialogs/scan_fill.png</midtexture>
+		<righttexture>common/blank.png</righttexture>
+		<overlaytexture>-</overlaytexture>
+	</include>
+	
+	<include name="Dialogs_LabelVars">
+		<posx>151</posx>
+		<width>595</width>
+		<height>32</height>
+		<textcolor>FFBBBBBB</textcolor>
+		<align>center</align>
+		<font>Font_ProgressLabel</font>		
+		<scroll>true</scroll>
+	</include>
+	<include name="Dialogs_HeadingLabel">
+		<include>Dialogs_Pos1</include>
+		<textcolor>FFFFFFFF</textcolor>
+		<include>Dialogs_LabelVars</include>
+	</include>
+
+	<include name="Dialogs_Pos1">
+		<posy>21</posy>	
+	</include>
+	
+	<include name="Dialogs_Pos2">
+		<posy>48</posy>	
+	</include>
+
+	<include name="Dialogs_Pos3">
+		<posy>75</posy>	
+	</include>
+
+	<include name="Dialogs_Pos4">
+		<posy>102</posy>	
+	</include>	
+	
+	<include name="Dialogs_Label1">
+		<include>Dialogs_Pos1</include>
+		<include>Dialogs_LabelVars</include>
+	</include>
+	
+	<include name="Dialogs_Label2">
+		<include>Dialogs_Pos2</include>
+		<include>Dialogs_LabelVars</include>
+	</include>
+
+	<include name="Dialogs_Label3">
+		<include>Dialogs_Pos3</include>
+		<include>Dialogs_LabelVars</include>
+	</include>
+
+	<include name="Dialogs_Label4">
+		<include>Dialogs_Pos4</include>
+		<include>Dialogs_LabelVars</include>
+	</include>	
+	
+</includes>
